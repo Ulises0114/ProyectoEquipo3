@@ -12,28 +12,43 @@ namespace Manejadores
 {
     public class ManejadorProveedores
     {
-        Base b = new Base("localhost", "root", "12345", "CarpinteriaDB");
+        Base b = new Base("127.0.0.1","3308", "root", "12345", "CarpinteriaDB");
+
 
         public void Guardar(Proveedores p)
         {
-            b.Comando($"call InsertarProovedor('{p.NombreProveedor}','{p.Contacto}','{p.Telefono}','{p.Email}','{p.Direccion}');");
+            b.Comando($"call InsertarProveedor('{p.NombreProveedor}','{p.Contacto}','{p.Telefono}','{p.Email}','{p.Direccion}');");
         }
 
         public void Borrar(Proveedores p)
         {
-            var rs = MessageBox.Show($"Esta seguro de eliminar {p.IdProveedor}", "ATENCION!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (rs == DialogResult.Yes)
-            {
-                b.Comando($"delete from Proveedores where IdProveedor = {p.IdProveedor}");
-            }
+                b.Comando($"delete from Proveedores where IdProveedor = {p.IdProveedor};");
         }
         public void Mostrar(string consulta, DataGridView tabla, string datos)
         {
             tabla.Columns.Clear();
-            tabla.DataSource = b.Consultar(consulta, datos).Tables[0];
-            tabla.Columns["IDPiezas"].Visible = false;
-            tabla.AutoResizeColumns();
-            tabla.AutoResizeRows();
+            var ds = b.Consultar(consulta, datos);
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                tabla.DataSource = ds.Tables[0];
+                if (tabla.Columns.Contains("IdProveedor"))
+                    tabla.Columns["IdProveedor"].Visible = true;
+                tabla.AutoResizeColumns();
+                tabla.AutoResizeRows();
+            }
+            else
+            {
+                // No hay datos, limpia la tabla o mostrar mensaje
+                tabla.DataSource = null;
+            }
         }
+
+
+        public void Modificar(Proveedores p)
+        {
+            b.Comando($"call ModificarProveedor('{p.IdProveedor}','{p.NombreProveedor}','{p.Contacto}','{p.Telefono}','{p.Email}','{p.Direccion}');");
+        }
+
+
     }
 }

@@ -28,23 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DtgDatos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtBusqueda = new System.Windows.Forms.TextBox();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnFiltrar = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // DtgDatos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(175, 95);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(602, 312);
-            this.dataGridView1.TabIndex = 10;
+            this.DtgDatos.AllowUserToAddRows = false;
+            this.DtgDatos.AllowUserToDeleteRows = false;
+            this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DtgDatos.Location = new System.Drawing.Point(175, 95);
+            this.DtgDatos.Name = "DtgDatos";
+            this.DtgDatos.Size = new System.Drawing.Size(602, 312);
+            this.DtgDatos.TabIndex = 10;
+            this.DtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellClick);
+            this.DtgDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellDoubleClick);
+            this.DtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellEnter);
+            this.DtgDatos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DtgDatos_CellMouseClick);
             // 
             // label1
             // 
@@ -56,12 +62,12 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Proveedores aprobados";
             // 
-            // textBox1
+            // TxtBusqueda
             // 
-            this.textBox1.Location = new System.Drawing.Point(175, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(383, 20);
-            this.textBox1.TabIndex = 12;
+            this.TxtBusqueda.Location = new System.Drawing.Point(175, 52);
+            this.TxtBusqueda.Name = "TxtBusqueda";
+            this.TxtBusqueda.Size = new System.Drawing.Size(383, 20);
+            this.TxtBusqueda.TabIndex = 12;
             // 
             // BtnAgregar
             // 
@@ -71,6 +77,7 @@
             this.BtnAgregar.TabIndex = 13;
             this.BtnAgregar.Text = "+ Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // BtnFiltrar
             // 
@@ -107,12 +114,13 @@
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.BtnFiltrar);
             this.Controls.Add(this.BtnAgregar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtBusqueda);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DtgDatos);
             this.Name = "FrmProveedores";
             this.Text = "FrmProveedores";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmProveedores_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,9 +128,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DtgDatos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtBusqueda;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnFiltrar;
         private System.Windows.Forms.Button BtnBuscar;

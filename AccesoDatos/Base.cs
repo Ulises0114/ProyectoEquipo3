@@ -11,55 +11,43 @@ namespace AccesoDatos
 {
     public class Base
     {
-        MySqlConnection con;
-        public Base(string server, string user, string password, string db, int port = 3308)
+        MySqlConnection conn;
+        public Base(string servidor,string puerto, string usuario, string password, string BaseDatos)
         {
-            con = new MySqlConnection($"server={server}; port={port}; user={user}; password={password}; database={db};");
+            conn = new MySqlConnection("server=127.0.0.1; port=3308; user=root; password=12345; database=CarpinteriaDB;");
         }
-
-        public void Comando(string query, bool mantenerConexion = false)
+        public void Comando(string cadena)
         {
             try
             {
-                if (con.State != ConnectionState.Open)
-                    con.Open();
-
-                MySqlCommand cmd = new MySqlCommand(query, con);
+                MySqlCommand cmd = new MySqlCommand(cadena, conn);
+                conn.Open();
                 cmd.ExecuteNonQuery();
-
-                if (!mantenerConexion)
-                    con.Close();
+                conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                if (con.State == ConnectionState.Open)
-                    con.Close();
+                conn.Close();
             }
         }
-
-        public DataSet Consultar(string query, string table, bool mantenerConexion = false)
+        public DataSet Consultar(string consulta, string tabla)
         {
             DataSet ds = new DataSet();
             try
             {
-                if (con.State != ConnectionState.Open)
-                    con.Open();
-
-                MySqlDataAdapter da = new MySqlDataAdapter(query, con);
-                da.Fill(ds, table);
-
-                if (!mantenerConexion)
-                    con.Close();
+                MySqlDataAdapter da = new MySqlDataAdapter(consulta, conn);
+                conn.Open();
+                da.Fill(ds, tabla);
+                conn.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al consultar: " + ex.Message);
-                if (!mantenerConexion)
-                    con.Close();
+                MessageBox.Show(ex.Message);
+                conn.Close();
             }
-
             return ds;
         }
+
     }
 }
