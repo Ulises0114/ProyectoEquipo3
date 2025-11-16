@@ -1,0 +1,318 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Manejadores;
+using Entidades;
+using System.IO;
+using System.Drawing.Drawing2D;
+
+namespace ProyectoEquipo3
+{
+    public partial class FrmInventario : Form
+    {
+        ManejadorInventario mi;
+        public static Inventarios inventario = new Inventarios(0,"",0,"",0m,"",0m,0m,"","");
+        int fila = 0, columna = 0;
+        private readonly string baseImagesPath = Path.Combine(Application.StartupPath, "images");
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            fila = e.RowIndex; columna = e.ColumnIndex;
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // protección contra clicks en encabezados
+            if (e.RowIndex < 0) return;
+
+            fila = e.RowIndex;
+            columna = e.ColumnIndex;
+
+            // toma la fila directamente del evento (más fiable)
+            var row = DtgDatos.Rows[fila];
+
+            // Toma cada campo por nombre de columna (más robusto que usar índices fijos)
+            // Asegúrate que los nombres que uso ("IdInventario","NombreProducto", etc.) coincidan exactamente con tus columnas.
+            FrmInventario.inventario.IdInventario = Convert.ToInt32(row.Cells["IdInventario"].Value ?? 0);
+            FrmInventario.inventario.NombreProducto = row.Cells["NombreProducto"].Value?.ToString() ?? "";
+            FrmInventario.inventario.IdProveedor = Convert.ToInt32(row.Cells["IdProveedor"].Value ?? 0);
+            FrmInventario.inventario.UnidadMedida = row.Cells["UnidadMedida"].Value?.ToString() ?? "";
+            FrmInventario.inventario.PrecioCompra = Convert.ToDecimal(row.Cells["PrecioCompra"].Value ?? 0m);
+            FrmInventario.inventario.FechaIngreso = row.Cells["FechaIngreso"].Value?.ToString() ?? "";
+            FrmInventario.inventario.StockMinimo = Convert.ToDecimal(row.Cells["StockMinimo"].Value ?? 0m);
+            FrmInventario.inventario.StockActual = Convert.ToDecimal(row.Cells["StockActual"].Value ?? 0m);
+            FrmInventario.inventario.Descripcion = row.Cells["Descripcion"].Value?.ToString() ?? "";
+
+            // opcional: si guardas ImagePath en la grid
+            if (DtgDatos.Columns.Contains("ImagePath"))
+                FrmInventario.inventario.ImagePath = row.Cells["ImagePath"].Value?.ToString() ?? "";
+
+            switch (columna)
+            {
+                case 10:
+                    {
+                        FrmDatosInventario di = new FrmDatosInventario();
+                        di.ShowDialog(this); // pasar owner
+                        DtgDatos.Columns.Clear();
+                    }; break;
+                case 11:
+                    {
+                        mi.Borrar(FrmInventario.inventario);
+                        DtgDatos.Columns.Clear();
+                    }; break;
+            }
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            inventario.IdInventario = 0;
+            inventario.NombreProducto = "";
+            inventario.IdProveedor = 0;
+            inventario.UnidadMedida = "";
+            inventario.PrecioCompra = 0m;
+            inventario.FechaIngreso = "";
+            inventario.StockMinimo = 0m;
+            inventario.StockActual = 0m;
+            inventario.Descripcion = "";
+            inventario.ImagePath = ""; // <<--- importante: limpiar la ruta de imagen previa
+
+            FrmDatosInventario di = new FrmDatosInventario();
+            // pasar this como owner para que FrmDatosInventario pueda invocar RefreshGrid()
+            di.ShowDialog(this);
+            DtgDatos.Columns.Clear();
+        }
+
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            mi.Mostrar($"select * from inventario where NombreProducto like '%{textBox1.Text}%'", DtgDatos, "inventario");
+            CargarGaleria();
+        }
+        private void FrmInventario_Load(object sender, EventArgs e)
+        {
+            BtnRefresh_Click(null, null);
+            CargarGaleria();
+        }
+        private void CargarGaleria()
+        {
+            DataTable dt = mi.ListarProductosParaGaleria();
+            FillListViewFromDataTable(lvProductos, ilThumbnails, dt);
+        }
+        private Image GetImageFromPath(string imagePathFromDb)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(imagePathFromDb))
+                    return SystemIcons.Application.ToBitmap();
+
+                // Si ImagePath ya es ruta absoluta, usarla; si solo es nombre, combinar con baseImagesPath
+                string fullPath = imagePathFromDb;
+                if (!Path.IsPathRooted(imagePathFromDb))
+                    fullPath = Path.Combine(baseImagesPath, imagePathFromDb);
+
+                if (File.Exists(fullPath))
+                {
+                    byte[] bytes = File.ReadAllBytes(fullPath);
+                    using (var ms = new MemoryStream(bytes))
+                    {
+                        return Image.FromStream(ms);
+                    }
+                }
+            }
+            catch
+            {
+                // ignorar y devolver placeholder
+            }
+            return SystemIcons.Application.ToBitmap();
+        }
+
+        // ----------------- Crear thumbnail + badge (C# 7.3 compatible) -----------------
+        private Image CreateThumbnailWithBadge(Image src, int thumbW, int thumbH, decimal stock)
+        {
+            if (src == null) src = SystemIcons.Application.ToBitmap();
+
+            double ratioX = (double)thumbW / src.Width;
+            double ratioY = (double)thumbH / src.Height;
+            double ratio = Math.Min(ratioX, ratioY);
+            int newW = Math.Max(1, (int)(src.Width * ratio));
+            int newH = Math.Max(1, (int)(src.Height * ratio));
+
+            Bitmap thumb = new Bitmap(thumbW, thumbH);
+            using (Graphics g = Graphics.FromImage(thumb))
+            {
+                g.Clear(Color.White);
+                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+                int x = (thumbW - newW) / 2;
+                int y = (thumbH - newH) / 2;
+                g.DrawImage(src, x, y, newW, newH);
+
+                // badge
+                string stockText = stock.ToString("0");
+                using (Font badgeFont = new Font("Segoe UI", 10, FontStyle.Bold))
+                {
+                    SizeF textSize = g.MeasureString(stockText, badgeFont);
+                    int pad = 6;
+                    int badgeW = (int)textSize.Width + pad * 2;
+                    int badgeH = (int)textSize.Height + pad;
+                    int badgeX = thumbW - badgeW - 6;
+                    int badgeY = 6;
+
+                    using (Brush brush = new SolidBrush(Color.FromArgb(220, 50, 50)))
+                    using (Brush brushText = new SolidBrush(Color.White))
+                    using (Pen pen = new Pen(Color.FromArgb(180, 40, 40)))
+                    {
+                        Rectangle rect = new Rectangle(badgeX, badgeY, badgeW, badgeH);
+                        int corner = Math.Min(badgeH, badgeW) / 3;
+
+                        using (var path = RoundedRect(rect, corner))
+                        {
+                            g.FillPath(brush, path);
+                            g.DrawPath(pen, path);
+                        }
+
+                        float tx = badgeX + (badgeW - textSize.Width) / 2f;
+                        float ty = badgeY + (badgeH - textSize.Height) / 2f - 1;
+                        g.DrawString(stockText, badgeFont, brushText, tx, ty);
+                    }
+                }
+            }
+            return thumb;
+        }
+
+        private GraphicsPath RoundedRect(Rectangle bounds, int radius)
+        {
+            var path = new GraphicsPath();
+            int diameter = radius * 2;
+            path.AddArc(bounds.X, bounds.Y, diameter, diameter, 180, 90);
+            path.AddArc(bounds.Right - diameter, bounds.Y, diameter, diameter, 270, 90);
+            path.AddArc(bounds.Right - diameter, bounds.Bottom - diameter, diameter, diameter, 0, 90);
+            path.AddArc(bounds.X, bounds.Bottom - diameter, diameter, diameter, 90, 90);
+            path.CloseFigure();
+            return path;
+        }
+
+        // ----------------- Llenar el ListView desde DataTable -----------------
+        private void FillListViewFromDataTable(ListView lv, ImageList il, DataTable dt)
+        {
+            lv.BeginUpdate();
+            try
+            {
+                lv.Items.Clear();
+                // Liberar imágenes previas (si quieres liberar memoria)
+                foreach (Image img in il.Images)
+                {
+                    img.Dispose();
+                }
+                il.Images.Clear();
+
+                int thumbW = il.ImageSize.Width;
+                int thumbH = il.ImageSize.Height;
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow row = dt.Rows[i];
+                    string imagePathDb = dt.Columns.Contains("ImagePath") && row["ImagePath"] != DBNull.Value
+                                         ? row["ImagePath"].ToString() : string.Empty;
+
+                    Image src = GetImageFromPath(imagePathDb);
+
+                    decimal stock = 0;
+                    if (dt.Columns.Contains("StockActual") && row["StockActual"] != DBNull.Value)
+                        decimal.TryParse(row["StockActual"].ToString(), out stock);
+
+                    using (Image tmpThumb = CreateThumbnailWithBadge(src, thumbW, thumbH, stock))
+                    {
+                        // clonamos antes de añadir (ImageList mantendrá su propia instancia)
+                        Bitmap bmp = new Bitmap(tmpThumb);
+                        il.Images.Add(bmp);
+                    }
+
+                    var item = new ListViewItem
+                    {
+                        Text = row["NombreProducto"]?.ToString() ?? "(sin nombre)",
+                        ImageIndex = i,
+                        Tag = row["IdInventario"]
+                    };
+                    lv.Items.Add(item);
+                }
+            }
+            finally
+            {
+                lv.EndUpdate();
+            }
+        }
+
+        // ----------------- Evento de activación del item (doble click / Enter) -----------------
+        private void LvProductos_ItemActivate(object sender, EventArgs e)
+        {
+            if (lvProductos.SelectedItems.Count == 0) return;
+
+            int id;
+            if (!int.TryParse(lvProductos.SelectedItems[0].Tag?.ToString(), out id)) return;
+
+            // Intento 1: si tu DtgDatos tiene como DataSource un DataTable, busca la fila ahí
+            try
+            {
+                var dt = DtgDatos.DataSource as DataTable;
+                if (dt != null)
+                {
+                    DataRow[] found = dt.Select($"IdInventario = {id}");
+                    if (found.Length > 0)
+                    {
+                        var row = found[0];
+                        FrmInventario.inventario.IdInventario = Convert.ToInt32(row["IdInventario"]);
+                        FrmInventario.inventario.NombreProducto = row["NombreProducto"]?.ToString() ?? "";
+                        FrmInventario.inventario.IdProveedor = Convert.ToInt32(row["IdProveedor"] ?? 0);
+                        FrmInventario.inventario.UnidadMedida = row["UnidadMedida"]?.ToString() ?? "";
+                        FrmInventario.inventario.PrecioCompra = Convert.ToDecimal(row["PrecioCompra"] ?? 0m);
+                        FrmInventario.inventario.FechaIngreso = row["FechaIngreso"]?.ToString() ?? "";
+                        FrmInventario.inventario.StockMinimo = Convert.ToDecimal(row["StockMinimo"] ?? 0m);
+                        FrmInventario.inventario.StockActual = Convert.ToDecimal(row["StockActual"] ?? 0m);
+                        FrmInventario.inventario.Descripcion = row["Descripcion"]?.ToString() ?? "";
+                        if (dt.Columns.Contains("ImagePath"))
+                            FrmInventario.inventario.ImagePath = row["ImagePath"]?.ToString() ?? "";
+                    }
+                    else
+                    {
+                        // Intento 2: pedir al manejador obtener por id (si tienes ese método)
+                        var item = mi.ObtenerPorId(id); // implementar ObtenerPorId en ManejadorInventario si no existe
+                        if (item != null)
+                        {
+                            FrmInventario.inventario = item;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                // si algo falla, intenta al menos abrir el diálogo (no se recomienda en producción)
+            }
+
+            // ahora sí abre el formulario con FrmInventario.inventario ya cargado
+            FrmDatosInventario di = new FrmDatosInventario();
+            di.ShowDialog(this);
+            DtgDatos.Columns.Clear();
+        }
+        public void RefreshGrid()
+        {
+            BtnRefresh_Click(null, null);
+        }
+        public FrmInventario()
+        {
+            InitializeComponent();
+            mi = new ManejadorInventario();
+            ilThumbnails.ImageSize = new Size(120, 120);
+            ilThumbnails.ColorDepth = ColorDepth.Depth32Bit;
+            lvProductos.LargeImageList = ilThumbnails;
+            lvProductos.View = View.LargeIcon;
+            lvProductos.MultiSelect = false;
+            lvProductos.ItemActivate += LvProductos_ItemActivate;
+        }
+    }
+}
