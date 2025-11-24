@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Data;
+using System.Collections.Generic; // Necesario para List<>
+using System.Data;                // Necesario para CommandType y ConnectionState
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;

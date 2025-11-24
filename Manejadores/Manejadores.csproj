@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ManejadorPresupuesto.cs" />
     <Compile Include="ManejadorInventario.cs" />
     <Compile Include="ManejadorNotificacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

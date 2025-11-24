@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Presupuesto.cs" />
     <Compile Include="Inventarios.cs" />
     <Compile Include="NotificacionesProgramadas.cs" />
     <Compile Include="NotificacionesSistema.cs" />
