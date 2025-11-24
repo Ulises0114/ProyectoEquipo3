@@ -92,6 +92,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManejadorLogin.cs" />
+    <Compile Include="ManejadorPermisos.cs" />
+    <Compile Include="ManejadorUsuarios.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="ManejadorProveedores.cs" />
     <Compile Include="ManejadorPresupuesto.cs" />

@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace ProyectoEquipo3
 {
-    public partial class Form1 : Form
+    public partial class FrmMenu : Form
     {
-        public Form1()
+        public FrmMenu()
         {
             InitializeComponent();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios frmUsuarios = new FrmUsuarios();
+            frmUsuarios.ShowDialog();
         }
     }
 }

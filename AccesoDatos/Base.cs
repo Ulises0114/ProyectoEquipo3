@@ -12,9 +12,9 @@ namespace AccesoDatos
     public class Base
     {
         MySqlConnection conn;
-        public Base(string servidor, string usuario, string password, string BaseDatos)
+        public Base(string servidor, string usuario, string password, string BaseDatos, int port = 3308)
         {
-            conn = new MySqlConnection($"server={servidor}; user={usuario}; password={password}; database={BaseDatos}");
+            conn = new MySqlConnection($"server={servidor}; port={port}; user={usuario}; password={password}; database={BaseDatos};");
         }
         public void Comando(string cadena)
         {

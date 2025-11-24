@@ -16,7 +16,7 @@ namespace ProyectoEquipo3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmNotificaciones());
+            Application.Run(new FrmLogin());
         }
     }
 }
