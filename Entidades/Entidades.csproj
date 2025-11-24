@@ -93,7 +93,6 @@
     <Compile Include="Permisos.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="Proveedores.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Presupuesto.cs" />
     <Compile Include="Inventarios.cs" />
     <Compile Include="NotificacionesProgramadas.cs" />

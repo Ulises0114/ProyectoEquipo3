@@ -14,7 +14,7 @@ namespace Manejador
 {
     public class ManejadorPresupuesto
     {
-        Base b = new Base("127.0.0.1", "3308", "root", "12345", "CarpinteriaDB");
+        Base b = new Base("localhost", "root", "12345", "CarpinteriaDB");
 
         public void Guardar(Presupuesto presupuesto)
         {
@@ -24,7 +24,7 @@ namespace Manejador
             listaParams.Add(new MySqlParameter("_CostoManoObra", presupuesto.CostoManoObra));
             listaParams.Add(new MySqlParameter("_EstadoPresupuesto", presupuesto.EstadoPresupuesto));
 
-            b.EjecutarSP("sp_GuardarPresupuesto", listaParams);
+            b.Comando("sp_GuardarPresupuesto");
         }
 
         public void Borrar(Presupuesto presupuesto)
@@ -37,7 +37,7 @@ namespace Manejador
                 var listaParams = new List<MySqlParameter>();
                 listaParams.Add(new MySqlParameter("_IdPresupuesto", presupuesto.IdPresupuesto));
 
-                b.EjecutarSP("sp_BorrarPresupuesto", listaParams);
+                b.Comando("sp_BorrarPresupuesto");
             }
         }
 
@@ -50,7 +50,7 @@ namespace Manejador
             listaParams.Add(new MySqlParameter("_CostoManoObra", presupuesto.CostoManoObra));
             listaParams.Add(new MySqlParameter("_EstadoPresupuesto", presupuesto.EstadoPresupuesto));
 
-            b.EjecutarSP("sp_ModificarPresupuesto", listaParams);
+            b.Comando("sp_ModificarPresupuesto");
         }
 
         public void Mostrar(string consulta, DataGridView tabla, string nombreTablaDataSet)

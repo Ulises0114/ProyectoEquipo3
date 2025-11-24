@@ -48,9 +48,10 @@
             // btnProgramarNotificacion
             // 
             this.btnProgramarNotificacion.BackColor = System.Drawing.Color.Green;
-            this.btnProgramarNotificacion.Location = new System.Drawing.Point(1241, 28);
+            this.btnProgramarNotificacion.Location = new System.Drawing.Point(1396, 35);
+            this.btnProgramarNotificacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnProgramarNotificacion.Name = "btnProgramarNotificacion";
-            this.btnProgramarNotificacion.Size = new System.Drawing.Size(323, 110);
+            this.btnProgramarNotificacion.Size = new System.Drawing.Size(363, 138);
             this.btnProgramarNotificacion.TabIndex = 0;
             this.btnProgramarNotificacion.Text = "+ Programar notificación";
             this.btnProgramarNotificacion.UseVisualStyleBackColor = false;
@@ -58,9 +59,10 @@
             // 
             // btnRefrescarNotificaciones
             // 
-            this.btnRefrescarNotificaciones.Location = new System.Drawing.Point(1041, 39);
+            this.btnRefrescarNotificaciones.Location = new System.Drawing.Point(1171, 49);
+            this.btnRefrescarNotificaciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRefrescarNotificaciones.Name = "btnRefrescarNotificaciones";
-            this.btnRefrescarNotificaciones.Size = new System.Drawing.Size(86, 81);
+            this.btnRefrescarNotificaciones.Size = new System.Drawing.Size(97, 101);
             this.btnRefrescarNotificaciones.TabIndex = 1;
             this.btnRefrescarNotificaciones.Text = "refresh";
             this.btnRefrescarNotificaciones.UseVisualStyleBackColor = true;
@@ -69,9 +71,10 @@
             // 
             this.panelSistemaContainer.Controls.Add(this.flpNotificacionesSistema);
             this.panelSistemaContainer.Controls.Add(this.lblTituloSistema);
-            this.panelSistemaContainer.Location = new System.Drawing.Point(244, 173);
+            this.panelSistemaContainer.Location = new System.Drawing.Point(274, 216);
+            this.panelSistemaContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelSistemaContainer.Name = "panelSistemaContainer";
-            this.panelSistemaContainer.Size = new System.Drawing.Size(540, 693);
+            this.panelSistemaContainer.Size = new System.Drawing.Size(608, 866);
             this.panelSistemaContainer.TabIndex = 2;
             // 
             // flpNotificacionesSistema
@@ -79,10 +82,11 @@
             this.flpNotificacionesSistema.AutoScroll = true;
             this.flpNotificacionesSistema.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpNotificacionesSistema.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpNotificacionesSistema.Location = new System.Drawing.Point(0, 25);
+            this.flpNotificacionesSistema.Location = new System.Drawing.Point(0, 29);
+            this.flpNotificacionesSistema.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flpNotificacionesSistema.Name = "flpNotificacionesSistema";
-            this.flpNotificacionesSistema.Padding = new System.Windows.Forms.Padding(8);
-            this.flpNotificacionesSistema.Size = new System.Drawing.Size(540, 668);
+            this.flpNotificacionesSistema.Padding = new System.Windows.Forms.Padding(9, 10, 9, 10);
+            this.flpNotificacionesSistema.Size = new System.Drawing.Size(608, 837);
             this.flpNotificacionesSistema.TabIndex = 1;
             this.flpNotificacionesSistema.WrapContents = false;
             // 
@@ -93,7 +97,7 @@
             this.lblTituloSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloSistema.Location = new System.Drawing.Point(0, 0);
             this.lblTituloSistema.Name = "lblTituloSistema";
-            this.lblTituloSistema.Size = new System.Drawing.Size(236, 25);
+            this.lblTituloSistema.Size = new System.Drawing.Size(294, 29);
             this.lblTituloSistema.TabIndex = 0;
             this.lblTituloSistema.Text = "Notificaciones del sistema";
             // 
@@ -101,9 +105,10 @@
             // 
             this.panel1.Controls.Add(this.flpProgramadas);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(790, 173);
+            this.panel1.Location = new System.Drawing.Point(889, 216);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(540, 693);
+            this.panel1.Size = new System.Drawing.Size(608, 866);
             this.panel1.TabIndex = 3;
             // 
             // flpProgramadas
@@ -111,10 +116,11 @@
             this.flpProgramadas.AutoScroll = true;
             this.flpProgramadas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpProgramadas.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpProgramadas.Location = new System.Drawing.Point(0, 25);
+            this.flpProgramadas.Location = new System.Drawing.Point(0, 29);
+            this.flpProgramadas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flpProgramadas.Name = "flpProgramadas";
-            this.flpProgramadas.Padding = new System.Windows.Forms.Padding(8);
-            this.flpProgramadas.Size = new System.Drawing.Size(540, 668);
+            this.flpProgramadas.Padding = new System.Windows.Forms.Padding(9, 10, 9, 10);
+            this.flpProgramadas.Size = new System.Drawing.Size(608, 837);
             this.flpProgramadas.TabIndex = 1;
             this.flpProgramadas.WrapContents = false;
             // 
@@ -125,42 +131,44 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 25);
+            this.label1.Size = new System.Drawing.Size(314, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Notificaciones programadas";
             // 
             // dgvProgramadas
             // 
             this.dgvProgramadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProgramadas.Location = new System.Drawing.Point(837, 74);
+            this.dgvProgramadas.Location = new System.Drawing.Point(942, 92);
+            this.dgvProgramadas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvProgramadas.Name = "dgvProgramadas";
             this.dgvProgramadas.RowHeadersWidth = 51;
             this.dgvProgramadas.RowTemplate.Height = 24;
-            this.dgvProgramadas.Size = new System.Drawing.Size(63, 30);
+            this.dgvProgramadas.Size = new System.Drawing.Size(71, 38);
             this.dgvProgramadas.TabIndex = 3;
             this.dgvProgramadas.Visible = false;
             // 
             // lblBadgeCount
             // 
             this.lblBadgeCount.AutoSize = true;
-            this.lblBadgeCount.Location = new System.Drawing.Point(1633, 88);
+            this.lblBadgeCount.Location = new System.Drawing.Point(1837, 110);
             this.lblBadgeCount.Name = "lblBadgeCount";
-            this.lblBadgeCount.Size = new System.Drawing.Size(44, 16);
+            this.lblBadgeCount.Size = new System.Drawing.Size(51, 20);
             this.lblBadgeCount.TabIndex = 3;
             this.lblBadgeCount.Text = "label1";
             this.lblBadgeCount.Visible = false;
             // 
             // FrmNotificaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1587, 914);
+            this.ClientSize = new System.Drawing.Size(1785, 1142);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvProgramadas);
             this.Controls.Add(this.lblBadgeCount);
             this.Controls.Add(this.panelSistemaContainer);
             this.Controls.Add(this.btnRefrescarNotificaciones);
             this.Controls.Add(this.btnProgramarNotificacion);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmNotificaciones";
             this.Text = "FrmNotificaciones";
             this.panelSistemaContainer.ResumeLayout(false);

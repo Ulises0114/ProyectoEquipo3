@@ -195,6 +195,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="ucNotificacionItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -207,9 +208,6 @@
     <Compile Include="ucProgramadaItem.Designer.cs">
       <DependentUpon>ucProgramadaItem.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmDatosProovedores.resx">
       <DependentUpon>FrmDatosProovedores.cs</DependentUpon>
     </EmbeddedResource>

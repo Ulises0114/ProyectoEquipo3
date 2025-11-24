@@ -12,7 +12,7 @@ namespace Manejadores
 {
     public class ManejadorProveedores
     {
-        Base b = new Base("127.0.0.1","3308", "root", "12345", "CarpinteriaDB");
+        Base b = new Base("localhost", "root", "12345", "CarpinteriaDB");
 
 
         public void Guardar(Proveedores p)
