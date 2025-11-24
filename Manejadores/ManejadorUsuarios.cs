@@ -15,7 +15,7 @@ namespace Manejadores
         Base b = new Base("localhost", "root", "12345", "CarpinteriaDB");
         public void Guardar(Usuarios usuario)
         {
-            b.Comando($"insert into usuarios values(null, '{usuario.NombreUsuario}', '{ManejadorLogin.Sha1(usuario.Contrasena)}')");
+            b.Comando($"insert into Usuarios VALUES(null, '{usuario.NombreUsuario}','{ManejadorLogin.Sha1(usuario.Contrasena)}', '{usuario.Telefono}','{usuario.Puesto}',true ,NULL);");
         }
 
         public void Borrar(Usuarios usuario)
@@ -29,28 +29,18 @@ namespace Manejadores
             }
         }
 
-        public void Editar(Usuarios usuario, bool estado)
+        public void Editar(Usuarios usuario)
         {
-            if (estado)
-            {
-                b.Comando($"update usuarios set nombre = '{usuario.NombreUsuario}', clave = '{ManejadorLogin.Sha1(usuario.Contrasena)}' where idu = {usuario.IdUsuario}");
-            }
-            else
-            {
-                b.Comando($"update usuarios set nombre = '{usuario.NombreUsuario}' where idu = {usuario.IdUsuario}");
-            }
+            b.Comando($"update Usuarios set NombreUsuario = '{usuario.NombreUsuario}', Clave = '{ManejadorLogin.Sha1(usuario.Contrasena)}', Telefono = '{usuario.Telefono}', Puesto = '{usuario.Puesto}' where IdUsuario = {usuario.IdUsuario}");
         }
-    
+
         public void Mostrar(string query, DataGridView tabla, string datos)
         {
             tabla.Columns.Clear();
             tabla.DataSource = b.Consultar(query, datos).Tables[0];
-            tabla.Columns["idu"].Visible = false;
-            tabla.Columns["clave"].Visible = false;
-
-            tabla.Columns.Insert(2, Boton("Editar", Color.Green));
-            tabla.Columns.Insert(3, Boton("Eliminar", Color.Red));
-
+            tabla.Columns["IdUsuario"].Visible = false;
+            tabla.Columns["Clave"].Visible = false;
+            tabla.Columns["FechaRegistro"].Visible = false;
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }

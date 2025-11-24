@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
 using Manejadores;
 
 namespace ProyectoEquipo3
@@ -25,6 +26,8 @@ namespace ProyectoEquipo3
             if (ml.Validar(txtUsuario, txtClave))
             {
                 MessageBox.Show("Bienvenido al sistema", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ManejadorPermisos mp = new ManejadorPermisos();
+                Usuarios.PermisosDelUsuario = mp.ObtenerPermisosPorUsuario(Usuarios.UsuarioLogueadoID);
                 FrmMenu frm = new FrmMenu();
                 frm.Show();
                 this.Hide();

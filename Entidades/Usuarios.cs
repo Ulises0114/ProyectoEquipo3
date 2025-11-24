@@ -22,5 +22,23 @@ namespace Entidades
         public string Contrasena { get; set; }
         public string Telefono { get; set; }
         public string Puesto { get; set; }
+        
+        public static int UsuarioLogueadoID;
+        public static string UsuarioLogueadoNombre;
+
+        public static List<Permisos> PermisosDelUsuario = new List<Permisos>();
+        public static bool PuedeEscribir(string modulo)
+        {
+            // Busca el permiso del módulo especificado
+            var permiso = PermisosDelUsuario.FirstOrDefault(p => p.NombreModulo == modulo);
+            // Si existe el permiso y tiene escritura activada, retorna true
+            return permiso != null && permiso.PermisoEscritura;
+        }
+
+        public static bool PuedeLeer(string modulo)
+        {
+            var permiso = PermisosDelUsuario.FirstOrDefault(p => p.NombreModulo == modulo);
+            return permiso != null && permiso.PermisoLeerAbrir;
+        }
     }
 }

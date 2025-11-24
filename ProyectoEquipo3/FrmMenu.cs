@@ -16,5 +16,11 @@ namespace ProyectoEquipo3
         {
             InitializeComponent();
         }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios frmUsuarios = new FrmUsuarios();
+            frmUsuarios.ShowDialog();
+        }
     }
 }

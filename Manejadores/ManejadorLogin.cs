@@ -1,4 +1,5 @@
 ﻿using AccesoDatos;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -26,11 +27,25 @@ namespace Manejadores
         }
         public bool Validar(TextBox usuario, TextBox clave)
         {
-            DataRow dr = b.Consultar($"call p_validar('{usuario.Text}', '{Sha1(clave.Text)}')", "Usuarios").Tables[0].Rows[0];
-            if (dr["rs"].ToString().Equals("Aceptado"))
-                return true;
-            else
+            DataSet ds = b.Consultar($"call sp_validar('{usuario.Text}', '{Sha1(clave.Text)}')", "usuarios");
+
+            if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+            {
                 return false;
+            }
+            DataRow dr = ds.Tables[0].Rows[0];
+
+            if (dr["rs"].ToString().Equals("Aceptado"))
+            {
+                Usuarios.UsuarioLogueadoID = Convert.ToInt32(dr["IdUsuario"]);
+                Usuarios.UsuarioLogueadoNombre = usuario.Text; 
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
