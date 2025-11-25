@@ -92,7 +92,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="ManejadorProyectos.cs" />
     <Compile Include="ManejadorLogin.cs" />
     <Compile Include="ManejadorPermisos.cs" />

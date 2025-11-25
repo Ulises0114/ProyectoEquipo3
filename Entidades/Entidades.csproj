@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Permisos.cs" />
+    <Compile Include="ProyectoMaterial.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="Proveedores.cs" />
     <Compile Include="Presupuesto.cs" />

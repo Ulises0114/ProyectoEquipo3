@@ -30,7 +30,6 @@
         {
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.DtgDatos = new System.Windows.Forms.DataGridView();
-            this.BtnMinimizar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.BtnPrueba = new System.Windows.Forms.Button();
             this.CmbFiltrar = new System.Windows.Forms.ComboBox();
@@ -44,9 +43,10 @@
             // 
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnAgregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregar.Location = new System.Drawing.Point(12, 49);
+            this.BtnAgregar.Location = new System.Drawing.Point(9, 40);
+            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(100, 35);
+            this.BtnAgregar.Size = new System.Drawing.Size(75, 28);
             this.BtnAgregar.TabIndex = 0;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = true;
@@ -56,35 +56,24 @@
             // 
             this.DtgDatos.AllowUserToAddRows = false;
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DtgDatos.Location = new System.Drawing.Point(12, 102);
+            this.DtgDatos.Location = new System.Drawing.Point(9, 83);
+            this.DtgDatos.Margin = new System.Windows.Forms.Padding(2);
             this.DtgDatos.Name = "DtgDatos";
             this.DtgDatos.RowHeadersWidth = 51;
             this.DtgDatos.RowTemplate.Height = 24;
-            this.DtgDatos.Size = new System.Drawing.Size(865, 410);
+            this.DtgDatos.Size = new System.Drawing.Size(649, 333);
             this.DtgDatos.TabIndex = 5;
             this.DtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellClick);
-            this.DtgDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellContentClick);
             this.DtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellEnter);
-            // 
-            // BtnMinimizar
-            // 
-            this.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnMinimizar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMinimizar.Location = new System.Drawing.Point(797, 12);
-            this.BtnMinimizar.Name = "BtnMinimizar";
-            this.BtnMinimizar.Size = new System.Drawing.Size(37, 23);
-            this.BtnMinimizar.TabIndex = 6;
-            this.BtnMinimizar.Text = "-";
-            this.BtnMinimizar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnMinimizar.UseVisualStyleBackColor = true;
             // 
             // BtnCerrar
             // 
             this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnCerrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCerrar.Location = new System.Drawing.Point(840, 12);
+            this.BtnCerrar.Location = new System.Drawing.Point(630, 10);
+            this.BtnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(37, 23);
+            this.BtnCerrar.Size = new System.Drawing.Size(28, 19);
             this.BtnCerrar.TabIndex = 7;
             this.BtnCerrar.Text = "X";
             this.BtnCerrar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -95,9 +84,10 @@
             // 
             this.BtnPrueba.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnPrueba.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPrueba.Location = new System.Drawing.Point(245, 49);
+            this.BtnPrueba.Location = new System.Drawing.Point(184, 40);
+            this.BtnPrueba.Margin = new System.Windows.Forms.Padding(2);
             this.BtnPrueba.Name = "BtnPrueba";
-            this.BtnPrueba.Size = new System.Drawing.Size(85, 35);
+            this.BtnPrueba.Size = new System.Drawing.Size(64, 28);
             this.BtnPrueba.TabIndex = 8;
             this.BtnPrueba.Text = "Ver";
             this.BtnPrueba.UseVisualStyleBackColor = true;
@@ -112,18 +102,21 @@
             "Pausado",
             "Completado",
             "Cancelado"});
-            this.CmbFiltrar.Location = new System.Drawing.Point(118, 60);
+            this.CmbFiltrar.Location = new System.Drawing.Point(88, 49);
+            this.CmbFiltrar.Margin = new System.Windows.Forms.Padding(2);
             this.CmbFiltrar.Name = "CmbFiltrar";
-            this.CmbFiltrar.Size = new System.Drawing.Size(121, 24);
+            this.CmbFiltrar.Size = new System.Drawing.Size(92, 21);
             this.CmbFiltrar.TabIndex = 9;
+            this.CmbFiltrar.SelectedIndexChanged += new System.EventHandler(this.CmbFiltrar_SelectedIndexChanged);
             // 
             // BtnPendientes
             // 
             this.BtnPendientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnPendientes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPendientes.Location = new System.Drawing.Point(520, 41);
+            this.BtnPendientes.Location = new System.Drawing.Point(390, 33);
+            this.BtnPendientes.Margin = new System.Windows.Forms.Padding(2);
             this.BtnPendientes.Name = "BtnPendientes";
-            this.BtnPendientes.Size = new System.Drawing.Size(115, 50);
+            this.BtnPendientes.Size = new System.Drawing.Size(86, 41);
             this.BtnPendientes.TabIndex = 2;
             this.BtnPendientes.UseVisualStyleBackColor = true;
             this.BtnPendientes.Click += new System.EventHandler(this.BtnPendientes_Click);
@@ -132,40 +125,45 @@
             // 
             this.BtnUrgentes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnUrgentes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUrgentes.Location = new System.Drawing.Point(641, 41);
+            this.BtnUrgentes.Location = new System.Drawing.Point(481, 33);
+            this.BtnUrgentes.Margin = new System.Windows.Forms.Padding(2);
             this.BtnUrgentes.Name = "BtnUrgentes";
-            this.BtnUrgentes.Size = new System.Drawing.Size(115, 50);
+            this.BtnUrgentes.Size = new System.Drawing.Size(86, 41);
             this.BtnUrgentes.TabIndex = 3;
             this.BtnUrgentes.UseVisualStyleBackColor = true;
+            this.BtnUrgentes.Click += new System.EventHandler(this.BtnUrgentes_Click);
             // 
             // BtnAtrasadas
             // 
             this.BtnAtrasadas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnAtrasadas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAtrasadas.Location = new System.Drawing.Point(762, 41);
+            this.BtnAtrasadas.Location = new System.Drawing.Point(572, 33);
+            this.BtnAtrasadas.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAtrasadas.Name = "BtnAtrasadas";
-            this.BtnAtrasadas.Size = new System.Drawing.Size(115, 50);
+            this.BtnAtrasadas.Size = new System.Drawing.Size(86, 41);
             this.BtnAtrasadas.TabIndex = 4;
             this.BtnAtrasadas.UseVisualStyleBackColor = true;
+            this.BtnAtrasadas.Click += new System.EventHandler(this.BtnAtrasadas_Click);
             // 
             // FrmProyectos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 524);
+            this.ClientSize = new System.Drawing.Size(667, 426);
             this.Controls.Add(this.CmbFiltrar);
             this.Controls.Add(this.BtnPrueba);
             this.Controls.Add(this.BtnCerrar);
-            this.Controls.Add(this.BtnMinimizar);
             this.Controls.Add(this.DtgDatos);
             this.Controls.Add(this.BtnAtrasadas);
             this.Controls.Add(this.BtnUrgentes);
             this.Controls.Add(this.BtnPendientes);
             this.Controls.Add(this.BtnAgregar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmProyectos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProyectos";
+            this.Load += new System.EventHandler(this.FrmProyectos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.ResumeLayout(false);
 
@@ -175,7 +173,6 @@
 
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.DataGridView DtgDatos;
-        private System.Windows.Forms.Button BtnMinimizar;
         private System.Windows.Forms.Button BtnCerrar;
         private System.Windows.Forms.Button BtnPrueba;
         private System.Windows.Forms.ComboBox CmbFiltrar;

@@ -110,6 +110,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAgregarMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarMaterial.Designer.cs">
+      <DependentUpon>FrmAgregarMaterial.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDatosUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     <Compile Include="FrmUsuarios.Designer.cs">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmAgregarMaterial.resx">
+      <DependentUpon>FrmAgregarMaterial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDatosUsuario.resx">
       <DependentUpon>FrmDatosUsuario.cs</DependentUpon>
     </EmbeddedResource>
