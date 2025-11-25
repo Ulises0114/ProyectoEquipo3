@@ -16,41 +16,50 @@ namespace Manejador
     {
         Base b = new Base("localhost", "root", "12345", "CarpinteriaDB");
 
-        public void Guardar(Presupuesto presupuesto)
+        public string GenerarPresupuesto(int idProyecto, string estado = "Pendiente")
         {
-            var listaParams = new List<MySqlParameter>();
-            listaParams.Add(new MySqlParameter("_IdProyecto", presupuesto.IdProyecto));
-            listaParams.Add(new MySqlParameter("_CostoMaterial", presupuesto.CostoMaterial));
-            listaParams.Add(new MySqlParameter("_CostoManoObra", presupuesto.CostoManoObra));
-            listaParams.Add(new MySqlParameter("_EstadoPresupuesto", presupuesto.EstadoPresupuesto));
+            try
+            {
+                b.Comando($"CALL sp_GenerarPresupuesto({idProyecto}, '{estado}');");
+                return "OK";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
 
-            b.Comando("sp_GuardarPresupuesto");
+        public string ModificarEstado(int idPresupuesto, string estado)
+        {
+            try
+            {
+                b.Comando($"CALL sp_ModificarEstadoPresupuesto({idPresupuesto}, '{estado}');");
+                return "OK";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
 
         public void Borrar(Presupuesto presupuesto)
         {
-            var rs = MessageBox.Show($"¿Está seguro de eliminar el presupuesto ID {presupuesto.IdPresupuesto}?",
+            var rs = MessageBox.Show($"¿Está seguro de eliminar el presupuesto del proyecto '{presupuesto.NombreMueble}'?",
                                      "¡ATENCIÓN!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
             if (rs == DialogResult.Yes)
             {
-                var listaParams = new List<MySqlParameter>();
-                listaParams.Add(new MySqlParameter("_IdPresupuesto", presupuesto.IdPresupuesto));
-
-                b.Comando("sp_BorrarPresupuesto");
+                try
+                {
+                    b.Comando($"CALL sp_BorrarPresupuesto({presupuesto.IdPresupuesto});");
+                    MessageBox.Show("Presupuesto eliminado correctamente", "Éxito",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al eliminar: {ex.Message}", "Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-        }
-
-        public void Modificar(Presupuesto presupuesto)
-        {
-            var listaParams = new List<MySqlParameter>();
-            listaParams.Add(new MySqlParameter("_IdPresupuesto", presupuesto.IdPresupuesto));
-            listaParams.Add(new MySqlParameter("_IdProyecto", presupuesto.IdProyecto));
-            listaParams.Add(new MySqlParameter("_CostoMaterial", presupuesto.CostoMaterial));
-            listaParams.Add(new MySqlParameter("_CostoManoObra", presupuesto.CostoManoObra));
-            listaParams.Add(new MySqlParameter("_EstadoPresupuesto", presupuesto.EstadoPresupuesto));
-
-            b.Comando("sp_ModificarPresupuesto");
         }
 
         public void Mostrar(string consulta, DataGridView tabla, string nombreTablaDataSet)
@@ -60,30 +69,44 @@ namespace Manejador
 
             if (tabla.Columns.Contains("IdPresupuesto"))
                 tabla.Columns["IdPresupuesto"].Visible = false;
-
             if (tabla.Columns.Contains("IdProyecto"))
                 tabla.Columns["IdProyecto"].Visible = false;
-
             if (tabla.Columns.Contains("FechaCreacion"))
                 tabla.Columns["FechaCreacion"].Visible = false;
-
             if (tabla.Columns.Contains("FechaActualizacion"))
                 tabla.Columns["FechaActualizacion"].Visible = false;
 
-            tabla.Columns.Insert(tabla.Columns.Count, Boton("Modificar", Color.Green));
-            tabla.Columns.Insert(tabla.Columns.Count, Boton("Borrar", Color.Red));
+            // Formatear columnas de dinero
+            if (tabla.Columns.Contains("CostoMaterial"))
+            {
+                tabla.Columns["CostoMaterial"].DefaultCellStyle.Format = "C2";
+                tabla.Columns["CostoMaterial"].HeaderText = "Costo Material";
+            }
+            if (tabla.Columns.Contains("CostoManoObra"))
+            {
+                tabla.Columns["CostoManoObra"].DefaultCellStyle.Format = "C2";
+                tabla.Columns["CostoManoObra"].HeaderText = "Costo Mano de Obra";
+            }
+            if (tabla.Columns.Contains("CostoTotal"))
+            {
+                tabla.Columns["CostoTotal"].DefaultCellStyle.Format = "C2";
+                tabla.Columns["CostoTotal"].HeaderText = "Costo Total";
+                tabla.Columns["CostoTotal"].DefaultCellStyle.Font = new Font(tabla.Font, FontStyle.Bold);
+            }
 
+            tabla.Columns.Add(Boton("Modificar", Color.Orange));
+            tabla.Columns.Add(Boton("Borrar", Color.Red));
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }
 
-        public static DataGridViewButtonColumn Boton(string Titulo, Color fondo)
+        public static DataGridViewButtonColumn Boton(string titulo, Color fondo)
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            btn.Text = Titulo;
-            btn.Name = "btn" + Titulo;
+            btn.Text = titulo;
+            btn.Name = "btn" + titulo;
             btn.UseColumnTextForButtonValue = true;
-            btn.FlatStyle = FlatStyle.Popup;
+            btn.FlatStyle = FlatStyle.Flat;
             btn.DefaultCellStyle.BackColor = fondo;
             btn.DefaultCellStyle.ForeColor = Color.White;
             return btn;
@@ -91,9 +114,30 @@ namespace Manejador
 
         public void LlenarProyectos(ComboBox caja)
         {
-            caja.DataSource = b.Consultar("SELECT IdProyecto, NombreMueble FROM ProyectosPendientes", "ProyectosPendientes").Tables[0];
+            // Solo mostrar proyectos que NO tengan presupuesto
+            string consulta = @"SELECT pp.IdProyecto, pp.NombreMueble 
+                           FROM ProyectosPendientes pp
+                           LEFT JOIN Presupuestos p ON pp.IdProyecto = p.IdProyecto
+                           WHERE p.IdPresupuesto IS NULL";
+
+            caja.DataSource = b.Consultar(consulta, "ProyectosSinPresupuesto").Tables[0];
             caja.DisplayMember = "NombreMueble";
             caja.ValueMember = "IdProyecto";
+        }
+
+        public DataTable ObtenerDetallePresupuesto(int idProyecto)
+        {
+            string consulta = $@"SELECT 
+            i.NombreProducto as Material,
+            pm.CantidadRequerida as Cantidad,
+            pm.UnidadMedida as Unidad,
+            i.PrecioCompra as 'Precio Unitario',
+            (pm.CantidadRequerida * i.PrecioCompra) as Subtotal
+            FROM ProyectoMateriales pm
+            JOIN inventario i ON pm.IdMaterial = i.IdInventario
+            WHERE pm.IdProyecto = {idProyecto}";
+
+            return b.Consultar(consulta, "detalle").Tables[0];
         }
     }
 }

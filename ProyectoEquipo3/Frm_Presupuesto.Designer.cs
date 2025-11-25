@@ -40,27 +40,25 @@
             // 
             this.DgvPresupuesto.AllowUserToAddRows = false;
             this.DgvPresupuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvPresupuesto.Location = new System.Drawing.Point(225, 151);
+            this.DgvPresupuesto.Location = new System.Drawing.Point(48, 148);
             this.DgvPresupuesto.Name = "DgvPresupuesto";
             this.DgvPresupuesto.ReadOnly = true;
             this.DgvPresupuesto.RowHeadersWidth = 51;
             this.DgvPresupuesto.RowTemplate.Height = 24;
-            this.DgvPresupuesto.Size = new System.Drawing.Size(1248, 470);
+            this.DgvPresupuesto.Size = new System.Drawing.Size(895, 385);
             this.DgvPresupuesto.TabIndex = 0;
             this.DgvPresupuesto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPresupuesto_CellClick);
-            this.DgvPresupuesto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.DgvPresupuesto.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPresupuesto_CellEnter);
             // 
             // TxtBuscarPresupuesto
             // 
-            this.TxtBuscarPresupuesto.Location = new System.Drawing.Point(225, 97);
+            this.TxtBuscarPresupuesto.Location = new System.Drawing.Point(48, 94);
             this.TxtBuscarPresupuesto.Name = "TxtBuscarPresupuesto";
-            this.TxtBuscarPresupuesto.Size = new System.Drawing.Size(577, 30);
+            this.TxtBuscarPresupuesto.Size = new System.Drawing.Size(577, 26);
             this.TxtBuscarPresupuesto.TabIndex = 1;
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(874, 92);
+            this.BtnAgregar.Location = new System.Drawing.Point(388, 27);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(104, 35);
             this.BtnAgregar.TabIndex = 2;
@@ -70,7 +68,7 @@
             // 
             // BtnFiltrar
             // 
-            this.BtnFiltrar.Location = new System.Drawing.Point(1056, 92);
+            this.BtnFiltrar.Location = new System.Drawing.Point(570, 27);
             this.BtnFiltrar.Name = "BtnFiltrar";
             this.BtnFiltrar.Size = new System.Drawing.Size(104, 35);
             this.BtnFiltrar.TabIndex = 3;
@@ -81,17 +79,17 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(217, 24);
+            this.label1.Location = new System.Drawing.Point(41, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(330, 44);
+            this.label1.Size = new System.Drawing.Size(262, 44);
             this.label1.TabIndex = 4;
             this.label1.Text = "PRESUPUESTO";
             // 
             // Frm_Presupuesto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1497, 636);
+            this.ClientSize = new System.Drawing.Size(985, 585);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnFiltrar);
             this.Controls.Add(this.BtnAgregar);

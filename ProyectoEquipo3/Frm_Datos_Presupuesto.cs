@@ -16,24 +16,25 @@ namespace ProyectoEquipo3
     public partial class FrmDatosPresupuestos : Form
     {
         ManejadorPresupuesto mp;
+        private bool esModificacion = false;
 
         public FrmDatosPresupuestos()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             mp = new ManejadorPresupuesto();
 
-            mp.LlenarProyectos(CmbIdMueble);
             CargarEstadosComboBox();
 
-            CmbIdMueble.SelectedIndex = -1;
-            CmbEstado.SelectedIndex = -1;
-
+            // Verificar si es modificación o nuevo
             if (Frm_Presupuesto.presupuesto.IdPresupuesto > 0)
             {
-                CmbIdMueble.SelectedValue = Frm_Presupuesto.presupuesto.IdProyecto;
-                TxtCostoMaterial.Text = Frm_Presupuesto.presupuesto.CostoMaterial.ToString();
-                TxtCostoManoObra.Text = Frm_Presupuesto.presupuesto.CostoManoObra.ToString();
-                CmbEstado.Text = Frm_Presupuesto.presupuesto.EstadoPresupuesto;
+                esModificacion = true;
+                CargarDatosModificacion();
+            }
+            else
+            {
+                esModificacion = false;
+                CargarDatosNuevo();
             }
         }
 
@@ -44,6 +45,85 @@ namespace ProyectoEquipo3
             CmbEstado.Items.Add("Aprobado");
             CmbEstado.Items.Add("En Proceso");
             CmbEstado.Items.Add("Rechazado");
+            CmbEstado.Items.Add("Completado");
+            CmbEstado.SelectedIndex = 0;
+        }
+
+        private void CargarDatosNuevo()
+        {
+            this.Text = "Generar Nuevo Presupuesto";
+            mp.LlenarProyectos(CmbIdMueble);
+            CmbIdMueble.SelectedIndex = -1;
+            CmbIdMueble.Enabled = true;
+
+            TxtCostoMaterial.ReadOnly = true;
+            TxtCostoMaterial.BackColor = Color.LightGray;
+            TxtCostoManoObra.ReadOnly = true;
+            TxtCostoManoObra.BackColor = Color.LightGray;
+
+        }
+
+        private void CargarDatosModificacion()
+        {
+            this.Text = $"Modificar Presupuesto - {Frm_Presupuesto.presupuesto.NombreMueble}";
+
+            CmbIdMueble.Enabled = false;
+            CmbIdMueble.Items.Clear();
+            CmbIdMueble.Items.Add(Frm_Presupuesto.presupuesto.NombreMueble);
+            CmbIdMueble.SelectedIndex = 0;
+
+            TxtCostoMaterial.Text = Frm_Presupuesto.presupuesto.CostoMaterial.ToString("F2");
+            TxtCostoMaterial.ReadOnly = true;
+            TxtCostoMaterial.BackColor = Color.LightGray;
+
+            TxtCostoManoObra.Text = Frm_Presupuesto.presupuesto.CostoManoObra.ToString("F2");
+            TxtCostoManoObra.ReadOnly = true;
+            TxtCostoManoObra.BackColor = Color.LightGray;
+
+            CmbEstado.Text = Frm_Presupuesto.presupuesto.EstadoPresupuesto;
+
+        }
+
+        private void CmbIdMueble_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CmbIdMueble.SelectedValue != null && !esModificacion)
+            {
+                try
+                {
+                    int idProyecto = Convert.ToInt32(CmbIdMueble.SelectedValue);
+                    CalcularCostos(idProyecto);
+                }
+                catch { }
+            }
+        }
+
+        private void CalcularCostos(int idProyecto)
+        {
+            try
+            {
+                DataTable dt = mp.ObtenerDetallePresupuesto(idProyecto);
+                double costoMaterial = 0;
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    costoMaterial += Convert.ToDouble(row["Subtotal"]);
+                }
+
+                double costoManoObra = costoMaterial;
+
+                TxtCostoMaterial.Text = costoMaterial.ToString("F2");
+                TxtCostoManoObra.Text = costoManoObra.ToString("F2");
+
+                if (LblTotal != null)
+                {
+                    LblTotal.Text = $"Total: {(costoMaterial + costoManoObra):C2}";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al calcular costos: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -53,30 +133,58 @@ namespace ProyectoEquipo3
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            if (CmbIdMueble.SelectedIndex == -1 || CmbEstado.SelectedIndex == -1)
+            if (!esModificacion && CmbIdMueble.SelectedIndex == -1)
             {
-                MessageBox.Show("Debe seleccionar un mueble y un estado.", "Error");
+                MessageBox.Show("Debe seleccionar un proyecto.", "Validación",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            Presupuesto p = new Presupuesto();
-
-            p.IdProyecto = (int)CmbIdMueble.SelectedValue;
-            p.CostoMaterial = string.IsNullOrEmpty(TxtCostoMaterial.Text) ? 0 : double.Parse(TxtCostoMaterial.Text);
-            p.CostoManoObra = string.IsNullOrEmpty(TxtCostoManoObra.Text) ? 0 : double.Parse(TxtCostoManoObra.Text);
-            p.EstadoPresupuesto = CmbEstado.Text;
-
-            if (Frm_Presupuesto.presupuesto.IdPresupuesto == 0)
+            if (CmbEstado.SelectedIndex == -1)
             {
-                mp.Guardar(p);
-            }
-            else
-            {
-                p.IdPresupuesto = Frm_Presupuesto.presupuesto.IdPresupuesto;
-                mp.Modificar(p);
+                MessageBox.Show("Debe seleccionar un estado.", "Validación",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
-            Close();
+            try
+            {
+                string resultado;
+
+                if (esModificacion)
+                {
+                    resultado = mp.ModificarEstado(
+                        Frm_Presupuesto.presupuesto.IdPresupuesto,
+                        CmbEstado.Text
+                    );
+                }
+                else
+                {
+                    int idProyecto = Convert.ToInt32(CmbIdMueble.SelectedValue);
+                    resultado = mp.GenerarPresupuesto(idProyecto, CmbEstado.Text);
+                }
+
+                if (resultado == "OK")
+                {
+                    MessageBox.Show(
+                        esModificacion ? "Presupuesto actualizado correctamente" : "Presupuesto generado correctamente",
+                        "Éxito",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show(resultado, "Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -40,6 +40,7 @@ namespace ProyectoEquipo3
             this.label4 = new System.Windows.Forms.Label();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
+            this.LblTotal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CmbIdMueble
@@ -47,29 +48,30 @@ namespace ProyectoEquipo3
             this.CmbIdMueble.FormattingEnabled = true;
             this.CmbIdMueble.Location = new System.Drawing.Point(123, 61);
             this.CmbIdMueble.Name = "CmbIdMueble";
-            this.CmbIdMueble.Size = new System.Drawing.Size(300, 33);
+            this.CmbIdMueble.Size = new System.Drawing.Size(300, 28);
             this.CmbIdMueble.TabIndex = 0;
+            this.CmbIdMueble.SelectedIndexChanged += new System.EventHandler(this.CmbIdMueble_SelectedIndexChanged);
             // 
             // CmbEstado
             // 
             this.CmbEstado.FormattingEnabled = true;
             this.CmbEstado.Location = new System.Drawing.Point(123, 313);
             this.CmbEstado.Name = "CmbEstado";
-            this.CmbEstado.Size = new System.Drawing.Size(300, 33);
+            this.CmbEstado.Size = new System.Drawing.Size(300, 28);
             this.CmbEstado.TabIndex = 1;
             // 
             // TxtCostoMaterial
             // 
             this.TxtCostoMaterial.Location = new System.Drawing.Point(123, 139);
             this.TxtCostoMaterial.Name = "TxtCostoMaterial";
-            this.TxtCostoMaterial.Size = new System.Drawing.Size(300, 30);
+            this.TxtCostoMaterial.Size = new System.Drawing.Size(300, 26);
             this.TxtCostoMaterial.TabIndex = 2;
             // 
             // TxtCostoManoObra
             // 
             this.TxtCostoManoObra.Location = new System.Drawing.Point(123, 227);
             this.TxtCostoManoObra.Name = "TxtCostoManoObra";
-            this.TxtCostoManoObra.Size = new System.Drawing.Size(300, 30);
+            this.TxtCostoManoObra.Size = new System.Drawing.Size(300, 26);
             this.TxtCostoManoObra.TabIndex = 3;
             // 
             // label1
@@ -124,11 +126,21 @@ namespace ProyectoEquipo3
             this.BtnCancelar.UseVisualStyleBackColor = true;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
-            // Frm_Datos_Presupuesto
+            // LblTotal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.LblTotal.AutoSize = true;
+            this.LblTotal.Location = new System.Drawing.Point(128, 356);
+            this.LblTotal.Name = "LblTotal";
+            this.LblTotal.Size = new System.Drawing.Size(51, 20);
+            this.LblTotal.TabIndex = 10;
+            this.LblTotal.Text = "label5";
+            // 
+            // FrmDatosPresupuestos
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 480);
+            this.Controls.Add(this.LblTotal);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.label4);
@@ -142,7 +154,7 @@ namespace ProyectoEquipo3
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Frm_Datos_Presupuesto";
+            this.Name = "FrmDatosPresupuestos";
             this.Text = "FrmDatosPresupuesto";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,5 +174,6 @@ namespace ProyectoEquipo3
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.Label LblTotal;
     }
 }

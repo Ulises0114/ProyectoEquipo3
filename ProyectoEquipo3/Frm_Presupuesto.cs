@@ -16,7 +16,6 @@ namespace ProyectoEquipo3
     public partial class Frm_Presupuesto : Form
     {
         ManejadorPresupuesto mp;
-
         public static Presupuesto presupuesto = new Presupuesto();
 
         public Frm_Presupuesto()
@@ -28,64 +27,72 @@ namespace ProyectoEquipo3
 
         private void BtnFiltrar_Click(object sender, EventArgs e)
         {
-            string filtro = TxtBuscarPresupuesto.Text;
+            string filtro = TxtBuscarPresupuesto.Text.Trim();
+            string consulta;
 
-            string consulta = $"SELECT p.*, pp.NombreMueble FROM Presupuestos p " +
-                       $"JOIN ProyectosPendientes pp ON p.IdProyecto = pp.IdProyecto " +
-                       $"WHERE pp.NombreMueble LIKE '%{filtro}%'";
+            if (string.IsNullOrWhiteSpace(filtro))
+            {
+                consulta = "SELECT * FROM vista_presupuestos";
+            }
+            else
+            {
+                consulta = $"SELECT * FROM vista_presupuestos " +
+                          $"WHERE NombreMueble LIKE '%{filtro}%' " +
+                          $"OR EstadoPresupuesto LIKE '%{filtro}%'";
+            }
+
             mp.Mostrar(consulta, DgvPresupuesto, "Presupuestos");
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             presupuesto = new Presupuesto();
-
             FrmDatosPresupuestos dp = new FrmDatosPresupuestos();
             dp.ShowDialog();
             ActualizarGrid();
-        }
-
-        private void DgvPresupuesto_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
         }
 
         private void DgvPresupuesto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
-            int filaActual = e.RowIndex;
-            string nombreColumna = DgvPresupuesto.Columns[e.ColumnIndex].Name;
-
-            if (nombreColumna == "btnModificar")
+            try
             {
-                presupuesto.IdPresupuesto = int.Parse(DgvPresupuesto.Rows[filaActual].Cells["IdPresupuesto"].Value.ToString());
-                presupuesto.IdProyecto = int.Parse(DgvPresupuesto.Rows[filaActual].Cells["IdProyecto"].Value.ToString());
-                presupuesto.CostoMaterial = double.Parse(DgvPresupuesto.Rows[filaActual].Cells["CostoMaterial"].Value.ToString());
-                presupuesto.CostoManoObra = double.Parse(DgvPresupuesto.Rows[filaActual].Cells["CostoManoObra"].Value.ToString());
-                presupuesto.CostoTotal = double.Parse(DgvPresupuesto.Rows[filaActual].Cells["CostoTotal"].Value.ToString());
+                int filaActual = e.RowIndex;
+                string nombreColumna = DgvPresupuesto.Columns[e.ColumnIndex].Name;
+
+                // Cargar datos del presupuesto seleccionado
+                presupuesto.IdPresupuesto = Convert.ToInt32(DgvPresupuesto.Rows[filaActual].Cells["IdPresupuesto"].Value);
+                presupuesto.IdProyecto = Convert.ToInt32(DgvPresupuesto.Rows[filaActual].Cells["IdProyecto"].Value);
+                presupuesto.NombreMueble = DgvPresupuesto.Rows[filaActual].Cells["NombreMueble"].Value.ToString();
+                presupuesto.CostoMaterial = Convert.ToDouble(DgvPresupuesto.Rows[filaActual].Cells["CostoMaterial"].Value);
+                presupuesto.CostoManoObra = Convert.ToDouble(DgvPresupuesto.Rows[filaActual].Cells["CostoManoObra"].Value);
+                presupuesto.CostoTotal = Convert.ToDouble(DgvPresupuesto.Rows[filaActual].Cells["CostoTotal"].Value);
                 presupuesto.EstadoPresupuesto = DgvPresupuesto.Rows[filaActual].Cells["EstadoPresupuesto"].Value.ToString();
 
-                FrmDatosPresupuestos dp = new FrmDatosPresupuestos();
-                dp.ShowDialog();
-                ActualizarGrid();
+                if (nombreColumna == "btnModificar")
+                {
+                    FrmDatosPresupuestos dp = new FrmDatosPresupuestos();
+                    dp.ShowDialog();
+                    ActualizarGrid();
+                }
+                else if (nombreColumna == "btnBorrar")
+                {
+                    mp.Borrar(presupuesto);
+                    ActualizarGrid();
+                }
             }
-            else if (nombreColumna == "btnBorrar")
+            catch (Exception ex)
             {
-                presupuesto.IdPresupuesto = int.Parse(DgvPresupuesto.Rows[filaActual].Cells["IdPresupuesto"].Value.ToString());
-                mp.Borrar(presupuesto);
-                ActualizarGrid();
+                MessageBox.Show($"Error: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void ActualizarGrid()
         {
-            string consulta = "SELECT p.*, pp.NombreMueble FROM Presupuestos p " +
-                           "JOIN ProyectosPendientes pp ON p.IdProyecto = pp.IdProyecto";
+            string consulta = "SELECT * FROM vista_presupuestos ORDER BY FechaCreacion DESC";
             mp.Mostrar(consulta, DgvPresupuesto, "Presupuestos");
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
