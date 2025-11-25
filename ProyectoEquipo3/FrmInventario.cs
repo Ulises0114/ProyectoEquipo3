@@ -28,17 +28,13 @@ namespace ProyectoEquipo3
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // protección contra clicks en encabezados
             if (e.RowIndex < 0) return;
 
             fila = e.RowIndex;
             columna = e.ColumnIndex;
 
-            // toma la fila directamente del evento (más fiable)
             var row = DtgDatos.Rows[fila];
 
-            // Toma cada campo por nombre de columna (más robusto que usar índices fijos)
-            // Asegúrate que los nombres que uso ("IdInventario","NombreProducto", etc.) coincidan exactamente con tus columnas.
             FrmInventario.inventario.IdInventario = Convert.ToInt32(row.Cells["IdInventario"].Value ?? 0);
             FrmInventario.inventario.NombreProducto = row.Cells["NombreProducto"].Value?.ToString() ?? "";
             FrmInventario.inventario.IdProveedor = Convert.ToInt32(row.Cells["IdProveedor"].Value ?? 0);
@@ -49,7 +45,6 @@ namespace ProyectoEquipo3
             FrmInventario.inventario.StockActual = Convert.ToDecimal(row.Cells["StockActual"].Value ?? 0m);
             FrmInventario.inventario.Descripcion = row.Cells["Descripcion"].Value?.ToString() ?? "";
 
-            // opcional: si guardas ImagePath en la grid
             if (DtgDatos.Columns.Contains("ImagePath"))
                 FrmInventario.inventario.ImagePath = row.Cells["ImagePath"].Value?.ToString() ?? "";
 
@@ -58,7 +53,7 @@ namespace ProyectoEquipo3
                 case 10:
                     {
                         FrmDatosInventario di = new FrmDatosInventario();
-                        di.ShowDialog(this); // pasar owner
+                        di.ShowDialog(this);
                         DtgDatos.Columns.Clear();
                     }; break;
                 case 11:
@@ -80,10 +75,9 @@ namespace ProyectoEquipo3
             inventario.StockMinimo = 0m;
             inventario.StockActual = 0m;
             inventario.Descripcion = "";
-            inventario.ImagePath = ""; // <<--- importante: limpiar la ruta de imagen previa
+            inventario.ImagePath = ""; 
 
             FrmDatosInventario di = new FrmDatosInventario();
-            // pasar this como owner para que FrmDatosInventario pueda invocar RefreshGrid()
             di.ShowDialog(this);
             DtgDatos.Columns.Clear();
         }
@@ -126,12 +120,11 @@ namespace ProyectoEquipo3
             }
             catch
             {
-                // ignorar y devolver placeholder
+                // ignorar y devolver 
             }
             return SystemIcons.Application.ToBitmap();
         }
 
-        // ----------------- Crear thumbnail + badge (C# 7.3 compatible) -----------------
         private Image CreateThumbnailWithBadge(Image src, int thumbW, int thumbH, decimal stock)
         {
             if (src == null) src = SystemIcons.Application.ToBitmap();
@@ -197,7 +190,6 @@ namespace ProyectoEquipo3
             return path;
         }
 
-        // ----------------- Llenar el ListView desde DataTable -----------------
         private void FillListViewFromDataTable(ListView lv, ImageList il, DataTable dt)
         {
             lv.BeginUpdate();
@@ -228,7 +220,6 @@ namespace ProyectoEquipo3
 
                     using (Image tmpThumb = CreateThumbnailWithBadge(src, thumbW, thumbH, stock))
                     {
-                        // clonamos antes de añadir (ImageList mantendrá su propia instancia)
                         Bitmap bmp = new Bitmap(tmpThumb);
                         il.Images.Add(bmp);
                     }
@@ -248,7 +239,6 @@ namespace ProyectoEquipo3
             }
         }
 
-        // ----------------- Evento de activación del item (doble click / Enter) -----------------
         private void LvProductos_ItemActivate(object sender, EventArgs e)
         {
             if (lvProductos.SelectedItems.Count == 0) return;
@@ -256,7 +246,6 @@ namespace ProyectoEquipo3
             int id;
             if (!int.TryParse(lvProductos.SelectedItems[0].Tag?.ToString(), out id)) return;
 
-            // Intento 1: si tu DtgDatos tiene como DataSource un DataTable, busca la fila ahí
             try
             {
                 var dt = DtgDatos.DataSource as DataTable;
@@ -280,7 +269,6 @@ namespace ProyectoEquipo3
                     }
                     else
                     {
-                        // Intento 2: pedir al manejador obtener por id (si tienes ese método)
                         var item = mi.ObtenerPorId(id); // implementar ObtenerPorId en ManejadorInventario si no existe
                         if (item != null)
                         {
@@ -291,10 +279,9 @@ namespace ProyectoEquipo3
             }
             catch
             {
-                // si algo falla, intenta al menos abrir el diálogo (no se recomienda en producción)
+                // si algo falla, intenta al menos abrir el diálogo 
             }
 
-            // ahora sí abre el formulario con FrmInventario.inventario ya cargado
             FrmDatosInventario di = new FrmDatosInventario();
             di.ShowDialog(this);
             DtgDatos.Columns.Clear();

@@ -11,7 +11,7 @@ namespace Entidades
         public int IdProyectoMaterial { get; set; }
         public int IdProyecto { get; set; }
         public int IdMaterial { get; set; }
-        public string NombreMaterial { get; set; } // Para mostrar en el grid
+        public string NombreMaterial { get; set; }
         public double CantidadRequerida { get; set; }
         public string UnidadMedida { get; set; }
         public DateTime FechaAsignacion { get; set; }

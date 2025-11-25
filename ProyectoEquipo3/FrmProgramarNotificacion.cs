@@ -24,7 +24,6 @@ namespace ProyectoEquipo3
 
         private void btnProgramar_Click(object sender, EventArgs e)
         {
-            // Validaciones simples
             if (string.IsNullOrWhiteSpace(txtAviso.Text))
             {
                 MessageBox.Show("Escribe el aviso.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -41,7 +40,6 @@ namespace ProyectoEquipo3
 
             string aviso = txtAviso.Text.Trim();
 
-            // Si tienes relación, parsear los valores (opcional)
             int? idProducto = null;
             int? idProyecto = null;
             if (this.Controls.ContainsKey("cmbRelacionTipo") && this.Controls.ContainsKey("cmbRelacionId"))
@@ -53,7 +51,6 @@ namespace ProyectoEquipo3
                     var selected = cmbIds.SelectedItem?.ToString();
                     if (!string.IsNullOrEmpty(selected))
                     {
-                        // asumimos formato "id - nombre"
                         var parts = selected.Split(new char[] { '-' }, 2);
                         if (int.TryParse(parts[0].Trim(), out int parsedId))
                         {
@@ -66,12 +63,7 @@ namespace ProyectoEquipo3
 
             try
             {
-                // Guardar en BD (manejador)
                 manejador.CrearNotificacionProgramada(fecha, aviso);
-
-                // Si quieres también crear en NotificacionesSistema inmediatamente (no necesario)
-                // manejador.CrearNotificacionSistema("MANUAL", idProducto, idProyecto, aviso);
-
                 MessageBox.Show("Notificación programada correctamente.", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();

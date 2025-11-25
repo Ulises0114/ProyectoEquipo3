@@ -47,9 +47,8 @@ namespace ProyectoEquipo3
 
         private void DtgDatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Verifica que no sea el header
+            if (e.RowIndex >= 0) 
             {
-                // Carga los datos del proveedor seleccionado
                 p.IdProveedor = int.Parse(DtgDatos.Rows[e.RowIndex].Cells["IdProveedor"].Value.ToString());
                 p.NombreProveedor = DtgDatos.Rows[e.RowIndex].Cells["NombreProveedor"].Value.ToString();
                 p.Contacto = DtgDatos.Rows[e.RowIndex].Cells["Contacto"].Value.ToString();
@@ -58,9 +57,8 @@ namespace ProyectoEquipo3
                 p.Direccion = DtgDatos.Rows[e.RowIndex].Cells["Direccion"].Value.ToString();
                 p.FechaIngreso = DtgDatos.Rows[e.RowIndex].Cells["FechaRegistro"].Value.ToString();
 
-                FrmDatosProovedores f = new FrmDatosProovedores(); // asume que usas el proveedor statico p
+                FrmDatosProovedores f = new FrmDatosProovedores(); 
                 f.ShowDialog();
-                // Después de cerrar la edición, refresca los datos
                 m.Mostrar("select * from Proveedores", DtgDatos, "Proveedores");
             }
         }
@@ -69,15 +67,11 @@ namespace ProyectoEquipo3
         {
             if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
             {
-                // Selecciona la fila completa
                 DtgDatos.ClearSelection();
                 DtgDatos.Rows[e.RowIndex].Selected = true;
 
                 p.IdProveedor = int.Parse(DtgDatos.Rows[e.RowIndex].Cells["IdProveedor"].Value.ToString());
                 p.NombreProveedor = DtgDatos.Rows[e.RowIndex].Cells["NombreProveedor"].Value.ToString();
-                // ... asigna el resto de campos si los necesitas
-
-                // Confirmar eliminación
                 var rs = MessageBox.Show($"¿Estás seguro de eliminar a {p.NombreProveedor}?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (rs == DialogResult.Yes)
                 {

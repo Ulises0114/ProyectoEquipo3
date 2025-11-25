@@ -14,9 +14,7 @@ namespace Manejadores
 {
     public class ManejadorNotificacion
     {
-        Base b = new Base("127.0.0.1;port=3308", "root", "12345", "CarpinteriaDB");
-
-        // Devuelve DataTable para el listado principal de notificaciones del sistema (con preview y fecha formateada)
+        Base b = new Base("localhost", "root", "12345", "CarpinteriaDB");
         public DataTable ObtenerNotificacionesParaListado(int limite = 100, bool soloNoLeidas = false)
         {
             string where = "1=1";
@@ -44,7 +42,6 @@ namespace Manejadores
             if (ds != null && ds.Tables.Count > 0) return ds.Tables[0];
             return new DataTable();
         }
-        // Devuelve DataTable para notificaciones programadas
         public DataTable ObtenerProgramadasParaListado(bool soloPendientes = true, int limite = 50)
         {
             string where = "1=1";
@@ -66,7 +63,6 @@ namespace Manejadores
             if (ds != null && ds.Tables.Count > 0) return ds.Tables[0];
             return new DataTable();
         }
-        // Alternativa: DataTable general (sin preview) - útil para otras pantallas
         public DataTable ObtenerNotificacionesTabla(bool soloNoLeidas = false)
         {
             string where = "1=1";
@@ -90,7 +86,6 @@ namespace Manejadores
             if (ds != null && ds.Tables.Count > 0) return ds.Tables[0];
             return new DataTable();
         }
-        // Listar entidades NotificacionesSistema
         public List<NotificacionesSistema> ListarNotificaciones(bool soloNoLeidas = false)
         {
             var list = new List<NotificacionesSistema>();
@@ -108,7 +103,6 @@ namespace Manejadores
             }
             return list;
         }
-        // Obtener por id (entidad)
         public NotificacionesSistema ObtenerPorId(int id)
         {
             if (id <= 0) return null;
@@ -127,14 +121,11 @@ namespace Manejadores
                 r["Leida"] != DBNull.Value && Convert.ToBoolean(r["Leida"])
             );
         }
-        // Marcar como leída (simple)
         public void MarcarLeida(int id)
         {
             if (id <= 0) return;
             b.Comando($"UPDATE NotificacionesSistema SET Leida = 1 WHERE IdNotificacion = {id}");
         }
-
-        // Marcar como leída y devolver mensaje para mostrar en detalle
         public string MarcarLeidaYDevolverMensaje(int id)
         {
             if (id <= 0) return null;
@@ -152,7 +143,6 @@ namespace Manejadores
             if (id <= 0) return;
             b.Comando($"DELETE FROM NotificacionesSistema WHERE IdNotificacion = {id}");
         }
-        // Crear notificación de sistema: valida existencia de inventario/proyecto y usa NULL si no existen
         public void CrearNotificacionSistema(string tipo, int? idInventario, int? idProyecto, string mensaje)
         {
             string safe = (mensaje ?? "").Replace("'", "''");
@@ -183,7 +173,6 @@ namespace Manejadores
             return 0;
         }
 
-        // Programadas
         public void CrearNotificacionProgramada(DateTime fechaNotificacion, string aviso)
         {
             string safe = (aviso ?? "").Replace("'", "''");
@@ -195,7 +184,6 @@ namespace Manejadores
             if (id <= 0) return;
             b.Comando($"UPDATE NotificacionesProgramadas SET Completada = 1 WHERE IdNotificacion = {id}");
         }
-        // Generar notificaciones de stock bajo manualmente desde la app (evita duplicados del día)
         public void GenerarNotificacionesStockBajoManuales()
         {
             var ds = b.Consultar(@"

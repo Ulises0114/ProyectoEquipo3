@@ -23,13 +23,8 @@ namespace ProyectoEquipo3
             InitializeComponent();
             mp = new ManejadorProyectos();
 
-            // Inicializar el ComboBox de filtros
             InicializarFiltros();
-
-            // Cargar datos iniciales
             CargarDatos();
-
-            // Actualizar contadores
             ActualizarContadores();
         }
 
@@ -42,7 +37,7 @@ namespace ProyectoEquipo3
             CmbFiltrar.Items.Add("Pausado");
             CmbFiltrar.Items.Add("Completado");
             CmbFiltrar.Items.Add("Cancelado");
-            CmbFiltrar.SelectedIndex = 0; // Seleccionar "Todos" por defecto
+            CmbFiltrar.SelectedIndex = 0;
         }
 
         private void CargarDatos()
@@ -65,8 +60,7 @@ namespace ProyectoEquipo3
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al actualizar contadores: {ex.Message}",
-                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al actualizar contadores: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -91,13 +85,9 @@ namespace ProyectoEquipo3
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            // Crear un nuevo proyecto vacío
             proyecto = new Proyectos(0, "", "Pendiente", null, null);
-
             FrmDatosProyectos fdp = new FrmDatosProyectos();
             fdp.ShowDialog();
-
-            // Recargar datos después de cerrar el formulario
             CargarDatos();
         }
 
@@ -140,8 +130,7 @@ namespace ProyectoEquipo3
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al procesar la selección: {ex.Message}",
-                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al procesar la selección: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

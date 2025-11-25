@@ -26,7 +26,6 @@ namespace ProyectoEquipo3
             mi.LlenarComboProveedores(cmbProveedor);
             txtNombreProducto.Text = FrmInventario.inventario.NombreProducto;
 
-            // seleccionar proveedor por SelectedValue (si LlenarComboProveedores configuró ValueMember)
             try
             {
                 cmbProveedor.SelectedValue = FrmInventario.inventario.IdProveedor;
@@ -38,7 +37,6 @@ namespace ProyectoEquipo3
 
             cmbUnidadMedida.Text = FrmInventario.inventario.UnidadMedida;
             txtPrecioCompra.Text = FrmInventario.inventario.PrecioCompra.ToString();
-            // usar Value o la fecha parseada según como lo guardes
             DateTime dt;
             if (DateTime.TryParse(FrmInventario.inventario.FechaIngreso, out dt))
                 dtpFechaIngreso.Value = dt;
@@ -88,22 +86,18 @@ namespace ProyectoEquipo3
                 int proveedorId = 0;
                 if (cmbProveedor.SelectedValue != null && int.TryParse(cmbProveedor.SelectedValue.ToString(), out proveedorId))
                 {
-                    // ok
                 }
                 else
                 {
                     int.TryParse(cmbProveedor.Text, out proveedorId);
                 }
 
-                // Si no se seleccionó imagen y estamos en edición, mantener la actual de FrmInventario
                 string imagePathToSave = selectedImageFileName;
                 if (string.IsNullOrWhiteSpace(imagePathToSave) && FrmInventario.inventario.IdInventario > 0)
                 {
-                    // si el registro en edición tiene imagen, la usamos
                     imagePathToSave = FrmInventario.inventario.ImagePath;
                 }
 
-                // construir objeto Inventarios (nota: adaptalo si tu constructor distinto)
                 var nuevo = new Inventarios(
                 FrmInventario.inventario.IdInventario > 0 ? FrmInventario.inventario.IdInventario : 0,
                 txtNombreProducto.Text,
@@ -123,15 +117,12 @@ namespace ProyectoEquipo3
                 }
                 else
                 {
-                    mi.Modificar(nuevo); // ahora modificas con el id correcto
+                    mi.Modificar(nuevo); 
                 }
-                // asegurarse que el objeto compartido tenga la ruta de imagen guardada
                 FrmInventario.inventario.ImagePath = imagePathToSave ?? "";
 
-                // limpiar la variable de archivo seleccionada en este formulario (evita "heredar" la imagen)
                 selectedImageFileName = "";
 
-                // pedir al formulario padre que refresque la grilla (si fue abierto con owner)
                 if (this.Owner is FrmInventario parent)
                 {
                     parent.RefreshGrid();
@@ -174,14 +165,11 @@ namespace ProyectoEquipo3
 
                     try
                     {
-                        // Copiar archivo seleccionado a la carpeta images
                         File.Copy(origen, destino);
 
-                        // Guardar el nombre (lo que se almacenará en DB)
                         selectedImageFileName = fileName;
                         selectedImageFullPath = destino;
 
-                        // Mostrar vista previa (usar FromStream para no bloquear archivo si luego quieres sobrescribir)
                         using (var fs = new FileStream(destino, FileMode.Open, FileAccess.Read))
                         {
                             pictureBoxPreview.Image = Image.FromStream(fs);

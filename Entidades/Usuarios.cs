@@ -29,9 +29,7 @@ namespace Entidades
         public static List<Permisos> PermisosDelUsuario = new List<Permisos>();
         public static bool PuedeEscribir(string modulo)
         {
-            // Busca el permiso del módulo especificado
             var permiso = PermisosDelUsuario.FirstOrDefault(p => p.NombreModulo == modulo);
-            // Si existe el permiso y tiene escritura activada, retorna true
             return permiso != null && permiso.PermisoEscritura;
         }
 

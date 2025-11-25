@@ -3,7 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using Manejadores;
-using ProyectoEquipo3.Controls; // espacio de nombres del ucNotificacionItem
+using ProyectoEquipo3.Controls;
 using Manejadores;
 
 namespace ProyectoEquipo3
@@ -144,11 +144,10 @@ namespace ProyectoEquipo3
             flpProgramadas.SuspendLayout();
             flpProgramadas.Controls.Clear();
 
-            var dt = manejador.ObtenerProgramadasParaListado(soloPendientes: false, limite: 500); // trae todas o filtra solo pendientes si lo prefieres
+            var dt = manejador.ObtenerProgramadasParaListado(soloPendientes: false, limite: 500); 
 
             if (dt == null || dt.Rows.Count == 0)
             {
-                // placeholder
                 var pnlEmpty = new Panel
                 {
                     Width = flpProgramadas.ClientSize.Width - 25,
@@ -177,13 +176,11 @@ namespace ProyectoEquipo3
                 DateTime fecha = r.Table.Columns.Contains("FechaNotificacion") && r["FechaNotificacion"] != DBNull.Value ? Convert.ToDateTime(r["FechaNotificacion"]) : DateTime.MinValue;
                 bool completada = r.Table.Columns.Contains("Completada") && r["Completada"] != DBNull.Value ? Convert.ToBoolean(r["Completada"]) : false;
 
-                // si quieres mostrar nombre de producto relacionado, añade JOIN en ObtenerProgramadasParaListado
-                string relacionado = ""; // para programadas normalmente no hay relacion
+                string relacionado = ""; 
 
                 var card = new ucProgramadaItem();
                 card.SetData(id, aviso, fecha, relacionado, completada);
 
-                // eventos
                 card.CompletarClicked += (s, nid) =>
                 {
                     if (MessageBox.Show("Marcar esta notificación como completada?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -197,10 +194,7 @@ namespace ProyectoEquipo3
                 {
                     if (MessageBox.Show("¿Eliminar esta notificación programada?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        // si quieres, usa un método eliminar específico; reutilizamos Eliminar() que borra NotificacionesSistema
-                        // Para programadas, implementa en manejador: EliminarProgramada(int id)
-                        manejador.EliminarProgramada(nid); // alternativamente, implementa m.EliminarProgramada(nid);
-                                                                   // si prefieres eliminar en lugar de marcar completada, crea manejador.EliminarProgramada(id)
+                        manejador.EliminarProgramada(nid); 
                         RefrescarTodo();
                     }
                 };
@@ -230,12 +224,10 @@ namespace ProyectoEquipo3
                 RefrescarTodo();
             }
         }
-
         private void TimerAutoRefresh_Tick(object sender, EventArgs e)
         {
             RefrescarTodo();
         }
-
         private void btnProgramarNotificacion_Click_1(object sender, EventArgs e)
         {
             using (var f = new FrmProgramarNotificacion())

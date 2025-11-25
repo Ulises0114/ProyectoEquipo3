@@ -13,8 +13,7 @@ namespace Manejadores
 {
     public class ManejadorInventario
     {
-        // Si CarpinteriaDB está en Docker y mapeada a 3308
-        Base b = new Base("127.0.0.1;port=3308", "root", "12345", "CarpinteriaDB");
+        Base b = new Base("localhost", "root", "12345", "CarpinteriaDB");
         public void Guardar(Inventarios inventario)
         {
             string imagePath = string.IsNullOrWhiteSpace(inventario.ImagePath) ? "" : inventario.ImagePath.Replace("'", "''");
@@ -22,8 +21,7 @@ namespace Manejadores
         }
         public void ActualizarImagePath(int idInventario, string imageFileName)
         {
-            // Guardar solo el nombre del archivo; puedes cambiar a ruta relativa si prefieres
-            string safe = imageFileName.Replace("'", "''"); // escapado básico
+            string safe = imageFileName.Replace("'", "''"); 
             b.Comando($"UPDATE inventario SET ImagePath = '{safe}' WHERE IdInventario = {idInventario}");
         }
         public void Borrar(Inventarios inventario)
@@ -46,8 +44,6 @@ namespace Manejadores
             tabla.Columns.Clear();
             tabla.DataSource = b.Consultar(consulta, datos).Tables[0];
             tabla.Columns["IdInventario"].Visible = false;
-            //tabla.Columns.Insert(10, Boton("Modificar", Color.Green));
-            //tabla.Columns.Insert(11, Boton("Borrar", Color.Red));
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }
@@ -70,9 +66,7 @@ namespace Manejadores
         }
         public int AgregarInventarioYObtenerId(Inventarios inv)
         {
-            // Llama al SP que ya tienes (sp_AgregarInventario)
             b.Comando($"CALL sp_AgregarInventario('{inv.NombreProducto}','{inv.IdProveedor}','{inv.UnidadMedida}','{inv.PrecioCompra}','{inv.FechaIngreso}','{inv.StockMinimo}','{inv.StockActual}','{inv.Descripcion}')");
-            // Obtener LAST_INSERT_ID()
             var ds = b.Consultar("SELECT LAST_INSERT_ID() AS Id", "tmp");
             if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
@@ -92,13 +86,11 @@ namespace Manejadores
         {
             if (id <= 0) return null;
 
-            // Consulta simple: id es entero, no debe permitir inyección en este caso
             var ds = b.Consultar($"SELECT * FROM inventario WHERE IdInventario = {id}", "inventario");
             if (ds == null || ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return null;
 
             var row = ds.Tables[0].Rows[0];
 
-            // Extraer cada campo con comprobaciones para evitar excepciones
             int idInventario = row.Table.Columns.Contains("IdInventario") && row["IdInventario"] != DBNull.Value
                 ? Convert.ToInt32(row["IdInventario"])
                 : 0;
@@ -138,8 +130,6 @@ namespace Manejadores
             string imagePath = row.Table.Columns.Contains("ImagePath") && row["ImagePath"] != DBNull.Value
                 ? row["ImagePath"].ToString()
                 : string.Empty;
-
-            // Crear y retornar el objeto
             return new Inventarios(
                 idInventario,
                 nombre,

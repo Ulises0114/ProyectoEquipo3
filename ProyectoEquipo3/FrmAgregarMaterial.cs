@@ -28,7 +28,6 @@ namespace ProyectoEquipo3
         {
             if (CmbMaterial.SelectedValue != null)
             {
-                // Obtener la unidad de medida del material seleccionado
                 DataRowView drv = (DataRowView)CmbMaterial.SelectedItem;
                 TxtUnidad.Text = drv["UnidadMedida"].ToString();
             }

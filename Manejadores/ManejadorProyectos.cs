@@ -93,7 +93,6 @@ namespace Manejadores
             var rs = MessageBox.Show($"¿Está seguro de eliminar el proyecto {proyecto.NombreMueble}?\n Esto devolverá todos los materiales al inventario.", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
-                // Al eliminar el proyecto, el CASCADE devolverá los materiales automáticamente
                 b.Comando($"DELETE FROM ProyectosPendientes WHERE IdProyecto={proyecto.IdProyecto}");
                 MessageBox.Show("Proyecto eliminado correctamente");
             }
@@ -135,12 +134,10 @@ namespace Manejadores
 
             if (string.IsNullOrWhiteSpace(seleccion?.Text) || seleccion.Text == "Todos")
             {
-                // Mostrar todos los proyectos sin filtro
                 consulta = "SELECT * FROM vista_proyectos_basicos;";
             }
             else
             {
-                // Filtrar por el estado seleccionado
                 consulta = $"SELECT * FROM vista_proyectos_basicos WHERE Estado_Proyecto = '{seleccion.Text}';";
             }
 

@@ -121,7 +121,6 @@ namespace ProyectoEquipo3
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            // Validaciones
             if (string.IsNullOrWhiteSpace(TxtMueble.Text))
             {
                 MessageBox.Show("Ingrese el nombre del mueble", "Validación",
@@ -167,7 +166,6 @@ namespace ProyectoEquipo3
                         // Habilitar la sección de materiales
                         PanelMateriales.Enabled = true;
 
-                        // Enfocar el botón de agregar material
                         BtnAgregarMaterial.Focus();
                     }
                     else
@@ -178,7 +176,6 @@ namespace ProyectoEquipo3
                 }
                 else
                 {
-                    // Modificar proyecto existente
                     resultado = mp.Modificar(new Proyectos(
                         idProyectoActual,
                         TxtMueble.Text.Trim(),
@@ -216,22 +213,17 @@ namespace ProyectoEquipo3
                 return;
             }
 
-            // Abrir formulario para agregar material
             FrmAgregarMaterial fam = new FrmAgregarMaterial(idProyectoActual);
             fam.ShowDialog();
-
-            // Recargar lista de materiales
             CargarMateriales();
         }
 
         private void DtgMateriales_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Ignorar clics en encabezados
             if (e.RowIndex < 0) return;
 
             try
             {
-                // Verificar si se hizo clic en el botón "Quitar"
                 if (e.ColumnIndex >= 0 && DtgMateriales.Columns[e.ColumnIndex].Name == "BtnEliminar")
                 {
                     // Verificar que la fila tenga datos
@@ -295,10 +287,5 @@ namespace ProyectoEquipo3
             }
         }
 
-        private void FrmDatosProyectos_Load(object sender, EventArgs e)
-        {
-            // Configuraciones adicionales al cargar el formulario
-            TxtMueble.Focus();
-        }
     }
 }

@@ -13,7 +13,6 @@ namespace Manejadores
     {
         Base b = new Base("localhost", "root", "12345", "CarpinteriaDB");
 
-        // Método para obtener una lista de permisos de un usuario
         public List<Permisos> ObtenerPermisosPorUsuario(int idUsuario)
         {
             List<Permisos> listaPermisos = new List<Permisos>();
@@ -26,7 +25,6 @@ namespace Manejadores
             {
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    // Convierte el valor de MySQL (0 o 1) a booleano
                     bool leer = Convert.ToBoolean(dr["permiso_leer_abrir"]);
                     bool escribir = Convert.ToBoolean(dr["permiso_escritura"]);
 

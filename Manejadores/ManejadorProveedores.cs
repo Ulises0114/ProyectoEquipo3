@@ -38,7 +38,6 @@ namespace Manejadores
             }
             else
             {
-                // No hay datos, limpia la tabla o mostrar mensaje
                 tabla.DataSource = null;
             }
         }
