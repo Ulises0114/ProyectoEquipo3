@@ -20,37 +20,49 @@ namespace ProyectoEquipo3
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             FrmUsuarios frmUsuarios = new FrmUsuarios();
-            frmUsuarios.ShowDialog();
+            frmUsuarios.Show();
+            this.Hide();
+            //Close();
         }
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
             FrmInventario frmInventario = new FrmInventario();
-            frmInventario.ShowDialog();
+            frmInventario.Show();
+            this.Hide();
+            //Close();
         }
 
         private void btnProyectos_Click(object sender, EventArgs e)
         {
             FrmProyectos frmProyectos = new FrmProyectos();
-            frmProyectos.ShowDialog();
+            frmProyectos.Show();
+            this.Hide();
+            //Close();
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             FrmProveedores frmProveedores = new FrmProveedores();
-            frmProveedores.ShowDialog();
+            frmProveedores.Show();
+            this.Hide();
+            //Close();
         }
 
         private void btnNotifiaciones_Click(object sender, EventArgs e)
         {
             FrmNotificaciones frmNotificaciones = new FrmNotificaciones();
-            frmNotificaciones.ShowDialog();
+            frmNotificaciones.Show();
+            this.Hide();
+            //Close();
         }
 
         private void btnPresupuesto_Click(object sender, EventArgs e)
         {
             Frm_Presupuesto frmPresupuesto = new Frm_Presupuesto();
-            frmPresupuesto.ShowDialog();
+            frmPresupuesto.Show();
+            this.Hide();
+            //Close();
         }
     }
 }

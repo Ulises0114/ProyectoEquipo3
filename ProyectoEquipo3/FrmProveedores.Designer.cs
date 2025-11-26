@@ -34,7 +34,6 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnFiltrar = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,25 +97,18 @@
             this.BtnBuscar.UseVisualStyleBackColor = true;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(2, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(167, 438);
-            this.panel1.TabIndex = 16;
-            // 
             // FrmProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1254, 677);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.BtnFiltrar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.TxtBusqueda);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DtgDatos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmProveedores";
             this.Text = "FrmProveedores";
             this.Load += new System.EventHandler(this.FrmProveedores_Load);
@@ -134,6 +126,5 @@
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnFiltrar;
         private System.Windows.Forms.Button BtnBuscar;
-        private System.Windows.Forms.Panel panel1;
     }
 }

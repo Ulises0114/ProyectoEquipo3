@@ -139,6 +139,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDatosUsuario";
             this.Text = "FrmDatosUsuario";
             this.ResumeLayout(false);

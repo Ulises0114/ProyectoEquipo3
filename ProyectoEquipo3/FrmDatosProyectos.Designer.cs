@@ -174,6 +174,7 @@
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PanelMateriales);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmDatosProyectos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

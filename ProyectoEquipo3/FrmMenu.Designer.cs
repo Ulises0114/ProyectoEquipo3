@@ -38,10 +38,9 @@
             // 
             // btnInventario
             // 
-            this.btnInventario.Location = new System.Drawing.Point(288, 151);
-            this.btnInventario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnInventario.Location = new System.Drawing.Point(192, 98);
             this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Size = new System.Drawing.Size(168, 149);
+            this.btnInventario.Size = new System.Drawing.Size(112, 97);
             this.btnInventario.TabIndex = 0;
             this.btnInventario.Text = "inventario";
             this.btnInventario.UseVisualStyleBackColor = true;
@@ -49,10 +48,9 @@
             // 
             // btnProyectos
             // 
-            this.btnProyectos.Location = new System.Drawing.Point(465, 151);
-            this.btnProyectos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnProyectos.Location = new System.Drawing.Point(310, 98);
             this.btnProyectos.Name = "btnProyectos";
-            this.btnProyectos.Size = new System.Drawing.Size(168, 149);
+            this.btnProyectos.Size = new System.Drawing.Size(112, 97);
             this.btnProyectos.TabIndex = 0;
             this.btnProyectos.Text = "proyectos";
             this.btnProyectos.UseVisualStyleBackColor = true;
@@ -60,10 +58,9 @@
             // 
             // btnProveedores
             // 
-            this.btnProveedores.Location = new System.Drawing.Point(642, 151);
-            this.btnProveedores.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnProveedores.Location = new System.Drawing.Point(428, 98);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(168, 149);
+            this.btnProveedores.Size = new System.Drawing.Size(112, 97);
             this.btnProveedores.TabIndex = 0;
             this.btnProveedores.Text = "proveedores";
             this.btnProveedores.UseVisualStyleBackColor = true;
@@ -71,10 +68,9 @@
             // 
             // btnNotifiaciones
             // 
-            this.btnNotifiaciones.Location = new System.Drawing.Point(288, 309);
-            this.btnNotifiaciones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNotifiaciones.Location = new System.Drawing.Point(192, 201);
             this.btnNotifiaciones.Name = "btnNotifiaciones";
-            this.btnNotifiaciones.Size = new System.Drawing.Size(168, 149);
+            this.btnNotifiaciones.Size = new System.Drawing.Size(112, 97);
             this.btnNotifiaciones.TabIndex = 0;
             this.btnNotifiaciones.Text = "notificaciones";
             this.btnNotifiaciones.UseVisualStyleBackColor = true;
@@ -82,10 +78,9 @@
             // 
             // btnPresupuesto
             // 
-            this.btnPresupuesto.Location = new System.Drawing.Point(465, 309);
-            this.btnPresupuesto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPresupuesto.Location = new System.Drawing.Point(310, 201);
             this.btnPresupuesto.Name = "btnPresupuesto";
-            this.btnPresupuesto.Size = new System.Drawing.Size(168, 149);
+            this.btnPresupuesto.Size = new System.Drawing.Size(112, 97);
             this.btnPresupuesto.TabIndex = 0;
             this.btnPresupuesto.Text = "presupuesto";
             this.btnPresupuesto.UseVisualStyleBackColor = true;
@@ -93,10 +88,9 @@
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Location = new System.Drawing.Point(642, 309);
-            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUsuarios.Location = new System.Drawing.Point(428, 201);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(168, 149);
+            this.btnUsuarios.Size = new System.Drawing.Size(112, 97);
             this.btnUsuarios.TabIndex = 0;
             this.btnUsuarios.Text = "gestion de usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
@@ -104,17 +98,18 @@
             // 
             // FrmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(1254, 677);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnPresupuesto);
             this.Controls.Add(this.btnNotifiaciones);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnProyectos);
             this.Controls.Add(this.btnInventario);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMenu";
             this.ResumeLayout(false);
 

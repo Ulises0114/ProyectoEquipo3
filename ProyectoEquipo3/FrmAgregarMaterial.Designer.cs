@@ -121,6 +121,7 @@
             this.Controls.Add(this.TxtCantidad);
             this.Controls.Add(this.TxtUnidad);
             this.Controls.Add(this.CmbMaterial);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAgregarMaterial";
             this.Text = "FrmAgregarMaterial";
             this.ResumeLayout(false);

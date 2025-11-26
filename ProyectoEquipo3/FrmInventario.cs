@@ -91,7 +91,10 @@ namespace ProyectoEquipo3
         {
             BtnRefresh_Click(null, null);
             CargarGaleria();
+            ConfigurarMenu();
+            //ConfigurarBotones();
         }
+
         private void CargarGaleria()
         {
             DataTable dt = mi.ListarProductosParaGaleria();
@@ -104,7 +107,6 @@ namespace ProyectoEquipo3
                 if (string.IsNullOrWhiteSpace(imagePathFromDb))
                     return SystemIcons.Application.ToBitmap();
 
-                // Si ImagePath ya es ruta absoluta, usarla; si solo es nombre, combinar con baseImagesPath
                 string fullPath = imagePathFromDb;
                 if (!Path.IsPathRooted(imagePathFromDb))
                     fullPath = Path.Combine(baseImagesPath, imagePathFromDb);
@@ -290,6 +292,11 @@ namespace ProyectoEquipo3
         {
             BtnRefresh_Click(null, null);
         }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
         public FrmInventario()
         {
             InitializeComponent();
@@ -300,6 +307,95 @@ namespace ProyectoEquipo3
             lvProductos.View = View.LargeIcon;
             lvProductos.MultiSelect = false;
             lvProductos.ItemActivate += LvProductos_ItemActivate;
+        }
+        private void ConfigurarMenu()
+        {
+            FlpAncho.Visible = false;
+            FlpAngosto.MouseEnter += (s, e) => MostrarMenuCompleto();
+            FlpAncho.MouseLeave += (s, e) => OcultarMenuCompleto(e);
+
+            foreach (Control btn in FlpAngosto.Controls)
+            {
+                btn.MouseEnter += (s, e) => MostrarMenuCompleto();
+            }
+
+            foreach (Control btn in FlpAncho.Controls)
+            {
+                btn.MouseLeave += (s, e) => OcultarMenuCompleto(e);
+            }
+        }
+
+        private void MostrarMenuCompleto()
+        {
+            FlpAngosto.Visible = false;
+            FlpAncho.Visible = true;
+            FlpAncho.BringToFront();
+        }
+
+        private void OcultarMenuCompleto(EventArgs e)
+        {
+            Task.Delay(100).ContinueWith(t =>
+            {
+                if (this.InvokeRequired)
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        Point cursorPos = FlpAncho.PointToClient(Cursor.Position);
+                        if (!FlpAncho.ClientRectangle.Contains(cursorPos))
+                        {
+                            FlpAncho.Visible = false;
+                            FlpAngosto.Visible = true;
+                        }
+                    }));
+                }
+            });
+        }
+
+        private void BtnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnMenu_Click(object sender, EventArgs e)
+        {
+            FrmMenu fm = new FrmMenu();
+            fm.Show();
+            Close();
+        }
+
+        private void BtnProyectos_Click(object sender, EventArgs e)
+        {
+            FrmProyectos fp = new FrmProyectos();
+            fp.Show();
+            Close();
+        }
+
+        private void BtnProveedores_Click(object sender, EventArgs e)
+        {
+            FrmProveedores fp = new FrmProveedores();
+            fp.Show();
+            Close();
+        }
+
+        private void BtnNotificaciones_Click(object sender, EventArgs e)
+        {
+            FrmNotificaciones fn = new FrmNotificaciones();
+            fn.Show();
+            Close();
+        }
+
+        private void BtnPresupuesto_Click(object sender, EventArgs e)
+        {
+            FrmDatosPresupuestos fp = new FrmDatosPresupuestos();
+            fp.Show();
+            Close();
+        }
+
+        private void BtnUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios fu = new FrmUsuarios();
+            fu.Show();
+            Close();
         }
     }
 }

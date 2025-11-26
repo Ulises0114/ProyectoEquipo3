@@ -85,7 +85,7 @@
             this.flpNotificacionesSistema.Location = new System.Drawing.Point(0, 20);
             this.flpNotificacionesSistema.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.flpNotificacionesSistema.Name = "flpNotificacionesSistema";
-            this.flpNotificacionesSistema.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.flpNotificacionesSistema.Padding = new System.Windows.Forms.Padding(6);
             this.flpNotificacionesSistema.Size = new System.Drawing.Size(405, 543);
             this.flpNotificacionesSistema.TabIndex = 1;
             this.flpNotificacionesSistema.WrapContents = false;
@@ -120,7 +120,7 @@
             this.flpProgramadas.Location = new System.Drawing.Point(0, 20);
             this.flpProgramadas.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.flpProgramadas.Name = "flpProgramadas";
-            this.flpProgramadas.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.flpProgramadas.Padding = new System.Windows.Forms.Padding(6);
             this.flpProgramadas.Size = new System.Drawing.Size(405, 543);
             this.flpProgramadas.TabIndex = 1;
             this.flpProgramadas.WrapContents = false;
@@ -164,13 +164,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1141, 681);
+            this.ClientSize = new System.Drawing.Size(1254, 677);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvProgramadas);
             this.Controls.Add(this.lblBadgeCount);
             this.Controls.Add(this.panelSistemaContainer);
             this.Controls.Add(this.btnRefrescarNotificaciones);
             this.Controls.Add(this.btnProgramarNotificacion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "FrmNotificaciones";
             this.Text = "FrmNotificaciones";

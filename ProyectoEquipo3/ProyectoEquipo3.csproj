@@ -267,6 +267,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ucNotificacionItem.resx">
       <DependentUpon>ucNotificacionItem.cs</DependentUpon>
@@ -313,6 +314,39 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cajas-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-menú-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-martillo-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-proveedor-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-alarma-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pila-de-monedas-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cuenta-de-prueba-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-minimizar-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-x-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 291.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
