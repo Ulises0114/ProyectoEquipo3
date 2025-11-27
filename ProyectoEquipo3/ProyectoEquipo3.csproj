@@ -348,5 +348,17 @@
   <ItemGroup>
     <None Include="Resources\Group 291.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoBuscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoFiltrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoEliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoEditar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

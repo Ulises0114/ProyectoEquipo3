@@ -25,7 +25,7 @@ namespace Manejadores
 
             if (rs == DialogResult.Yes)
             {
-                b.Comando($"delete from usuarios where idu = {usuario.IdUsuario}");
+                b.Comando($"delete from Usuarios where idu = {usuario.IdUsuario}");
             }
         }
 
