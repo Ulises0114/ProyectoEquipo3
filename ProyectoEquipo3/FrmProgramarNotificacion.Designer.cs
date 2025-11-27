@@ -32,72 +32,100 @@
             this.dtpFechaNotificacion = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAviso = new System.Windows.Forms.TextBox();
-            this.btnProgramar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnProgramar = new RoundedButton();
+            this.btnCancelar = new RoundedButton();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 29);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 16);
+            this.label1.Size = new System.Drawing.Size(121, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fecha y hora";
             // 
             // dtpFechaNotificacion
             // 
             this.dtpFechaNotificacion.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.dtpFechaNotificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaNotificacion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaNotificacion.Location = new System.Drawing.Point(69, 60);
+            this.dtpFechaNotificacion.Location = new System.Drawing.Point(52, 50);
+            this.dtpFechaNotificacion.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaNotificacion.Name = "dtpFechaNotificacion";
             this.dtpFechaNotificacion.ShowUpDown = true;
-            this.dtpFechaNotificacion.Size = new System.Drawing.Size(200, 22);
+            this.dtpFechaNotificacion.Size = new System.Drawing.Size(260, 29);
             this.dtpFechaNotificacion.TabIndex = 1;
             this.dtpFechaNotificacion.Value = new System.DateTime(2025, 11, 21, 12, 16, 8, 0);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 104);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(50, 96);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 16);
+            this.label2.Size = new System.Drawing.Size(56, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "Aviso";
             // 
             // txtAviso
             // 
-            this.txtAviso.Location = new System.Drawing.Point(69, 123);
+            this.txtAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAviso.Location = new System.Drawing.Point(54, 122);
+            this.txtAviso.Margin = new System.Windows.Forms.Padding(2);
             this.txtAviso.Multiline = true;
             this.txtAviso.Name = "txtAviso";
-            this.txtAviso.Size = new System.Drawing.Size(200, 145);
+            this.txtAviso.Size = new System.Drawing.Size(258, 179);
             this.txtAviso.TabIndex = 3;
             // 
             // btnProgramar
             // 
-            this.btnProgramar.Location = new System.Drawing.Point(57, 288);
+            this.btnProgramar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
+            this.btnProgramar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
+            this.btnProgramar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnProgramar.BorderRadius = 20;
+            this.btnProgramar.BorderSize = 1;
+            this.btnProgramar.FlatAppearance.BorderSize = 0;
+            this.btnProgramar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProgramar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProgramar.ForeColor = System.Drawing.Color.White;
+            this.btnProgramar.Location = new System.Drawing.Point(54, 319);
             this.btnProgramar.Name = "btnProgramar";
-            this.btnProgramar.Size = new System.Drawing.Size(107, 39);
-            this.btnProgramar.TabIndex = 4;
+            this.btnProgramar.Size = new System.Drawing.Size(117, 47);
+            this.btnProgramar.TabIndex = 6;
             this.btnProgramar.Text = "+ Guardar";
-            this.btnProgramar.UseVisualStyleBackColor = true;
+            this.btnProgramar.TextColor = System.Drawing.Color.White;
+            this.btnProgramar.UseVisualStyleBackColor = false;
             this.btnProgramar.Click += new System.EventHandler(this.btnProgramar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(179, 288);
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
+            this.btnCancelar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
+            this.btnCancelar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.BorderRadius = 20;
+            this.btnCancelar.BorderSize = 1;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(195, 319);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(107, 39);
-            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Size = new System.Drawing.Size(117, 47);
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "x Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.TextColor = System.Drawing.Color.White;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FrmProgramarNotificacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 364);
+            this.ClientSize = new System.Drawing.Size(369, 406);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnProgramar);
             this.Controls.Add(this.txtAviso);
@@ -105,6 +133,7 @@
             this.Controls.Add(this.dtpFechaNotificacion);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmProgramarNotificacion";
@@ -121,7 +150,7 @@
         private System.Windows.Forms.DateTimePicker dtpFechaNotificacion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAviso;
-        private System.Windows.Forms.Button btnProgramar;
-        private System.Windows.Forms.Button btnCancelar;
+        private RoundedButton btnProgramar;
+        private RoundedButton btnCancelar;
     }
 }

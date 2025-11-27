@@ -101,6 +101,9 @@
     <Compile Include="ManejadorInventario.cs" />
     <Compile Include="ManejadorNotificacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoundedButton .cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

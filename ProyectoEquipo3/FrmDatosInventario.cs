@@ -16,6 +16,7 @@ namespace ProyectoEquipo3
     public partial class FrmDatosInventario : Form
     {
         ManejadorInventario mi;
+        //ManejadorDiseño md;
         private readonly string baseImagesPath = Path.Combine(Application.StartupPath, "images");
         private string selectedImageFileName = "";
         private string selectedImageFullPath = "";
@@ -24,6 +25,7 @@ namespace ProyectoEquipo3
             InitializeComponent();
             mi = new ManejadorInventario();
             mi.LlenarComboProveedores(cmbProveedor);
+            //md = new ManejadorDiseño();            
             txtNombreProducto.Text = FrmInventario.inventario.NombreProducto;
 
             try

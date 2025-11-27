@@ -163,6 +163,16 @@ namespace ProyectoEquipo3.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_repetir_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-repetir-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_x_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-x-48", resourceCulture);

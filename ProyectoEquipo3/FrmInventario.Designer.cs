@@ -49,12 +49,12 @@
             this.BtnPresupuesto = new System.Windows.Forms.Button();
             this.BtnUsuarios = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnRefresh = new System.Windows.Forms.Button();
             this.DtgDatos = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnMin = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
+            this.btnAgregar = new RoundedButton();
             this.FlpAngosto.SuspendLayout();
             this.FlpAncho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
@@ -196,6 +196,7 @@
             // 
             // lvProductos
             // 
+            this.lvProductos.BackColor = System.Drawing.Color.Silver;
             this.lvProductos.HideSelection = false;
             this.lvProductos.LargeImageList = this.ilThumbnails;
             this.lvProductos.Location = new System.Drawing.Point(159, 77);
@@ -359,39 +360,30 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(929, 639);
+            this.textBox1.Location = new System.Drawing.Point(789, 622);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(76, 20);
             this.textBox1.TabIndex = 19;
             this.textBox1.Visible = false;
             // 
-            // BtnAgregar
-            // 
-            this.BtnAgregar.Location = new System.Drawing.Point(1149, 622);
-            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(82, 52);
-            this.BtnAgregar.TabIndex = 18;
-            this.BtnAgregar.Text = "Agregar Materia Prima";
-            this.BtnAgregar.UseVisualStyleBackColor = true;
-            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
-            // 
             // BtnRefresh
             // 
-            this.BtnRefresh.Location = new System.Drawing.Point(1054, 636);
+            this.BtnRefresh.BackColor = System.Drawing.Color.Silver;
+            this.BtnRefresh.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.icons8_repetir_50;
+            this.BtnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnRefresh.Location = new System.Drawing.Point(960, 607);
             this.BtnRefresh.Margin = new System.Windows.Forms.Padding(2);
             this.BtnRefresh.Name = "BtnRefresh";
-            this.BtnRefresh.Size = new System.Drawing.Size(56, 38);
+            this.BtnRefresh.Size = new System.Drawing.Size(53, 52);
             this.BtnRefresh.TabIndex = 17;
-            this.BtnRefresh.Text = "reset";
-            this.BtnRefresh.UseVisualStyleBackColor = true;
+            this.BtnRefresh.UseVisualStyleBackColor = false;
             this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // DtgDatos
             // 
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DtgDatos.Location = new System.Drawing.Point(1009, 636);
+            this.DtgDatos.Location = new System.Drawing.Point(869, 619);
             this.DtgDatos.Margin = new System.Windows.Forms.Padding(2);
             this.DtgDatos.Name = "DtgDatos";
             this.DtgDatos.RowHeadersWidth = 51;
@@ -438,6 +430,26 @@
             this.BtnCerrar.UseVisualStyleBackColor = false;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
+            this.btnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
+            this.btnAgregar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAgregar.BorderRadius = 20;
+            this.btnAgregar.BorderSize = 1;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(1030, 607);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(131, 52);
+            this.btnAgregar.TabIndex = 24;
+            this.btnAgregar.Text = "Agregar Materia Prima";
+            this.btnAgregar.TextColor = System.Drawing.Color.White;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
             // FrmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,11 +457,11 @@
             this.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.Group_29;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1254, 677);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.FlpAngosto);
             this.Controls.Add(this.lvProductos);
             this.Controls.Add(this.FlpAncho);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnRefresh);
             this.Controls.Add(this.DtgDatos);
             this.Controls.Add(this.panel2);
@@ -489,11 +501,11 @@
         private System.Windows.Forms.Button BtnPresupuesto;
         private System.Windows.Forms.Button BtnUsuarios;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnRefresh;
         private System.Windows.Forms.DataGridView DtgDatos;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnMin;
         private System.Windows.Forms.Button BtnCerrar;
+        private RoundedButton btnAgregar;
     }
 }
