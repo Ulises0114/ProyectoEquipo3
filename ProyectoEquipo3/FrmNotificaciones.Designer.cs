@@ -454,7 +454,6 @@
             // BtnMin
             // 
             this.BtnMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(132)))));
-            this.BtnMin.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.icons8_minimizar_50;
             this.BtnMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnMin.Location = new System.Drawing.Point(1164, 10);
             this.BtnMin.Name = "BtnMin";
@@ -466,7 +465,6 @@
             // BtnCerrar
             // 
             this.BtnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.BtnCerrar.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.icons8_x_48;
             this.BtnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnCerrar.Location = new System.Drawing.Point(1207, 10);
             this.BtnCerrar.Name = "BtnCerrar";
@@ -478,7 +476,6 @@
             // btnRefrescarNotificaciones
             // 
             this.btnRefrescarNotificaciones.BackColor = System.Drawing.Color.Silver;
-            this.btnRefrescarNotificaciones.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.icons8_repetir_50;
             this.btnRefrescarNotificaciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnRefrescarNotificaciones.Location = new System.Drawing.Point(827, 72);
             this.btnRefrescarNotificaciones.Margin = new System.Windows.Forms.Padding(2);
@@ -512,7 +509,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.Group_291;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1254, 677);
             this.Controls.Add(this.btnProgramarNotificacion);
