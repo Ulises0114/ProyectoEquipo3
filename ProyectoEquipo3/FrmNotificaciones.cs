@@ -323,7 +323,7 @@ namespace ProyectoEquipo3
 
         private void BtnPresupuesto_Click(object sender, EventArgs e)
         {
-            FrmDatosPresupuestos fp = new FrmDatosPresupuestos();
+            Frm_Presupuesto fp = new Frm_Presupuesto();
             fp.Show();
             Close();
         }

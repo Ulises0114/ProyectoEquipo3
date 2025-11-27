@@ -192,6 +192,7 @@
             this.BtnMenu1.TabIndex = 0;
             this.BtnMenu1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnMenu1.UseVisualStyleBackColor = false;
+            this.BtnMenu1.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
             // BtnInventario1
             // 
@@ -207,6 +208,7 @@
             this.BtnInventario1.TabIndex = 1;
             this.BtnInventario1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnInventario1.UseVisualStyleBackColor = false;
+            this.BtnInventario1.Click += new System.EventHandler(this.BtnInventario_Click);
             // 
             // BtnProyectos1
             // 
@@ -222,6 +224,7 @@
             this.BtnProyectos1.TabIndex = 2;
             this.BtnProyectos1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnProyectos1.UseVisualStyleBackColor = false;
+            this.BtnProyectos1.Click += new System.EventHandler(this.BtnProyectos_Click);
             // 
             // BtnProveedores1
             // 
@@ -237,6 +240,7 @@
             this.BtnProveedores1.TabIndex = 3;
             this.BtnProveedores1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnProveedores1.UseVisualStyleBackColor = false;
+            this.BtnProveedores1.Click += new System.EventHandler(this.BtnProveedores_Click);
             // 
             // BtnNotificaciones1
             // 
@@ -267,6 +271,7 @@
             this.BtnPresupuesto1.TabIndex = 5;
             this.BtnPresupuesto1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnPresupuesto1.UseVisualStyleBackColor = false;
+            this.BtnPresupuesto1.Click += new System.EventHandler(this.BtnPresupuesto_Click);
             // 
             // BtnUsuarios1
             // 
@@ -282,6 +287,7 @@
             this.BtnUsuarios1.TabIndex = 6;
             this.BtnUsuarios1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnUsuarios1.UseVisualStyleBackColor = false;
+            this.BtnUsuarios1.Click += new System.EventHandler(this.BtnUsuarios_Click);
             // 
             // FlpAncho
             // 
@@ -506,7 +512,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.Group_29;
+            this.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.Group_291;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1254, 677);
             this.Controls.Add(this.btnProgramarNotificacion);
             this.Controls.Add(this.btnRefrescarNotificaciones);
@@ -517,6 +524,7 @@
             this.Controls.Add(this.dgvProgramadas);
             this.Controls.Add(this.lblBadgeCount);
             this.Controls.Add(this.panelSistemaContainer);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
