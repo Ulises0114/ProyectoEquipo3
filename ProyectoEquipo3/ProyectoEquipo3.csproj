@@ -363,5 +363,18 @@
   <ItemGroup>
     <None Include="Resources\icons8-repetir-50.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recurso 3%404x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-usuario-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-usuario-32 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-candado-50.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

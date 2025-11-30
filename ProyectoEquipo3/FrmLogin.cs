@@ -37,5 +37,27 @@ namespace ProyectoEquipo3
                 MessageBox.Show("Usuario o clave incorrecta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtClave_Enter(object sender, EventArgs e)
+        {
+            txtClave.Text = "";
+            txtClave.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+            txtClave.PasswordChar = '*';
+        }
+
+        private void txtUsuario_Enter(object sender, EventArgs e)
+        {
+            txtUsuario.Text = "";
+            txtUsuario.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+        }
     }
 }

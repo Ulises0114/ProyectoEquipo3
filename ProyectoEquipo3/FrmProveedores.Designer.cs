@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProveedores));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProveedores));
-            this.DtgDatos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.TxtBusqueda = new System.Windows.Forms.TextBox();
-            this.BtnAgregar = new System.Windows.Forms.Button();
             this.FlpAngosto = new System.Windows.Forms.FlowLayoutPanel();
             this.BtnMenu1 = new System.Windows.Forms.Button();
             this.BtnInventario1 = new System.Windows.Forms.Button();
@@ -54,50 +51,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnMin = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
-            this.BtnBuscar = new System.Windows.Forms.Button();
-            this.BtnFiltrar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
+            this.BtnRefresh = new RoundedButton();
+            this.roundedButton1 = new RoundedButton();
+            this.TxtBusqueda = new System.Windows.Forms.TextBox();
+            this.DtgDatos = new System.Windows.Forms.DataGridView();
             this.FlpAngosto.SuspendLayout();
             this.FlpAncho.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DtgDatos
-            // 
-            this.DtgDatos.AllowUserToAddRows = false;
-            this.DtgDatos.AllowUserToDeleteRows = false;
-            this.DtgDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DtgDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(161)))), ((int)(((byte)(137)))));
-            this.DtgDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DtgDatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DtgDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(161)))), ((int)(((byte)(137)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DtgDatos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DtgDatos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(96)))), ((int)(((byte)(93)))));
-            this.DtgDatos.Location = new System.Drawing.Point(117, 186);
-            this.DtgDatos.Name = "DtgDatos";
-            this.DtgDatos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.DtgDatos.Size = new System.Drawing.Size(1095, 450);
-            this.DtgDatos.TabIndex = 10;
-            this.DtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellClick);
-            this.DtgDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellDoubleClick);
-            this.DtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellEnter);
-            this.DtgDatos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DtgDatos_CellMouseClick);
             // 
             // label1
             // 
@@ -108,28 +70,6 @@
             this.label1.Size = new System.Drawing.Size(120, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Proveedores aprobados";
-            // 
-            // TxtBusqueda
-            // 
-            this.TxtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBusqueda.Location = new System.Drawing.Point(117, 117);
-            this.TxtBusqueda.Multiline = true;
-            this.TxtBusqueda.Name = "TxtBusqueda";
-            this.TxtBusqueda.Size = new System.Drawing.Size(711, 46);
-            this.TxtBusqueda.TabIndex = 12;
-            // 
-            // BtnAgregar
-            // 
-            this.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
-            this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregar.ForeColor = System.Drawing.Color.White;
-            this.BtnAgregar.Location = new System.Drawing.Point(848, 117);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(159, 47);
-            this.BtnAgregar.TabIndex = 13;
-            this.BtnAgregar.Text = "+ Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = false;
-            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // FlpAngosto
             // 
@@ -164,7 +104,7 @@
             // 
             // BtnInventario1
             // 
-            this.BtnInventario1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
+            this.BtnInventario1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(134)))), ((int)(((byte)(105)))));
             this.BtnInventario1.FlatAppearance.BorderSize = 0;
             this.BtnInventario1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnInventario1.Image = ((System.Drawing.Image)(resources.GetObject("BtnInventario1.Image")));
@@ -179,7 +119,7 @@
             // 
             // BtnProyectos1
             // 
-            this.BtnProyectos1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(134)))), ((int)(((byte)(105)))));
+            this.BtnProyectos1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
             this.BtnProyectos1.FlatAppearance.BorderSize = 0;
             this.BtnProyectos1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnProyectos1.Image = ((System.Drawing.Image)(resources.GetObject("BtnProyectos1.Image")));
@@ -275,7 +215,7 @@
             this.BtnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(134)))), ((int)(((byte)(105)))));
             this.BtnMenu.FlatAppearance.BorderSize = 0;
             this.BtnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMenu.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnMenu.ForeColor = System.Drawing.SystemColors.Control;
             this.BtnMenu.Image = ((System.Drawing.Image)(resources.GetObject("BtnMenu.Image")));
             this.BtnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -291,10 +231,10 @@
             // 
             // BtnInventario
             // 
-            this.BtnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
+            this.BtnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(134)))), ((int)(((byte)(105)))));
             this.BtnInventario.FlatAppearance.BorderSize = 0;
             this.BtnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInventario.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInventario.ForeColor = System.Drawing.SystemColors.Control;
             this.BtnInventario.Image = ((System.Drawing.Image)(resources.GetObject("BtnInventario.Image")));
             this.BtnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -310,10 +250,10 @@
             // 
             // BtnProyectos
             // 
-            this.BtnProyectos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(134)))), ((int)(((byte)(105)))));
+            this.BtnProyectos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
             this.BtnProyectos.FlatAppearance.BorderSize = 0;
             this.BtnProyectos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnProyectos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProyectos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProyectos.ForeColor = System.Drawing.SystemColors.Control;
             this.BtnProyectos.Image = ((System.Drawing.Image)(resources.GetObject("BtnProyectos.Image")));
             this.BtnProyectos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -332,7 +272,7 @@
             this.BtnProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(134)))), ((int)(((byte)(105)))));
             this.BtnProveedores.FlatAppearance.BorderSize = 0;
             this.BtnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProveedores.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProveedores.ForeColor = System.Drawing.SystemColors.Control;
             this.BtnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("BtnProveedores.Image")));
             this.BtnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -351,7 +291,7 @@
             this.BtnNotificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(134)))), ((int)(((byte)(105)))));
             this.BtnNotificaciones.FlatAppearance.BorderSize = 0;
             this.BtnNotificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNotificaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNotificaciones.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNotificaciones.ForeColor = System.Drawing.SystemColors.Control;
             this.BtnNotificaciones.Image = ((System.Drawing.Image)(resources.GetObject("BtnNotificaciones.Image")));
             this.BtnNotificaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -370,7 +310,7 @@
             this.BtnPresupuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(134)))), ((int)(((byte)(105)))));
             this.BtnPresupuesto.FlatAppearance.BorderSize = 0;
             this.BtnPresupuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPresupuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPresupuesto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPresupuesto.ForeColor = System.Drawing.SystemColors.Control;
             this.BtnPresupuesto.Image = ((System.Drawing.Image)(resources.GetObject("BtnPresupuesto.Image")));
             this.BtnPresupuesto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -389,7 +329,7 @@
             this.BtnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(134)))), ((int)(((byte)(105)))));
             this.BtnUsuarios.FlatAppearance.BorderSize = 0;
             this.BtnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUsuarios.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUsuarios.ForeColor = System.Drawing.SystemColors.Control;
             this.BtnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("BtnUsuarios.Image")));
             this.BtnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -437,47 +377,104 @@
             this.BtnCerrar.Size = new System.Drawing.Size(35, 35);
             this.BtnCerrar.TabIndex = 0;
             this.BtnCerrar.UseVisualStyleBackColor = false;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
-            // BtnBuscar
+            // BtnRefresh
             // 
-            this.BtnBuscar.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.IconoBuscar;
-            this.BtnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnBuscar.Location = new System.Drawing.Point(782, 117);
-            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(0);
-            this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(46, 46);
-            this.BtnBuscar.TabIndex = 15;
-            this.BtnBuscar.UseVisualStyleBackColor = true;
-            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            this.BtnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BtnRefresh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BtnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnRefresh.BorderColor = System.Drawing.Color.Transparent;
+            this.BtnRefresh.BorderRadius = 20;
+            this.BtnRefresh.BorderSize = 1;
+            this.BtnRefresh.ButtonImage = null;
+            this.BtnRefresh.FlatAppearance.BorderSize = 0;
+            this.BtnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRefresh.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRefresh.ForeColor = System.Drawing.Color.White;
+            this.BtnRefresh.HoverColor = System.Drawing.Color.Silver;
+            this.BtnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnRefresh.ImagePadding = 0;
+            this.BtnRefresh.Location = new System.Drawing.Point(833, 102);
+            this.BtnRefresh.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnRefresh.Name = "BtnRefresh";
+            this.BtnRefresh.PressedColor = System.Drawing.SystemColors.ControlDark;
+            this.BtnRefresh.Size = new System.Drawing.Size(131, 52);
+            this.BtnRefresh.TabIndex = 31;
+            this.BtnRefresh.Text = "Filtrar";
+            this.BtnRefresh.TextColor = System.Drawing.Color.White;
+            this.BtnRefresh.UseVisualStyleBackColor = false;
+            this.BtnRefresh.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
-            // BtnFiltrar
+            // roundedButton1
             // 
-            this.BtnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.BtnFiltrar.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.BtnFiltrar.FlatAppearance.BorderSize = 0;
-            this.BtnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnFiltrar.ForeColor = System.Drawing.Color.White;
-            this.BtnFiltrar.Image = global::ProyectoEquipo3.Properties.Resources.IconoFiltrar;
-            this.BtnFiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnFiltrar.Location = new System.Drawing.Point(1053, 117);
-            this.BtnFiltrar.Name = "BtnFiltrar";
-            this.BtnFiltrar.Size = new System.Drawing.Size(159, 47);
-            this.BtnFiltrar.TabIndex = 14;
-            this.BtnFiltrar.Text = "Filtrar";
-            this.BtnFiltrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnFiltrar.UseVisualStyleBackColor = false;
+            this.roundedButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(185)))), ((int)(((byte)(116)))));
+            this.roundedButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(185)))), ((int)(((byte)(116)))));
+            this.roundedButton1.BorderColor = System.Drawing.Color.Transparent;
+            this.roundedButton1.BorderRadius = 20;
+            this.roundedButton1.BorderSize = 1;
+            this.roundedButton1.ButtonImage = null;
+            this.roundedButton1.FlatAppearance.BorderSize = 0;
+            this.roundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton1.ForeColor = System.Drawing.Color.White;
+            this.roundedButton1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(170)))), ((int)(((byte)(85)))));
+            this.roundedButton1.Location = new System.Drawing.Point(1081, 102);
+            this.roundedButton1.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedButton1.Name = "roundedButton1";
+            this.roundedButton1.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(139)))), ((int)(((byte)(70)))));
+            this.roundedButton1.Size = new System.Drawing.Size(131, 52);
+            this.roundedButton1.TabIndex = 30;
+            this.roundedButton1.Text = "+ Agregar";
+            this.roundedButton1.TextColor = System.Drawing.Color.White;
+            this.roundedButton1.UseVisualStyleBackColor = false;
+            this.roundedButton1.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
-            // label2
+            // TxtBusqueda
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(110, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 37);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Proveedores";
+            this.TxtBusqueda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBusqueda.Location = new System.Drawing.Point(117, 114);
+            this.TxtBusqueda.Name = "TxtBusqueda";
+            this.TxtBusqueda.Size = new System.Drawing.Size(708, 29);
+            this.TxtBusqueda.TabIndex = 12;
+            // 
+            // DtgDatos
+            // 
+            this.DtgDatos.AllowUserToAddRows = false;
+            this.DtgDatos.AllowUserToDeleteRows = false;
+            this.DtgDatos.AllowUserToResizeColumns = false;
+            this.DtgDatos.AllowUserToResizeRows = false;
+            this.DtgDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DtgDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(161)))), ((int)(((byte)(137)))));
+            this.DtgDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DtgDatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(137)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DtgDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(161)))), ((int)(((byte)(137)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(137)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DtgDatos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DtgDatos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(96)))), ((int)(((byte)(93)))));
+            this.DtgDatos.Location = new System.Drawing.Point(117, 195);
+            this.DtgDatos.Name = "DtgDatos";
+            this.DtgDatos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DtgDatos.RowHeadersVisible = false;
+            this.DtgDatos.Size = new System.Drawing.Size(1095, 450);
+            this.DtgDatos.TabIndex = 32;
+            this.DtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellClick);
+            this.DtgDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellDoubleClick);
+            this.DtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellEnter);
             // 
             // FrmProveedores
             // 
@@ -486,39 +483,31 @@
             this.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.Group_29;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1254, 677);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.DtgDatos);
+            this.Controls.Add(this.BtnRefresh);
+            this.Controls.Add(this.roundedButton1);
             this.Controls.Add(this.FlpAngosto);
             this.Controls.Add(this.FlpAncho);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.BtnBuscar);
-            this.Controls.Add(this.BtnFiltrar);
-            this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.TxtBusqueda);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.DtgDatos);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProveedores";
             this.Load += new System.EventHandler(this.FrmProveedores_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.FlpAngosto.ResumeLayout(false);
             this.FlpAncho.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView DtgDatos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TxtBusqueda;
-        private System.Windows.Forms.Button BtnAgregar;
-        private System.Windows.Forms.Button BtnFiltrar;
-        private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.FlowLayoutPanel FlpAngosto;
         private System.Windows.Forms.Button BtnMenu1;
         private System.Windows.Forms.Button BtnInventario1;
@@ -538,6 +527,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnMin;
         private System.Windows.Forms.Button BtnCerrar;
-        private System.Windows.Forms.Label label2;
+        private RoundedButton BtnRefresh;
+        private RoundedButton roundedButton1;
+        private System.Windows.Forms.TextBox TxtBusqueda;
+        private System.Windows.Forms.DataGridView DtgDatos;
     }
 }

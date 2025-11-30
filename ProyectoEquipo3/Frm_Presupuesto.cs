@@ -191,6 +191,13 @@ namespace ProyectoEquipo3
 
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
+            Application.Exit();
+        }
+
+        private void BtnInventario_Click(object sender, EventArgs e)
+        {
+            FrmInventario frmInventario = new FrmInventario();
+            frmInventario.Show();
             Close();
         }
     }

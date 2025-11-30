@@ -140,7 +140,7 @@ namespace ProyectoEquipo3
             Bitmap thumb = new Bitmap(thumbW, thumbH);
             using (Graphics g = Graphics.FromImage(thumb))
             {
-                g.Clear(Color.White);
+                g.Clear(Color.FromArgb(217, 217, 217)); //color de fondo
                 g.InterpolationMode = InterpolationMode.HighQualityBicubic;
 
                 int x = (thumbW - newW) / 2;
@@ -149,7 +149,7 @@ namespace ProyectoEquipo3
 
                 // badge
                 string stockText = stock.ToString("0");
-                using (Font badgeFont = new Font("Segoe UI", 10, FontStyle.Bold))
+                using (Font badgeFont = new Font("Rounded MT Bold", 10, FontStyle.Bold))
                 {
                     SizeF textSize = g.MeasureString(stockText, badgeFont);
                     int pad = 6;

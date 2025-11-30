@@ -176,6 +176,11 @@ namespace ProyectoEquipo3
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             m.Mostrar($"select * from Proveedores where NombreProveedor like '%{TxtBusqueda.Text}%' ; ", DtgDatos, "Proveedores");

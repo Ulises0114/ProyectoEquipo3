@@ -80,7 +80,7 @@ namespace ProyectoEquipo3
 
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
@@ -164,6 +164,96 @@ namespace ProyectoEquipo3
             DtgDatos.AllowUserToAddRows = false;
             DtgDatos.AllowUserToDeleteRows = false;
             DtgDatos.ReadOnly = true;
+            ConfigurarMenu();
+        }
+        private void ConfigurarMenu()
+        {
+            FlpAncho.Visible = false;
+            FlpAngosto.MouseEnter += (s, e) => MostrarMenuCompleto();
+            FlpAncho.MouseLeave += (s, e) => OcultarMenuCompleto(e);
+
+            foreach (Control btn in FlpAngosto.Controls)
+            {
+                btn.MouseEnter += (s, e) => MostrarMenuCompleto();
+            }
+
+            foreach (Control btn in FlpAncho.Controls)
+            {
+                btn.MouseLeave += (s, e) => OcultarMenuCompleto(e);
+            }
+        }
+
+        private void MostrarMenuCompleto()
+        {
+            FlpAngosto.Visible = false;
+            FlpAncho.Visible = true;
+            FlpAncho.BringToFront();
+        }
+
+        private void OcultarMenuCompleto(EventArgs e)
+        {
+            Task.Delay(100).ContinueWith(t =>
+            {
+                if (this.InvokeRequired)
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        Point cursorPos = FlpAncho.PointToClient(Cursor.Position);
+                        if (!FlpAncho.ClientRectangle.Contains(cursorPos))
+                        {
+                            FlpAncho.Visible = false;
+                            FlpAngosto.Visible = true;
+                        }
+                    }));
+                }
+            });
+        }
+
+        private void BtnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnMenu_Click(object sender, EventArgs e)
+        {
+            FrmMenu fm = new FrmMenu();
+            fm.Show();
+            Close();
+        }
+
+        private void BtnProveedores_Click(object sender, EventArgs e)
+        {
+            FrmProveedores fp = new FrmProveedores();
+            fp.Show();
+            Close();
+        }
+
+        private void BtnNotificaciones_Click(object sender, EventArgs e)
+        {
+            FrmNotificaciones fn = new FrmNotificaciones();
+            fn.Show();
+            Close();
+        }
+
+        private void BtnPresupuesto_Click(object sender, EventArgs e)
+        {
+            Frm_Presupuesto fp = new Frm_Presupuesto();
+            fp.Show();
+            Close();
+        }
+
+        private void BtnInventario_Click(object sender, EventArgs e)
+        {
+            FrmInventario frmInventario = new FrmInventario();
+            frmInventario.Show();
+            Close();
+        }
+
+        private void BtnUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios fu = new FrmUsuarios();
+            fu.Show();
+            Close();
         }
     }
 }

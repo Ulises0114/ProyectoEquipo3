@@ -38,9 +38,9 @@ namespace ProyectoEquipo3
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.LblTotal = new System.Windows.Forms.Label();
+            this.roundedButton1 = new RoundedButton();
             this.SuspendLayout();
             // 
             // CmbIdMueble
@@ -106,16 +106,6 @@ namespace ProyectoEquipo3
             this.label4.TabIndex = 7;
             this.label4.Text = "Estado";
             // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.Location = new System.Drawing.Point(52, 389);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(146, 39);
-            this.BtnGuardar.TabIndex = 8;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.UseVisualStyleBackColor = true;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
             // BtnCancelar
             // 
             this.BtnCancelar.Location = new System.Drawing.Point(327, 389);
@@ -135,14 +125,34 @@ namespace ProyectoEquipo3
             this.LblTotal.TabIndex = 10;
             this.LblTotal.Text = "label5";
             // 
+            // roundedButton1
+            // 
+            this.roundedButton1.BackColor = System.Drawing.Color.AliceBlue;
+            this.roundedButton1.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.roundedButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.roundedButton1.BorderRadius = 15;
+            this.roundedButton1.BorderSize = 1;
+            this.roundedButton1.FlatAppearance.BorderSize = 0;
+            this.roundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton1.ForeColor = System.Drawing.Color.White;
+            this.roundedButton1.HoverColor = System.Drawing.Color.LightBlue;
+            this.roundedButton1.Location = new System.Drawing.Point(97, 403);
+            this.roundedButton1.Name = "roundedButton1";
+            this.roundedButton1.PressedColor = System.Drawing.Color.DodgerBlue;
+            this.roundedButton1.Size = new System.Drawing.Size(112, 45);
+            this.roundedButton1.TabIndex = 11;
+            this.roundedButton1.Text = "roundedButton1";
+            this.roundedButton1.TextColor = System.Drawing.Color.White;
+            this.roundedButton1.UseVisualStyleBackColor = false;
+            // 
             // FrmDatosPresupuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 480);
+            this.Controls.Add(this.roundedButton1);
             this.Controls.Add(this.LblTotal);
             this.Controls.Add(this.BtnCancelar);
-            this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -172,8 +182,8 @@ namespace ProyectoEquipo3
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Label LblTotal;
+        private RoundedButton roundedButton1;
     }
 }

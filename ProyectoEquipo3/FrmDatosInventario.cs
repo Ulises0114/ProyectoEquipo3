@@ -184,5 +184,21 @@ namespace ProyectoEquipo3
                 }
             }
         }
+
+        private void txtPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // 1. Si es número, déjalo pasar
+            if (char.IsDigit(e.KeyChar)) return;
+
+            // 2. Si es borrar (backspace), déjalo pasar
+            if (char.IsControl(e.KeyChar)) return;
+
+            // 3. Si es punto (.) Y NO hay otro punto escrito ya... déjalo pasar
+            if (e.KeyChar == '.' && !((TextBox)sender).Text.Contains(".")) return;
+
+            // 4. Si no fue nada de lo anterior, CANCELALO
+            e.Handled = true;
+
+        }
     }
 }

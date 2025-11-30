@@ -22,24 +22,15 @@ namespace ProyectoEquipo3
         {
             InitializeComponent();
             mp = new ManejadorProyectos();
-
-            // Configurar ComboBox de estados
             CmbEstado.Items.Clear();
             CmbEstado.Items.AddRange(new string[] { "Pendiente", "En Proceso", "Pausado", "Completado", "Cancelado" });
-            CmbEstado.SelectedIndex = 0; // Seleccionar "Pendiente" por defecto
-
-            // Configurar el DataGridView de materiales
+            CmbEstado.SelectedIndex = 0;
             ConfigurarGridMateriales();
-
-            // Deshabilitar el panel de materiales hasta que se guarde el proyecto
             PanelMateriales.Enabled = false;
-
-            // Verificar si estamos modificando un proyecto existente
             if (FrmProyectos.proyecto != null && FrmProyectos.proyecto.IdProyecto > 0)
             {
                 esNuevo = false;
                 idProyectoActual = FrmProyectos.proyecto.IdProyecto;
-
                 TxtMueble.Text = FrmProyectos.proyecto.NombreMueble;
                 CmbEstado.Text = FrmProyectos.proyecto.EstadoProyecto;
 
@@ -48,17 +39,13 @@ namespace ProyectoEquipo3
                     DtpFecha.Value = FrmProyectos.proyecto.FechaEstimadaFin.Value;
                 }
 
-                // Habilitar el panel de materiales para proyectos existentes
                 PanelMateriales.Enabled = true;
-
-                // Cargar materiales existentes
                 CargarMateriales();
             }
         }
 
         private void ConfigurarGridMateriales()
         {
-            // Configuración básica del DataGridView
             DtgMateriales.AutoGenerateColumns = true;
             DtgMateriales.AllowUserToAddRows = false;
             DtgMateriales.AllowUserToDeleteRows = false;
@@ -71,22 +58,15 @@ namespace ProyectoEquipo3
         {
             try
             {
-                // Limpiar el DataGridView
                 DtgMateriales.DataSource = null;
                 DtgMateriales.Columns.Clear();
-
-                // Obtener los materiales del proyecto
                 DataTable dtMateriales = mp.ObtenerMaterialesProyecto(idProyectoActual);
                 DtgMateriales.DataSource = dtMateriales;
-
-                // Ocultar columnas de IDs
                 if (DtgMateriales.Columns.Contains("IdProyectoMaterial"))
                     DtgMateriales.Columns["IdProyectoMaterial"].Visible = false;
 
                 if (DtgMateriales.Columns.Contains("IdMaterial"))
                     DtgMateriales.Columns["IdMaterial"].Visible = false;
-
-                // Agregar botón de eliminar
                 if (!DtgMateriales.Columns.Contains("BtnEliminar"))
                 {
                     DataGridViewButtonColumn btnEliminar = new DataGridViewButtonColumn();
@@ -101,10 +81,8 @@ namespace ProyectoEquipo3
                     DtgMateriales.Columns.Add(btnEliminar);
                 }
 
-                // Ajustar tamaño de columnas
                 DtgMateriales.AutoResizeColumns();
 
-                // Mostrar mensaje si no hay materiales
                 if (dtMateriales.Rows.Count == 0)
                 {
                     MessageBox.Show("No hay materiales agregados a este proyecto.\n" +
@@ -143,7 +121,6 @@ namespace ProyectoEquipo3
 
                 if (esNuevo)
                 {
-                    // Guardar proyecto nuevo
                     resultado = mp.GuardarProyecto(new Proyectos(
                         0,
                         TxtMueble.Text.Trim(),
@@ -154,7 +131,6 @@ namespace ProyectoEquipo3
 
                     if (resultado.StartsWith("OK"))
                     {
-                        // Extraer el ID del proyecto recién creado
                         string[] partes = resultado.Split('|');
                         idProyectoActual = int.Parse(partes[1]);
                         esNuevo = false;
@@ -163,10 +139,7 @@ namespace ProyectoEquipo3
                                       "Ahora puede agregar los materiales necesarios.",
                                       "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // Habilitar la sección de materiales
                         PanelMateriales.Enabled = true;
-
-                        BtnAgregarMaterial.Focus();
                     }
                     else
                     {
@@ -221,12 +194,10 @@ namespace ProyectoEquipo3
         private void DtgMateriales_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-
             try
             {
                 if (e.ColumnIndex >= 0 && DtgMateriales.Columns[e.ColumnIndex].Name == "BtnEliminar")
                 {
-                    // Verificar que la fila tenga datos
                     if (DtgMateriales.Rows[e.RowIndex].Cells["IdProyectoMaterial"].Value == null)
                     {
                         MessageBox.Show("No se puede eliminar esta fila.", "Error",
@@ -286,6 +257,5 @@ namespace ProyectoEquipo3
                 Close();
             }
         }
-
     }
 }

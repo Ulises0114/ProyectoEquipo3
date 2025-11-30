@@ -64,5 +64,19 @@ namespace ProyectoEquipo3
             this.Hide();
             //Close();
         }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+            LblBienvenido.Text = "Bienvenido " + Entidades.Usuarios.UsuarioLogueadoNombre;
+        }
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
