@@ -133,7 +133,58 @@ namespace ProyectoEquipo3
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            if (!esModificacion && CmbIdMueble.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un proyecto.", "Validación",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if (CmbEstado.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un estado.", "Validación",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                string resultado;
+
+                if (esModificacion)
+                {
+                    resultado = mp.ModificarEstado(
+                        Frm_Presupuesto.presupuesto.IdPresupuesto,
+                        CmbEstado.Text
+                    );
+                }
+                else
+                {
+                    int idProyecto = Convert.ToInt32(CmbIdMueble.SelectedValue);
+                    resultado = mp.GenerarPresupuesto(idProyecto, CmbEstado.Text);
+                }
+
+                if (resultado == "OK")
+                {
+                    MessageBox.Show(
+                        esModificacion ? "Presupuesto actualizado correctamente" : "Presupuesto generado correctamente",
+                        "Éxito",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show(resultado, "Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
