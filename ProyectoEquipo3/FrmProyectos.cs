@@ -165,6 +165,14 @@ namespace ProyectoEquipo3
             DtgDatos.AllowUserToDeleteRows = false;
             DtgDatos.ReadOnly = true;
             ConfigurarMenu();
+            if (!Usuarios.PuedeLeer("Proyectos"))
+            {
+                MessageBox.Show("No tienes permiso para ver este módulo.");
+                this.Close();
+                return;
+            }
+            bool tieneEscritura = Usuarios.PuedeEscribir("Usuarios");
+            BtnAgregar.Enabled = tieneEscritura;
         }
         private void ConfigurarMenu()
         {

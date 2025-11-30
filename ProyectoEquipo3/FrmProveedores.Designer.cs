@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProveedores));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.FlpAngosto = new System.Windows.Forms.FlowLayoutPanel();
             this.BtnMenu1 = new System.Windows.Forms.Button();
@@ -51,8 +51,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnMin = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
-            this.BtnRefresh = new RoundedButton();
-            this.roundedButton1 = new RoundedButton();
+            this.BtnBuscar = new RoundedButton();
+            this.BtnAgregar = new RoundedButton();
             this.TxtBusqueda = new System.Windows.Forms.TextBox();
             this.DtgDatos = new System.Windows.Forms.DataGridView();
             this.FlpAngosto.SuspendLayout();
@@ -101,6 +101,7 @@
             this.BtnMenu1.TabIndex = 0;
             this.BtnMenu1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnMenu1.UseVisualStyleBackColor = false;
+            this.BtnMenu1.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
             // BtnInventario1
             // 
@@ -116,10 +117,11 @@
             this.BtnInventario1.TabIndex = 1;
             this.BtnInventario1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnInventario1.UseVisualStyleBackColor = false;
+            this.BtnInventario1.Click += new System.EventHandler(this.BtnInventario_Click);
             // 
             // BtnProyectos1
             // 
-            this.BtnProyectos1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
+            this.BtnProyectos1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(134)))), ((int)(((byte)(105)))));
             this.BtnProyectos1.FlatAppearance.BorderSize = 0;
             this.BtnProyectos1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnProyectos1.Image = ((System.Drawing.Image)(resources.GetObject("BtnProyectos1.Image")));
@@ -131,10 +133,11 @@
             this.BtnProyectos1.TabIndex = 2;
             this.BtnProyectos1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnProyectos1.UseVisualStyleBackColor = false;
+            this.BtnProyectos1.Click += new System.EventHandler(this.BtnProyectos_Click);
             // 
             // BtnProveedores1
             // 
-            this.BtnProveedores1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(134)))), ((int)(((byte)(105)))));
+            this.BtnProveedores1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
             this.BtnProveedores1.FlatAppearance.BorderSize = 0;
             this.BtnProveedores1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnProveedores1.Image = ((System.Drawing.Image)(resources.GetObject("BtnProveedores1.Image")));
@@ -161,6 +164,7 @@
             this.BtnNotificaciones1.TabIndex = 4;
             this.BtnNotificaciones1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnNotificaciones1.UseVisualStyleBackColor = false;
+            this.BtnNotificaciones1.Click += new System.EventHandler(this.BtnNotificaciones_Click);
             // 
             // BtnPresupuesto1
             // 
@@ -176,6 +180,7 @@
             this.BtnPresupuesto1.TabIndex = 5;
             this.BtnPresupuesto1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnPresupuesto1.UseVisualStyleBackColor = false;
+            this.BtnPresupuesto1.Click += new System.EventHandler(this.BtnPresupuesto_Click);
             // 
             // BtnUsuarios1
             // 
@@ -191,6 +196,7 @@
             this.BtnUsuarios1.TabIndex = 6;
             this.BtnUsuarios1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnUsuarios1.UseVisualStyleBackColor = false;
+            this.BtnUsuarios1.Click += new System.EventHandler(this.BtnUsuarios_Click);
             // 
             // FlpAncho
             // 
@@ -250,7 +256,7 @@
             // 
             // BtnProyectos
             // 
-            this.BtnProyectos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
+            this.BtnProyectos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(134)))), ((int)(((byte)(105)))));
             this.BtnProyectos.FlatAppearance.BorderSize = 0;
             this.BtnProyectos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnProyectos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -269,7 +275,7 @@
             // 
             // BtnProveedores
             // 
-            this.BtnProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(134)))), ((int)(((byte)(105)))));
+            this.BtnProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
             this.BtnProveedores.FlatAppearance.BorderSize = 0;
             this.BtnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnProveedores.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -284,7 +290,6 @@
             this.BtnProveedores.Text = "     Proveedores";
             this.BtnProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnProveedores.UseVisualStyleBackColor = false;
-            this.BtnProveedores.Click += new System.EventHandler(this.BtnProveedores_Click);
             // 
             // BtnNotificaciones
             // 
@@ -379,61 +384,60 @@
             this.BtnCerrar.UseVisualStyleBackColor = false;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
-            // BtnRefresh
+            // BtnBuscar
             // 
-            this.BtnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.BtnRefresh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.BtnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnRefresh.BorderColor = System.Drawing.Color.Transparent;
-            this.BtnRefresh.BorderRadius = 20;
-            this.BtnRefresh.BorderSize = 1;
-            this.BtnRefresh.ButtonImage = null;
-            this.BtnRefresh.FlatAppearance.BorderSize = 0;
-            this.BtnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRefresh.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRefresh.ForeColor = System.Drawing.Color.White;
-            this.BtnRefresh.HoverColor = System.Drawing.Color.Silver;
-            this.BtnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnRefresh.ImagePadding = 0;
-            this.BtnRefresh.Location = new System.Drawing.Point(833, 102);
-            this.BtnRefresh.Margin = new System.Windows.Forms.Padding(5);
-            this.BtnRefresh.Name = "BtnRefresh";
-            this.BtnRefresh.PressedColor = System.Drawing.SystemColors.ControlDark;
-            this.BtnRefresh.Size = new System.Drawing.Size(131, 52);
-            this.BtnRefresh.TabIndex = 31;
-            this.BtnRefresh.Text = "Filtrar";
-            this.BtnRefresh.TextColor = System.Drawing.Color.White;
-            this.BtnRefresh.UseVisualStyleBackColor = false;
-            this.BtnRefresh.Click += new System.EventHandler(this.BtnBuscar_Click);
+            this.BtnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BtnBuscar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BtnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnBuscar.BorderColor = System.Drawing.Color.Transparent;
+            this.BtnBuscar.BorderRadius = 20;
+            this.BtnBuscar.BorderSize = 1;
+            this.BtnBuscar.ButtonImage = global::ProyectoEquipo3.Properties.Resources.icons8_filtrar_50;
+            this.BtnBuscar.FlatAppearance.BorderSize = 0;
+            this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuscar.ForeColor = System.Drawing.Color.White;
+            this.BtnBuscar.HoverColor = System.Drawing.Color.Silver;
+            this.BtnBuscar.ImagePadding = 10;
+            this.BtnBuscar.Location = new System.Drawing.Point(828, 101);
+            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.PressedColor = System.Drawing.SystemColors.ControlDark;
+            this.BtnBuscar.Size = new System.Drawing.Size(151, 52);
+            this.BtnBuscar.TabIndex = 31;
+            this.BtnBuscar.Text = "Filtrar";
+            this.BtnBuscar.TextColor = System.Drawing.Color.White;
+            this.BtnBuscar.UseVisualStyleBackColor = false;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
-            // roundedButton1
+            // BtnAgregar
             // 
-            this.roundedButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(185)))), ((int)(((byte)(116)))));
-            this.roundedButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(185)))), ((int)(((byte)(116)))));
-            this.roundedButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.roundedButton1.BorderRadius = 20;
-            this.roundedButton1.BorderSize = 1;
-            this.roundedButton1.ButtonImage = null;
-            this.roundedButton1.FlatAppearance.BorderSize = 0;
-            this.roundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButton1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButton1.ForeColor = System.Drawing.Color.White;
-            this.roundedButton1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(170)))), ((int)(((byte)(85)))));
-            this.roundedButton1.Location = new System.Drawing.Point(1081, 102);
-            this.roundedButton1.Margin = new System.Windows.Forms.Padding(5);
-            this.roundedButton1.Name = "roundedButton1";
-            this.roundedButton1.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(139)))), ((int)(((byte)(70)))));
-            this.roundedButton1.Size = new System.Drawing.Size(131, 52);
-            this.roundedButton1.TabIndex = 30;
-            this.roundedButton1.Text = "+ Agregar";
-            this.roundedButton1.TextColor = System.Drawing.Color.White;
-            this.roundedButton1.UseVisualStyleBackColor = false;
-            this.roundedButton1.Click += new System.EventHandler(this.BtnAgregar_Click);
+            this.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(185)))), ((int)(((byte)(116)))));
+            this.BtnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(185)))), ((int)(((byte)(116)))));
+            this.BtnAgregar.BorderColor = System.Drawing.Color.Transparent;
+            this.BtnAgregar.BorderRadius = 20;
+            this.BtnAgregar.BorderSize = 1;
+            this.BtnAgregar.ButtonImage = null;
+            this.BtnAgregar.FlatAppearance.BorderSize = 0;
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.ForeColor = System.Drawing.Color.White;
+            this.BtnAgregar.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(170)))), ((int)(((byte)(85)))));
+            this.BtnAgregar.Location = new System.Drawing.Point(1076, 101);
+            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(139)))), ((int)(((byte)(70)))));
+            this.BtnAgregar.Size = new System.Drawing.Size(131, 52);
+            this.BtnAgregar.TabIndex = 30;
+            this.BtnAgregar.Text = "+ Agregar";
+            this.BtnAgregar.TextColor = System.Drawing.Color.White;
+            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // TxtBusqueda
             // 
             this.TxtBusqueda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBusqueda.Location = new System.Drawing.Point(117, 114);
+            this.TxtBusqueda.Location = new System.Drawing.Point(112, 113);
             this.TxtBusqueda.Name = "TxtBusqueda";
             this.TxtBusqueda.Size = new System.Drawing.Size(708, 29);
             this.TxtBusqueda.TabIndex = 12;
@@ -448,25 +452,25 @@
             this.DtgDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(161)))), ((int)(((byte)(137)))));
             this.DtgDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DtgDatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(137)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DtgDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(137)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DtgDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(161)))), ((int)(((byte)(137)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(137)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DtgDatos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(161)))), ((int)(((byte)(137)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(137)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DtgDatos.DefaultCellStyle = dataGridViewCellStyle4;
             this.DtgDatos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(96)))), ((int)(((byte)(93)))));
-            this.DtgDatos.Location = new System.Drawing.Point(117, 195);
+            this.DtgDatos.Location = new System.Drawing.Point(112, 195);
             this.DtgDatos.Name = "DtgDatos";
             this.DtgDatos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.DtgDatos.RowHeadersVisible = false;
@@ -484,8 +488,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1254, 677);
             this.Controls.Add(this.DtgDatos);
-            this.Controls.Add(this.BtnRefresh);
-            this.Controls.Add(this.roundedButton1);
+            this.Controls.Add(this.BtnBuscar);
+            this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.FlpAngosto);
             this.Controls.Add(this.FlpAncho);
             this.Controls.Add(this.panel2);
@@ -527,8 +531,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnMin;
         private System.Windows.Forms.Button BtnCerrar;
-        private RoundedButton BtnRefresh;
-        private RoundedButton roundedButton1;
+        private RoundedButton BtnBuscar;
+        private RoundedButton BtnAgregar;
         private System.Windows.Forms.TextBox TxtBusqueda;
         private System.Windows.Forms.DataGridView DtgDatos;
     }

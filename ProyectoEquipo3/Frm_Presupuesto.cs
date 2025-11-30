@@ -187,6 +187,20 @@ namespace ProyectoEquipo3
         private void Frm_Presupuesto_Load(object sender, EventArgs e)
         {
             ConfigurarMenu();
+            if (!Usuarios.PuedeLeer("Presupuestos"))
+            {
+                MessageBox.Show("No tienes permiso para ver este módulo.");
+                Close();
+                FrmMenu fm = new FrmMenu();
+                fm.Show();
+                return;
+            }
+            bool tieneEscritura = Usuarios.PuedeEscribir("Usuarios");
+            BtnAgregar.Enabled = tieneEscritura;
+            if (!tieneEscritura)
+            {
+                DgvPresupuesto.Enabled = false;
+            }
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)

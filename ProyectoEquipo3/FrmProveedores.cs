@@ -44,6 +44,20 @@ namespace ProyectoEquipo3
         {
             m.Mostrar("select * from Proveedores", DtgDatos, "Proveedores");
             ConfigurarMenu();
+            if (!Usuarios.PuedeLeer("Proveedores"))
+            {
+                MessageBox.Show("No tienes permiso para ver este módulo.");
+                Close();
+                FrmMenu fm = new FrmMenu();
+                fm.Show();
+                return;
+            }
+            bool tieneEscritura = Usuarios.PuedeEscribir("Usuarios");
+            BtnAgregar.Enabled = tieneEscritura;
+            if (!tieneEscritura)
+            {
+                DtgDatos.Enabled = false;
+            }
         }
 
         private void DtgDatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -136,11 +150,6 @@ namespace ProyectoEquipo3
             FrmProyectos fp = new FrmProyectos();
             fp.Show();
             Close();
-        }
-
-        private void BtnProveedores_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void BtnNotificaciones_Click(object sender, EventArgs e)

@@ -6,6 +6,7 @@ using Manejadores;
 using ProyectoEquipo3.Controls;
 using Manejadores;
 using System.Threading.Tasks;
+using Entidades;
 
 namespace ProyectoEquipo3
 {
@@ -27,6 +28,16 @@ namespace ProyectoEquipo3
         {
             RefrescarTodo();
             ConfigurarMenu();
+            if (!Usuarios.PuedeLeer("Notificaciones"))
+            {
+                MessageBox.Show("No tienes permiso para ver este módulo.");
+                Close();
+                FrmMenu fm = new FrmMenu();
+                fm.Show();
+                return;
+            }
+            bool tieneEscritura = Usuarios.PuedeEscribir("Usuarios");
+            btnProgramarNotificacion.Enabled = tieneEscritura;
         }
 
         private void RefrescarTodo()

@@ -37,7 +37,7 @@ namespace ProyectoEquipo3
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            mu.Mostrar($"select * from Usuarios where NombreUsuario like '%{TxtBuscar.Text}%'", dtgDatosUsuarios, "usuarios");
+            mu.Mostrar($"select * from Usuarios", dtgDatosUsuarios, "usuarios");
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -62,6 +62,7 @@ namespace ProyectoEquipo3
 
         private void FrmUsuarios_Load(object sender, EventArgs e)
         {
+            mu.Mostrar("select * from Usuarios", dtgDatosUsuarios, "usuarios");
             ConfigurarMenu();
             if (!Usuarios.PuedeLeer("Usuarios"))
             {
@@ -73,6 +74,14 @@ namespace ProyectoEquipo3
             btnAgregar.Enabled = tieneEscritura;
             btnEditar.Enabled = tieneEscritura;
             btnEliminar.Enabled = tieneEscritura;
+            if (tieneEscritura)
+            {
+                LblMiembro.ForeColor = Color.FromKnownColor(KnownColor.ButtonShadow);
+            }
+            else
+            {
+                LblAdmin.ForeColor = Color.FromKnownColor(KnownColor.ButtonShadow);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -170,6 +179,16 @@ namespace ProyectoEquipo3
                     }));
                 }
             });
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void dtgDatosUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)

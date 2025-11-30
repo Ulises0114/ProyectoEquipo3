@@ -58,7 +58,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnMin = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
-            this.btnRefrescarNotificaciones = new System.Windows.Forms.Button();
+            this.btnRefrescarNotificaciones = new RoundedButton();
             this.btnProgramarNotificacion = new RoundedButton();
             this.panelSistemaContainer.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -72,10 +72,11 @@
             // 
             this.panelSistemaContainer.Controls.Add(this.flpNotificacionesSistema);
             this.panelSistemaContainer.Controls.Add(this.lblTituloSistema);
-            this.panelSistemaContainer.Location = new System.Drawing.Point(251, 143);
-            this.panelSistemaContainer.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panelSistemaContainer.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelSistemaContainer.Location = new System.Drawing.Point(157, 143);
+            this.panelSistemaContainer.Margin = new System.Windows.Forms.Padding(10);
             this.panelSistemaContainer.Name = "panelSistemaContainer";
-            this.panelSistemaContainer.Size = new System.Drawing.Size(405, 563);
+            this.panelSistemaContainer.Size = new System.Drawing.Size(490, 514);
             this.panelSistemaContainer.TabIndex = 2;
             // 
             // flpNotificacionesSistema
@@ -88,7 +89,7 @@
             this.flpNotificacionesSistema.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.flpNotificacionesSistema.Name = "flpNotificacionesSistema";
             this.flpNotificacionesSistema.Padding = new System.Windows.Forms.Padding(6);
-            this.flpNotificacionesSistema.Size = new System.Drawing.Size(405, 543);
+            this.flpNotificacionesSistema.Size = new System.Drawing.Size(490, 494);
             this.flpNotificacionesSistema.TabIndex = 1;
             this.flpNotificacionesSistema.WrapContents = false;
             // 
@@ -108,10 +109,11 @@
             // 
             this.panel1.Controls.Add(this.flpProgramadas);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(661, 143);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(667, 144);
+            this.panel1.Margin = new System.Windows.Forms.Padding(10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(405, 563);
+            this.panel1.Size = new System.Drawing.Size(490, 514);
             this.panel1.TabIndex = 3;
             // 
             // flpProgramadas
@@ -124,7 +126,7 @@
             this.flpProgramadas.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.flpProgramadas.Name = "flpProgramadas";
             this.flpProgramadas.Padding = new System.Windows.Forms.Padding(6);
-            this.flpProgramadas.Size = new System.Drawing.Size(405, 543);
+            this.flpProgramadas.Size = new System.Drawing.Size(490, 494);
             this.flpProgramadas.TabIndex = 1;
             this.flpProgramadas.WrapContents = false;
             // 
@@ -143,7 +145,7 @@
             // dgvProgramadas
             // 
             this.dgvProgramadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProgramadas.Location = new System.Drawing.Point(628, 60);
+            this.dgvProgramadas.Location = new System.Drawing.Point(950, 87);
             this.dgvProgramadas.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvProgramadas.Name = "dgvProgramadas";
             this.dgvProgramadas.RowHeadersWidth = 51;
@@ -454,6 +456,7 @@
             // BtnMin
             // 
             this.BtnMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(132)))));
+            this.BtnMin.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.icons8_minimizar_50;
             this.BtnMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnMin.Location = new System.Drawing.Point(1164, 10);
             this.BtnMin.Name = "BtnMin";
@@ -465,6 +468,7 @@
             // BtnCerrar
             // 
             this.BtnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.BtnCerrar.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.icons8_x_48;
             this.BtnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnCerrar.Location = new System.Drawing.Point(1207, 10);
             this.BtnCerrar.Name = "BtnCerrar";
@@ -475,35 +479,49 @@
             // 
             // btnRefrescarNotificaciones
             // 
-            this.btnRefrescarNotificaciones.BackColor = System.Drawing.Color.Silver;
-            this.btnRefrescarNotificaciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnRefrescarNotificaciones.Location = new System.Drawing.Point(827, 72);
-            this.btnRefrescarNotificaciones.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRefrescarNotificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnRefrescarNotificaciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnRefrescarNotificaciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefrescarNotificaciones.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRefrescarNotificaciones.BorderRadius = 20;
+            this.btnRefrescarNotificaciones.BorderSize = 1;
+            this.btnRefrescarNotificaciones.ButtonImage = global::ProyectoEquipo3.Properties.Resources.icons8_repetir_50;
+            this.btnRefrescarNotificaciones.FlatAppearance.BorderSize = 0;
+            this.btnRefrescarNotificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefrescarNotificaciones.ForeColor = System.Drawing.Color.White;
+            this.btnRefrescarNotificaciones.HoverColor = System.Drawing.Color.Silver;
+            this.btnRefrescarNotificaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRefrescarNotificaciones.ImagePadding = 0;
+            this.btnRefrescarNotificaciones.Location = new System.Drawing.Point(1021, 72);
+            this.btnRefrescarNotificaciones.Margin = new System.Windows.Forms.Padding(5);
             this.btnRefrescarNotificaciones.Name = "btnRefrescarNotificaciones";
-            this.btnRefrescarNotificaciones.Size = new System.Drawing.Size(53, 52);
-            this.btnRefrescarNotificaciones.TabIndex = 27;
+            this.btnRefrescarNotificaciones.PressedColor = System.Drawing.SystemColors.ControlDark;
+            this.btnRefrescarNotificaciones.Size = new System.Drawing.Size(60, 52);
+            this.btnRefrescarNotificaciones.TabIndex = 28;
+            this.btnRefrescarNotificaciones.TextColor = System.Drawing.Color.White;
             this.btnRefrescarNotificaciones.UseVisualStyleBackColor = false;
             this.btnRefrescarNotificaciones.Click += new System.EventHandler(this.BtnRefrescarNotificaciones_Click);
             // 
             // btnProgramarNotificacion
             // 
-            this.btnProgramarNotificacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
-            this.btnProgramarNotificacion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
+            this.btnProgramarNotificacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(185)))), ((int)(((byte)(116)))));
+            this.btnProgramarNotificacion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(185)))), ((int)(((byte)(116)))));
             this.btnProgramarNotificacion.BorderColor = System.Drawing.Color.Transparent;
             this.btnProgramarNotificacion.BorderRadius = 20;
             this.btnProgramarNotificacion.BorderSize = 1;
             this.btnProgramarNotificacion.ButtonImage = null;
             this.btnProgramarNotificacion.FlatAppearance.BorderSize = 0;
             this.btnProgramarNotificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProgramarNotificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProgramarNotificacion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProgramarNotificacion.ForeColor = System.Drawing.Color.White;
-            this.btnProgramarNotificacion.HoverColor = System.Drawing.Color.LightBlue;
-            this.btnProgramarNotificacion.Location = new System.Drawing.Point(885, 72);
+            this.btnProgramarNotificacion.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(170)))), ((int)(((byte)(85)))));
+            this.btnProgramarNotificacion.Location = new System.Drawing.Point(1091, 72);
+            this.btnProgramarNotificacion.Margin = new System.Windows.Forms.Padding(5);
             this.btnProgramarNotificacion.Name = "btnProgramarNotificacion";
-            this.btnProgramarNotificacion.PressedColor = System.Drawing.Color.DodgerBlue;
-            this.btnProgramarNotificacion.Size = new System.Drawing.Size(181, 52);
-            this.btnProgramarNotificacion.TabIndex = 28;
-            this.btnProgramarNotificacion.Text = "+ Programar notificación";
+            this.btnProgramarNotificacion.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(139)))), ((int)(((byte)(70)))));
+            this.btnProgramarNotificacion.Size = new System.Drawing.Size(131, 52);
+            this.btnProgramarNotificacion.TabIndex = 27;
+            this.btnProgramarNotificacion.Text = "+ Programar notificacion";
             this.btnProgramarNotificacion.TextColor = System.Drawing.Color.White;
             this.btnProgramarNotificacion.UseVisualStyleBackColor = false;
             this.btnProgramarNotificacion.Click += new System.EventHandler(this.btnProgramarNotificacion_Click_1);
@@ -512,17 +530,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.Group_291;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1254, 677);
-            this.Controls.Add(this.btnProgramarNotificacion);
-            this.Controls.Add(this.btnRefrescarNotificaciones);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelSistemaContainer);
             this.Controls.Add(this.FlpAngosto);
             this.Controls.Add(this.FlpAncho);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvProgramadas);
             this.Controls.Add(this.lblBadgeCount);
-            this.Controls.Add(this.panelSistemaContainer);
+            this.Controls.Add(this.btnRefrescarNotificaciones);
+            this.Controls.Add(this.btnProgramarNotificacion);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -572,7 +591,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnMin;
         private System.Windows.Forms.Button BtnCerrar;
-        private System.Windows.Forms.Button btnRefrescarNotificaciones;
+        private RoundedButton btnRefrescarNotificaciones;
         private RoundedButton btnProgramarNotificacion;
     }
 }

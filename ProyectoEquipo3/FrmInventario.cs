@@ -93,6 +93,14 @@ namespace ProyectoEquipo3
             CargarGaleria();
             ConfigurarMenu();
             //ConfigurarBotones();
+            if (!Usuarios.PuedeLeer("Inventario"))
+            {
+                MessageBox.Show("No tienes permiso para ver este módulo.");
+                this.Close();
+                return;
+            }
+            bool tieneEscritura = Usuarios.PuedeEscribir("Usuarios");
+            btnAgregar.Enabled = tieneEscritura;
         }
 
         private void CargarGaleria()

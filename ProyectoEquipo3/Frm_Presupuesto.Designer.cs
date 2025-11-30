@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Presupuesto));
-            this.DgvPresupuesto = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtBuscarPresupuesto = new System.Windows.Forms.TextBox();
-            this.BtnAgregar = new System.Windows.Forms.Button();
-            this.BtnFiltrar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.FlpAngosto = new System.Windows.Forms.FlowLayoutPanel();
             this.BtnMenu1 = new System.Windows.Forms.Button();
             this.BtnInventario1 = new System.Windows.Forms.Button();
@@ -55,81 +51,22 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnMin = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvPresupuesto)).BeginInit();
+            this.DgvPresupuesto = new System.Windows.Forms.DataGridView();
+            this.BtnAgregar = new RoundedButton();
+            this.BtnRefresh = new RoundedButton();
             this.FlpAngosto.SuspendLayout();
             this.FlpAncho.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvPresupuesto)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DgvPresupuesto
-            // 
-            this.DgvPresupuesto.AllowUserToAddRows = false;
-            this.DgvPresupuesto.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(161)))), ((int)(((byte)(137)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvPresupuesto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DgvPresupuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(161)))), ((int)(((byte)(137)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvPresupuesto.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DgvPresupuesto.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(96)))), ((int)(((byte)(93)))));
-            this.DgvPresupuesto.Location = new System.Drawing.Point(84, 232);
-            this.DgvPresupuesto.Name = "DgvPresupuesto";
-            this.DgvPresupuesto.ReadOnly = true;
-            this.DgvPresupuesto.RowHeadersWidth = 51;
-            this.DgvPresupuesto.RowTemplate.Height = 24;
-            this.DgvPresupuesto.Size = new System.Drawing.Size(1133, 422);
-            this.DgvPresupuesto.TabIndex = 0;
-            this.DgvPresupuesto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPresupuesto_CellClick);
             // 
             // TxtBuscarPresupuesto
             // 
-            this.TxtBuscarPresupuesto.Location = new System.Drawing.Point(84, 178);
+            this.TxtBuscarPresupuesto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
+            this.TxtBuscarPresupuesto.Location = new System.Drawing.Point(112, 113);
             this.TxtBuscarPresupuesto.Name = "TxtBuscarPresupuesto";
-            this.TxtBuscarPresupuesto.Size = new System.Drawing.Size(713, 26);
+            this.TxtBuscarPresupuesto.Size = new System.Drawing.Size(708, 29);
             this.TxtBuscarPresupuesto.TabIndex = 1;
-            // 
-            // BtnAgregar
-            // 
-            this.BtnAgregar.BackColor = System.Drawing.Color.LightGreen;
-            this.BtnAgregar.Location = new System.Drawing.Point(858, 169);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(119, 37);
-            this.BtnAgregar.TabIndex = 2;
-            this.BtnAgregar.Text = "+ Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = false;
-            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
-            // 
-            // BtnFiltrar
-            // 
-            this.BtnFiltrar.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.BtnFiltrar.Location = new System.Drawing.Point(996, 168);
-            this.BtnFiltrar.Name = "BtnFiltrar";
-            this.BtnFiltrar.Size = new System.Drawing.Size(119, 38);
-            this.BtnFiltrar.TabIndex = 3;
-            this.BtnFiltrar.Text = "Filtrar";
-            this.BtnFiltrar.UseVisualStyleBackColor = false;
-            this.BtnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(213, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 44);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "PRESUPUESTO";
             // 
             // FlpAngosto
             // 
@@ -444,6 +381,93 @@
             this.BtnCerrar.UseVisualStyleBackColor = false;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
+            // DgvPresupuesto
+            // 
+            this.DgvPresupuesto.AllowUserToAddRows = false;
+            this.DgvPresupuesto.AllowUserToDeleteRows = false;
+            this.DgvPresupuesto.AllowUserToResizeColumns = false;
+            this.DgvPresupuesto.AllowUserToResizeRows = false;
+            this.DgvPresupuesto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvPresupuesto.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(161)))), ((int)(((byte)(137)))));
+            this.DgvPresupuesto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DgvPresupuesto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(137)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvPresupuesto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DgvPresupuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(161)))), ((int)(((byte)(137)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(137)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvPresupuesto.DefaultCellStyle = dataGridViewCellStyle4;
+            this.DgvPresupuesto.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(96)))), ((int)(((byte)(93)))));
+            this.DgvPresupuesto.Location = new System.Drawing.Point(112, 195);
+            this.DgvPresupuesto.Name = "DgvPresupuesto";
+            this.DgvPresupuesto.ReadOnly = true;
+            this.DgvPresupuesto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DgvPresupuesto.RowHeadersVisible = false;
+            this.DgvPresupuesto.Size = new System.Drawing.Size(1095, 450);
+            this.DgvPresupuesto.TabIndex = 36;
+            this.DgvPresupuesto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPresupuesto_CellClick);
+            // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(185)))), ((int)(((byte)(116)))));
+            this.BtnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(185)))), ((int)(((byte)(116)))));
+            this.BtnAgregar.BorderColor = System.Drawing.Color.Transparent;
+            this.BtnAgregar.BorderRadius = 20;
+            this.BtnAgregar.BorderSize = 1;
+            this.BtnAgregar.ButtonImage = null;
+            this.BtnAgregar.FlatAppearance.BorderSize = 0;
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.ForeColor = System.Drawing.Color.White;
+            this.BtnAgregar.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(170)))), ((int)(((byte)(85)))));
+            this.BtnAgregar.Location = new System.Drawing.Point(1076, 101);
+            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(139)))), ((int)(((byte)(70)))));
+            this.BtnAgregar.Size = new System.Drawing.Size(131, 52);
+            this.BtnAgregar.TabIndex = 34;
+            this.BtnAgregar.Text = "+ Agregar";
+            this.BtnAgregar.TextColor = System.Drawing.Color.White;
+            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // BtnRefresh
+            // 
+            this.BtnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BtnRefresh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BtnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnRefresh.BorderColor = System.Drawing.Color.Transparent;
+            this.BtnRefresh.BorderRadius = 20;
+            this.BtnRefresh.BorderSize = 1;
+            this.BtnRefresh.ButtonImage = global::ProyectoEquipo3.Properties.Resources.icons8_filtrar_50;
+            this.BtnRefresh.FlatAppearance.BorderSize = 0;
+            this.BtnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRefresh.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRefresh.ForeColor = System.Drawing.Color.White;
+            this.BtnRefresh.HoverColor = System.Drawing.Color.Silver;
+            this.BtnRefresh.ImagePadding = 10;
+            this.BtnRefresh.Location = new System.Drawing.Point(828, 101);
+            this.BtnRefresh.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnRefresh.Name = "BtnRefresh";
+            this.BtnRefresh.PressedColor = System.Drawing.SystemColors.ControlDark;
+            this.BtnRefresh.Size = new System.Drawing.Size(151, 52);
+            this.BtnRefresh.TabIndex = 37;
+            this.BtnRefresh.Text = "Filtrar";
+            this.BtnRefresh.TextColor = System.Drawing.Color.White;
+            this.BtnRefresh.UseVisualStyleBackColor = false;
+            this.BtnRefresh.Click += new System.EventHandler(this.BtnFiltrar_Click);
+            // 
             // Frm_Presupuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -452,14 +476,13 @@
             this.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.Group_291;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1254, 677);
+            this.Controls.Add(this.BtnRefresh);
+            this.Controls.Add(this.DgvPresupuesto);
+            this.Controls.Add(this.TxtBuscarPresupuesto);
+            this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.FlpAngosto);
             this.Controls.Add(this.FlpAncho);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.BtnFiltrar);
-            this.Controls.Add(this.BtnAgregar);
-            this.Controls.Add(this.TxtBuscarPresupuesto);
-            this.Controls.Add(this.DgvPresupuesto);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -469,22 +492,17 @@
             this.Text = "Frm_Presupuesto";
             this.Load += new System.EventHandler(this.Frm_Presupuesto_Load);
             this.Click += new System.EventHandler(this.BtnUsuarios_Click);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvPresupuesto)).EndInit();
             this.FlpAngosto.ResumeLayout(false);
             this.FlpAncho.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvPresupuesto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView DgvPresupuesto;
         private System.Windows.Forms.TextBox TxtBuscarPresupuesto;
-        private System.Windows.Forms.Button BtnAgregar;
-        private System.Windows.Forms.Button BtnFiltrar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel FlpAngosto;
         private System.Windows.Forms.Button BtnMenu1;
         private System.Windows.Forms.Button BtnInventario1;
@@ -504,5 +522,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnMin;
         private System.Windows.Forms.Button BtnCerrar;
+        private System.Windows.Forms.DataGridView DgvPresupuesto;
+        private RoundedButton BtnAgregar;
+        private RoundedButton BtnRefresh;
     }
 }

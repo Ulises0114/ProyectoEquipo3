@@ -45,7 +45,7 @@
             // 
             this.CmbMaterial.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbMaterial.FormattingEnabled = true;
-            this.CmbMaterial.Location = new System.Drawing.Point(42, 52);
+            this.CmbMaterial.Location = new System.Drawing.Point(41, 52);
             this.CmbMaterial.Name = "CmbMaterial";
             this.CmbMaterial.Size = new System.Drawing.Size(219, 26);
             this.CmbMaterial.TabIndex = 0;
@@ -54,7 +54,7 @@
             // TxtUnidad
             // 
             this.TxtUnidad.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtUnidad.Location = new System.Drawing.Point(42, 183);
+            this.TxtUnidad.Location = new System.Drawing.Point(41, 183);
             this.TxtUnidad.Name = "TxtUnidad";
             this.TxtUnidad.ReadOnly = true;
             this.TxtUnidad.Size = new System.Drawing.Size(151, 26);
@@ -63,16 +63,17 @@
             // TxtCantidad
             // 
             this.TxtCantidad.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCantidad.Location = new System.Drawing.Point(42, 118);
+            this.TxtCantidad.Location = new System.Drawing.Point(41, 118);
             this.TxtCantidad.Name = "TxtCantidad";
             this.TxtCantidad.Size = new System.Drawing.Size(151, 26);
             this.TxtCantidad.TabIndex = 1;
+            this.TxtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantidad_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 31);
+            this.label1.Location = new System.Drawing.Point(41, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 18);
             this.label1.TabIndex = 2;
@@ -82,7 +83,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 97);
+            this.label2.Location = new System.Drawing.Point(41, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 18);
             this.label2.TabIndex = 2;
@@ -92,7 +93,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 162);
+            this.label3.Location = new System.Drawing.Point(41, 162);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(148, 18);
             this.label3.TabIndex = 2;
