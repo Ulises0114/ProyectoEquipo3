@@ -47,7 +47,7 @@
             this.CmbMaterial.FormattingEnabled = true;
             this.CmbMaterial.Location = new System.Drawing.Point(41, 52);
             this.CmbMaterial.Name = "CmbMaterial";
-            this.CmbMaterial.Size = new System.Drawing.Size(219, 26);
+            this.CmbMaterial.Size = new System.Drawing.Size(219, 31);
             this.CmbMaterial.TabIndex = 0;
             this.CmbMaterial.SelectedIndexChanged += new System.EventHandler(this.CmbMaterial_SelectedIndexChanged);
             // 
@@ -57,7 +57,7 @@
             this.TxtUnidad.Location = new System.Drawing.Point(41, 183);
             this.TxtUnidad.Name = "TxtUnidad";
             this.TxtUnidad.ReadOnly = true;
-            this.TxtUnidad.Size = new System.Drawing.Size(151, 26);
+            this.TxtUnidad.Size = new System.Drawing.Size(151, 31);
             this.TxtUnidad.TabIndex = 1;
             // 
             // TxtCantidad
@@ -65,7 +65,7 @@
             this.TxtCantidad.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCantidad.Location = new System.Drawing.Point(41, 118);
             this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(151, 26);
+            this.TxtCantidad.Size = new System.Drawing.Size(151, 31);
             this.TxtCantidad.TabIndex = 1;
             this.TxtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantidad_KeyPress);
             // 
@@ -75,7 +75,7 @@
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(41, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 18);
+            this.label1.Size = new System.Drawing.Size(89, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "Material";
             // 
@@ -85,7 +85,7 @@
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(41, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 18);
+            this.label2.Size = new System.Drawing.Size(96, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "cantidad";
             // 
@@ -95,7 +95,7 @@
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(41, 162);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 18);
+            this.label3.Size = new System.Drawing.Size(185, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "unidad de medida";
             // 
@@ -149,7 +149,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.BtnCancelar);
             this.panel1.Controls.Add(this.BtnGuardar);

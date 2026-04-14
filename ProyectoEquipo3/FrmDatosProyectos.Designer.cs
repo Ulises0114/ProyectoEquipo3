@@ -36,11 +36,11 @@
             this.DtpFecha = new System.Windows.Forms.DateTimePicker();
             this.DtgMateriales = new System.Windows.Forms.DataGridView();
             this.PanelMateriales = new System.Windows.Forms.Panel();
+            this.BtnAgregarMaterial = new RoundedButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.BtnCancelar = new RoundedButton();
             this.BtnGuardar = new RoundedButton();
-            this.BtnAgregarMaterial = new RoundedButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.DtgMateriales)).BeginInit();
             this.PanelMateriales.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -53,7 +53,7 @@
             this.label1.Location = new System.Drawing.Point(33, 32);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 18);
+            this.label1.Size = new System.Drawing.Size(201, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre del mueble";
             // 
@@ -70,7 +70,7 @@
             this.CmbEstado.Location = new System.Drawing.Point(33, 153);
             this.CmbEstado.Margin = new System.Windows.Forms.Padding(2);
             this.CmbEstado.Name = "CmbEstado";
-            this.CmbEstado.Size = new System.Drawing.Size(176, 26);
+            this.CmbEstado.Size = new System.Drawing.Size(176, 31);
             this.CmbEstado.TabIndex = 20;
             // 
             // label5
@@ -80,7 +80,7 @@
             this.label5.Location = new System.Drawing.Point(33, 133);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 18);
+            this.label5.Size = new System.Drawing.Size(171, 23);
             this.label5.TabIndex = 19;
             this.label5.Text = "Estado Proyecto";
             // 
@@ -90,7 +90,7 @@
             this.TxtMueble.Location = new System.Drawing.Point(33, 52);
             this.TxtMueble.Margin = new System.Windows.Forms.Padding(2);
             this.TxtMueble.Name = "TxtMueble";
-            this.TxtMueble.Size = new System.Drawing.Size(176, 26);
+            this.TxtMueble.Size = new System.Drawing.Size(176, 31);
             this.TxtMueble.TabIndex = 22;
             // 
             // label6
@@ -100,7 +100,7 @@
             this.label6.Location = new System.Drawing.Point(33, 232);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(136, 18);
+            this.label6.Size = new System.Drawing.Size(166, 23);
             this.label6.TabIndex = 24;
             this.label6.Text = "Fecha Estimada";
             // 
@@ -109,7 +109,7 @@
             this.DtpFecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpFecha.Location = new System.Drawing.Point(33, 277);
             this.DtpFecha.Name = "DtpFecha";
-            this.DtpFecha.Size = new System.Drawing.Size(176, 26);
+            this.DtpFecha.Size = new System.Drawing.Size(176, 31);
             this.DtpFecha.TabIndex = 27;
             // 
             // DtgMateriales
@@ -117,6 +117,7 @@
             this.DtgMateriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtgMateriales.Location = new System.Drawing.Point(12, 21);
             this.DtgMateriales.Name = "DtgMateriales";
+            this.DtgMateriales.RowHeadersWidth = 51;
             this.DtgMateriales.Size = new System.Drawing.Size(373, 211);
             this.DtgMateriales.TabIndex = 28;
             this.DtgMateriales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgMateriales_CellClick);
@@ -131,9 +132,33 @@
             this.PanelMateriales.Size = new System.Drawing.Size(398, 322);
             this.PanelMateriales.TabIndex = 30;
             // 
+            // BtnAgregarMaterial
+            // 
+            this.BtnAgregarMaterial.BackColor = System.Drawing.SystemColors.Window;
+            this.BtnAgregarMaterial.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.BtnAgregarMaterial.BorderColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BtnAgregarMaterial.BorderRadius = 20;
+            this.BtnAgregarMaterial.BorderSize = 2;
+            this.BtnAgregarMaterial.ButtonImage = null;
+            this.BtnAgregarMaterial.FlatAppearance.BorderSize = 0;
+            this.BtnAgregarMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregarMaterial.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregarMaterial.ForeColor = System.Drawing.Color.Gray;
+            this.BtnAgregarMaterial.HoverColor = System.Drawing.SystemColors.Control;
+            this.BtnAgregarMaterial.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnAgregarMaterial.Location = new System.Drawing.Point(284, 249);
+            this.BtnAgregarMaterial.Name = "BtnAgregarMaterial";
+            this.BtnAgregarMaterial.PressedColor = System.Drawing.SystemColors.ControlDark;
+            this.BtnAgregarMaterial.Size = new System.Drawing.Size(101, 41);
+            this.BtnAgregarMaterial.TabIndex = 43;
+            this.BtnAgregarMaterial.Text = "Agregar\r\nmaterial\r\n";
+            this.BtnAgregarMaterial.TextColor = System.Drawing.Color.Gray;
+            this.BtnAgregarMaterial.UseVisualStyleBackColor = false;
+            this.BtnAgregarMaterial.Click += new System.EventHandler(this.BtnAgregarMaterial_Click);
+            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.BtnCancelar);
             this.panel1.Controls.Add(this.BtnGuardar);
@@ -148,14 +173,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(660, 450);
             this.panel1.TabIndex = 31;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.Location = new System.Drawing.Point(5, 5);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(660, 450);
-            this.panel2.TabIndex = 32;
             // 
             // BtnCancelar
             // 
@@ -205,29 +222,13 @@
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
-            // BtnAgregarMaterial
+            // panel2
             // 
-            this.BtnAgregarMaterial.BackColor = System.Drawing.SystemColors.Window;
-            this.BtnAgregarMaterial.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.BtnAgregarMaterial.BorderColor = System.Drawing.SystemColors.ButtonShadow;
-            this.BtnAgregarMaterial.BorderRadius = 20;
-            this.BtnAgregarMaterial.BorderSize = 2;
-            this.BtnAgregarMaterial.ButtonImage = null;
-            this.BtnAgregarMaterial.FlatAppearance.BorderSize = 0;
-            this.BtnAgregarMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarMaterial.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregarMaterial.ForeColor = System.Drawing.Color.Gray;
-            this.BtnAgregarMaterial.HoverColor = System.Drawing.SystemColors.Control;
-            this.BtnAgregarMaterial.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnAgregarMaterial.Location = new System.Drawing.Point(284, 249);
-            this.BtnAgregarMaterial.Name = "BtnAgregarMaterial";
-            this.BtnAgregarMaterial.PressedColor = System.Drawing.SystemColors.ControlDark;
-            this.BtnAgregarMaterial.Size = new System.Drawing.Size(101, 41);
-            this.BtnAgregarMaterial.TabIndex = 43;
-            this.BtnAgregarMaterial.Text = "Agregar\r\nmaterial\r\n";
-            this.BtnAgregarMaterial.TextColor = System.Drawing.Color.Gray;
-            this.BtnAgregarMaterial.UseVisualStyleBackColor = false;
-            this.BtnAgregarMaterial.Click += new System.EventHandler(this.BtnAgregarMaterial_Click);
+            this.panel2.BackColor = System.Drawing.Color.DimGray;
+            this.panel2.Location = new System.Drawing.Point(5, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(660, 450);
+            this.panel2.TabIndex = 32;
             // 
             // FrmDatosProyectos
             // 

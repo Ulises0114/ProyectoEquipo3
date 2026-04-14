@@ -46,7 +46,7 @@
             this.label1.Location = new System.Drawing.Point(35, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 18);
+            this.label1.Size = new System.Drawing.Size(136, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fecha y hora";
             // 
@@ -59,7 +59,7 @@
             this.dtpFechaNotificacion.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaNotificacion.Name = "dtpFechaNotificacion";
             this.dtpFechaNotificacion.ShowUpDown = true;
-            this.dtpFechaNotificacion.Size = new System.Drawing.Size(260, 26);
+            this.dtpFechaNotificacion.Size = new System.Drawing.Size(260, 31);
             this.dtpFechaNotificacion.TabIndex = 1;
             this.dtpFechaNotificacion.Value = new System.DateTime(2025, 11, 21, 12, 16, 8, 0);
             // 
@@ -70,7 +70,7 @@
             this.label2.Location = new System.Drawing.Point(35, 85);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 18);
+            this.label2.Size = new System.Drawing.Size(63, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Aviso";
             // 

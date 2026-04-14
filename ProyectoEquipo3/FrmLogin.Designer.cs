@@ -31,13 +31,13 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnMin = new System.Windows.Forms.Button();
+            this.BtnCerrar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.roundedButton1 = new RoundedButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.BtnMin = new System.Windows.Forms.Button();
-            this.BtnCerrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
@@ -55,7 +55,7 @@
             this.txtUsuario.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.txtUsuario.Location = new System.Drawing.Point(856, 351);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(373, 26);
+            this.txtUsuario.Size = new System.Drawing.Size(373, 30);
             this.txtUsuario.TabIndex = 1;
             this.txtUsuario.Text = "Usuario";
             this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
@@ -66,7 +66,7 @@
             this.txtClave.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.txtClave.Location = new System.Drawing.Point(856, 416);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(373, 26);
+            this.txtClave.Size = new System.Drawing.Size(373, 30);
             this.txtClave.TabIndex = 2;
             this.txtClave.Text = "Contraseña";
             this.txtClave.Enter += new System.EventHandler(this.txtClave_Enter);
@@ -83,6 +83,30 @@
             this.panel2.Size = new System.Drawing.Size(1254, 54);
             this.panel2.TabIndex = 25;
             // 
+            // BtnMin
+            // 
+            this.BtnMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(132)))));
+            this.BtnMin.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.icons8_minimizar_50;
+            this.BtnMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnMin.Location = new System.Drawing.Point(1164, 10);
+            this.BtnMin.Name = "BtnMin";
+            this.BtnMin.Size = new System.Drawing.Size(35, 35);
+            this.BtnMin.TabIndex = 1;
+            this.BtnMin.UseVisualStyleBackColor = false;
+            this.BtnMin.Click += new System.EventHandler(this.BtnMin_Click);
+            // 
+            // BtnCerrar
+            // 
+            this.BtnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.BtnCerrar.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.icons8_x_48;
+            this.BtnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCerrar.Location = new System.Drawing.Point(1207, 10);
+            this.BtnCerrar.Name = "BtnCerrar";
+            this.BtnCerrar.Size = new System.Drawing.Size(35, 35);
+            this.BtnCerrar.TabIndex = 0;
+            this.BtnCerrar.UseVisualStyleBackColor = false;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -90,7 +114,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(137)))), ((int)(((byte)(99)))));
             this.label2.Location = new System.Drawing.Point(976, 289);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 22);
+            this.label2.Size = new System.Drawing.Size(163, 28);
             this.label2.TabIndex = 4;
             this.label2.Text = "USER LOGIN";
             // 
@@ -150,30 +174,6 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // BtnMin
-            // 
-            this.BtnMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(132)))));
-            this.BtnMin.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.icons8_minimizar_50;
-            this.BtnMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnMin.Location = new System.Drawing.Point(1164, 10);
-            this.BtnMin.Name = "BtnMin";
-            this.BtnMin.Size = new System.Drawing.Size(35, 35);
-            this.BtnMin.TabIndex = 1;
-            this.BtnMin.UseVisualStyleBackColor = false;
-            this.BtnMin.Click += new System.EventHandler(this.BtnMin_Click);
-            // 
-            // BtnCerrar
-            // 
-            this.BtnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.BtnCerrar.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.icons8_x_48;
-            this.BtnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnCerrar.Location = new System.Drawing.Point(1207, 10);
-            this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(35, 35);
-            this.BtnCerrar.TabIndex = 0;
-            this.BtnCerrar.UseVisualStyleBackColor = false;
-            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
-            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::ProyectoEquipo3.Properties.Resources.Group_291;
@@ -199,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
             this.ClientSize = new System.Drawing.Size(1254, 677);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);

@@ -82,14 +82,14 @@
             // flpNotificacionesSistema
             // 
             this.flpNotificacionesSistema.AutoScroll = true;
-            this.flpNotificacionesSistema.BackColor = System.Drawing.Color.Silver;
+            this.flpNotificacionesSistema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
             this.flpNotificacionesSistema.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpNotificacionesSistema.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpNotificacionesSistema.Location = new System.Drawing.Point(0, 20);
+            this.flpNotificacionesSistema.Location = new System.Drawing.Point(0, 25);
             this.flpNotificacionesSistema.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.flpNotificacionesSistema.Name = "flpNotificacionesSistema";
             this.flpNotificacionesSistema.Padding = new System.Windows.Forms.Padding(6);
-            this.flpNotificacionesSistema.Size = new System.Drawing.Size(490, 494);
+            this.flpNotificacionesSistema.Size = new System.Drawing.Size(490, 489);
             this.flpNotificacionesSistema.TabIndex = 1;
             this.flpNotificacionesSistema.WrapContents = false;
             // 
@@ -101,7 +101,7 @@
             this.lblTituloSistema.Location = new System.Drawing.Point(0, 0);
             this.lblTituloSistema.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTituloSistema.Name = "lblTituloSistema";
-            this.lblTituloSistema.Size = new System.Drawing.Size(192, 20);
+            this.lblTituloSistema.Size = new System.Drawing.Size(236, 25);
             this.lblTituloSistema.TabIndex = 0;
             this.lblTituloSistema.Text = "Notificaciones del sistema";
             // 
@@ -119,14 +119,14 @@
             // flpProgramadas
             // 
             this.flpProgramadas.AutoScroll = true;
-            this.flpProgramadas.BackColor = System.Drawing.Color.Silver;
+            this.flpProgramadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
             this.flpProgramadas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpProgramadas.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpProgramadas.Location = new System.Drawing.Point(0, 20);
+            this.flpProgramadas.Location = new System.Drawing.Point(0, 25);
             this.flpProgramadas.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.flpProgramadas.Name = "flpProgramadas";
             this.flpProgramadas.Padding = new System.Windows.Forms.Padding(6);
-            this.flpProgramadas.Size = new System.Drawing.Size(490, 494);
+            this.flpProgramadas.Size = new System.Drawing.Size(490, 489);
             this.flpProgramadas.TabIndex = 1;
             this.flpProgramadas.WrapContents = false;
             // 
@@ -138,13 +138,15 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 20);
+            this.label1.Size = new System.Drawing.Size(253, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Notificaciones programadas";
             // 
             // dgvProgramadas
             // 
+            this.dgvProgramadas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
             this.dgvProgramadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProgramadas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
             this.dgvProgramadas.Location = new System.Drawing.Point(950, 87);
             this.dgvProgramadas.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvProgramadas.Name = "dgvProgramadas";

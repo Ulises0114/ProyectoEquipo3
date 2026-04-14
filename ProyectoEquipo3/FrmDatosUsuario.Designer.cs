@@ -90,7 +90,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(27, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 15);
+            this.label1.Size = new System.Drawing.Size(75, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Nombre";
             // 
@@ -101,7 +101,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(27, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 15);
+            this.label2.Size = new System.Drawing.Size(56, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Clave";
             // 
@@ -112,7 +112,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(27, 164);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 15);
+            this.label3.Size = new System.Drawing.Size(81, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Telefono";
             // 
@@ -123,7 +123,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Location = new System.Drawing.Point(27, 226);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 15);
+            this.label5.Size = new System.Drawing.Size(65, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Puesto";
             // 
@@ -177,7 +177,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
             this.panel1.Controls.Add(this.roundedButton1);
             this.panel1.Controls.Add(this.roundedButton2);
             this.panel1.Controls.Add(this.label5);

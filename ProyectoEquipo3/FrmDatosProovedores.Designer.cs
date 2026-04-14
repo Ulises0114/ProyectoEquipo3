@@ -51,7 +51,7 @@
             this.TxtNombre.Location = new System.Drawing.Point(31, 40);
             this.TxtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(368, 26);
+            this.TxtNombre.Size = new System.Drawing.Size(368, 31);
             this.TxtNombre.TabIndex = 0;
             // 
             // TxtDireccion
@@ -60,7 +60,7 @@
             this.TxtDireccion.Location = new System.Drawing.Point(31, 343);
             this.TxtDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtDireccion.Name = "TxtDireccion";
-            this.TxtDireccion.Size = new System.Drawing.Size(368, 26);
+            this.TxtDireccion.Size = new System.Drawing.Size(368, 31);
             this.TxtDireccion.TabIndex = 2;
             // 
             // TxtTelefono
@@ -69,7 +69,7 @@
             this.TxtTelefono.Location = new System.Drawing.Point(31, 197);
             this.TxtTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtTelefono.Name = "TxtTelefono";
-            this.TxtTelefono.Size = new System.Drawing.Size(368, 26);
+            this.TxtTelefono.Size = new System.Drawing.Size(368, 31);
             this.TxtTelefono.TabIndex = 3;
             // 
             // TxtContacto
@@ -78,7 +78,7 @@
             this.TxtContacto.Location = new System.Drawing.Point(31, 117);
             this.TxtContacto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtContacto.Name = "TxtContacto";
-            this.TxtContacto.Size = new System.Drawing.Size(368, 26);
+            this.TxtContacto.Size = new System.Drawing.Size(368, 31);
             this.TxtContacto.TabIndex = 4;
             // 
             // TxtEmail
@@ -87,7 +87,7 @@
             this.TxtEmail.Location = new System.Drawing.Point(31, 268);
             this.TxtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(368, 26);
+            this.TxtEmail.Size = new System.Drawing.Size(368, 31);
             this.TxtEmail.TabIndex = 5;
             // 
             // label1
@@ -96,7 +96,7 @@
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(31, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 18);
+            this.label1.Size = new System.Drawing.Size(232, 23);
             this.label1.TabIndex = 8;
             this.label1.Text = "Nombre del proveedor";
             // 
@@ -106,7 +106,7 @@
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(31, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 18);
+            this.label2.Size = new System.Drawing.Size(99, 23);
             this.label2.TabIndex = 9;
             this.label2.Text = "Contacto";
             // 
@@ -116,7 +116,7 @@
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(31, 172);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 18);
+            this.label3.Size = new System.Drawing.Size(95, 23);
             this.label3.TabIndex = 10;
             this.label3.Text = "Telefono";
             // 
@@ -126,7 +126,7 @@
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(31, 243);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 18);
+            this.label4.Size = new System.Drawing.Size(63, 23);
             this.label4.TabIndex = 11;
             this.label4.Text = "Email";
             // 
@@ -136,13 +136,13 @@
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(31, 318);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 18);
+            this.label5.Size = new System.Drawing.Size(104, 23);
             this.label5.TabIndex = 12;
             this.label5.Text = "Dirección";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.BtnCancelar);
             this.panel1.Controls.Add(this.BtnGuardar);
@@ -219,7 +219,7 @@
             // 
             // FrmDatosProovedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Magenta;
             this.ClientSize = new System.Drawing.Size(440, 470);

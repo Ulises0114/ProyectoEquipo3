@@ -79,8 +79,8 @@
             // 
             // BtnInventario
             // 
-            this.BtnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.BtnInventario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BtnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
+            this.BtnInventario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
             this.BtnInventario.BorderColor = System.Drawing.Color.Transparent;
             this.BtnInventario.BorderRadius = 8;
             this.BtnInventario.BorderSize = 0;
@@ -89,13 +89,13 @@
             this.BtnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnInventario.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInventario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
-            this.BtnInventario.HoverColor = System.Drawing.Color.Silver;
+            this.BtnInventario.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(207)))), ((int)(((byte)(181)))));
             this.BtnInventario.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnInventario.ImagePadding = 40;
             this.BtnInventario.Location = new System.Drawing.Point(277, 130);
             this.BtnInventario.Margin = new System.Windows.Forms.Padding(10);
             this.BtnInventario.Name = "BtnInventario";
-            this.BtnInventario.PressedColor = System.Drawing.SystemColors.ControlDark;
+            this.BtnInventario.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.BtnInventario.Size = new System.Drawing.Size(220, 220);
             this.BtnInventario.TabIndex = 27;
             this.BtnInventario.Text = "Gestión de\r\nInventario";
@@ -105,8 +105,8 @@
             // 
             // BtnProyectos
             // 
-            this.BtnProyectos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.BtnProyectos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BtnProyectos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
+            this.BtnProyectos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
             this.BtnProyectos.BorderColor = System.Drawing.Color.Transparent;
             this.BtnProyectos.BorderRadius = 8;
             this.BtnProyectos.BorderSize = 0;
@@ -115,13 +115,13 @@
             this.BtnProyectos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnProyectos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProyectos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
-            this.BtnProyectos.HoverColor = System.Drawing.Color.Silver;
+            this.BtnProyectos.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(207)))), ((int)(((byte)(181)))));
             this.BtnProyectos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnProyectos.ImagePadding = 40;
             this.BtnProyectos.Location = new System.Drawing.Point(517, 130);
             this.BtnProyectos.Margin = new System.Windows.Forms.Padding(10);
             this.BtnProyectos.Name = "BtnProyectos";
-            this.BtnProyectos.PressedColor = System.Drawing.SystemColors.ControlDark;
+            this.BtnProyectos.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.BtnProyectos.Size = new System.Drawing.Size(220, 220);
             this.BtnProyectos.TabIndex = 27;
             this.BtnProyectos.Text = "Proyectos\r\npendientes";
@@ -131,8 +131,8 @@
             // 
             // BtnProveedores
             // 
-            this.BtnProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.BtnProveedores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BtnProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
+            this.BtnProveedores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
             this.BtnProveedores.BorderColor = System.Drawing.Color.Transparent;
             this.BtnProveedores.BorderRadius = 8;
             this.BtnProveedores.BorderSize = 0;
@@ -141,13 +141,13 @@
             this.BtnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnProveedores.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProveedores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
-            this.BtnProveedores.HoverColor = System.Drawing.Color.Silver;
+            this.BtnProveedores.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(207)))), ((int)(((byte)(181)))));
             this.BtnProveedores.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnProveedores.ImagePadding = 40;
             this.BtnProveedores.Location = new System.Drawing.Point(757, 130);
             this.BtnProveedores.Margin = new System.Windows.Forms.Padding(10);
             this.BtnProveedores.Name = "BtnProveedores";
-            this.BtnProveedores.PressedColor = System.Drawing.SystemColors.ControlDark;
+            this.BtnProveedores.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.BtnProveedores.Size = new System.Drawing.Size(220, 220);
             this.BtnProveedores.TabIndex = 27;
             this.BtnProveedores.Text = "Proveedores";
@@ -157,8 +157,8 @@
             // 
             // BtnNotificaciones
             // 
-            this.BtnNotificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.BtnNotificaciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BtnNotificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
+            this.BtnNotificaciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
             this.BtnNotificaciones.BorderColor = System.Drawing.Color.Transparent;
             this.BtnNotificaciones.BorderRadius = 8;
             this.BtnNotificaciones.BorderSize = 0;
@@ -167,13 +167,13 @@
             this.BtnNotificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnNotificaciones.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNotificaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
-            this.BtnNotificaciones.HoverColor = System.Drawing.Color.Silver;
+            this.BtnNotificaciones.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(207)))), ((int)(((byte)(181)))));
             this.BtnNotificaciones.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnNotificaciones.ImagePadding = 40;
             this.BtnNotificaciones.Location = new System.Drawing.Point(277, 377);
             this.BtnNotificaciones.Margin = new System.Windows.Forms.Padding(10);
             this.BtnNotificaciones.Name = "BtnNotificaciones";
-            this.BtnNotificaciones.PressedColor = System.Drawing.SystemColors.ControlDark;
+            this.BtnNotificaciones.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.BtnNotificaciones.Size = new System.Drawing.Size(220, 220);
             this.BtnNotificaciones.TabIndex = 27;
             this.BtnNotificaciones.Text = "Notificaciones";
@@ -183,8 +183,8 @@
             // 
             // BtnPresupuestos
             // 
-            this.BtnPresupuestos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.BtnPresupuestos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BtnPresupuestos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
+            this.BtnPresupuestos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
             this.BtnPresupuestos.BorderColor = System.Drawing.Color.Transparent;
             this.BtnPresupuestos.BorderRadius = 8;
             this.BtnPresupuestos.BorderSize = 0;
@@ -193,13 +193,13 @@
             this.BtnPresupuestos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPresupuestos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPresupuestos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
-            this.BtnPresupuestos.HoverColor = System.Drawing.Color.Silver;
+            this.BtnPresupuestos.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(207)))), ((int)(((byte)(181)))));
             this.BtnPresupuestos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPresupuestos.ImagePadding = 40;
             this.BtnPresupuestos.Location = new System.Drawing.Point(517, 377);
             this.BtnPresupuestos.Margin = new System.Windows.Forms.Padding(10);
             this.BtnPresupuestos.Name = "BtnPresupuestos";
-            this.BtnPresupuestos.PressedColor = System.Drawing.SystemColors.ControlDark;
+            this.BtnPresupuestos.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.BtnPresupuestos.Size = new System.Drawing.Size(220, 220);
             this.BtnPresupuestos.TabIndex = 27;
             this.BtnPresupuestos.Text = "Presupuesto";
@@ -209,8 +209,8 @@
             // 
             // BtnUsuarios
             // 
-            this.BtnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.BtnUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BtnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
+            this.BtnUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(227)))), ((int)(((byte)(211)))));
             this.BtnUsuarios.BorderColor = System.Drawing.Color.Transparent;
             this.BtnUsuarios.BorderRadius = 8;
             this.BtnUsuarios.BorderSize = 0;
@@ -219,13 +219,13 @@
             this.BtnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUsuarios.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
-            this.BtnUsuarios.HoverColor = System.Drawing.Color.Silver;
+            this.BtnUsuarios.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(207)))), ((int)(((byte)(181)))));
             this.BtnUsuarios.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnUsuarios.ImagePadding = 40;
             this.BtnUsuarios.Location = new System.Drawing.Point(757, 377);
             this.BtnUsuarios.Margin = new System.Windows.Forms.Padding(10);
             this.BtnUsuarios.Name = "BtnUsuarios";
-            this.BtnUsuarios.PressedColor = System.Drawing.SystemColors.ControlDark;
+            this.BtnUsuarios.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.BtnUsuarios.Size = new System.Drawing.Size(220, 220);
             this.BtnUsuarios.TabIndex = 27;
             this.BtnUsuarios.Text = "Gestión de\r\nusuarios";
@@ -241,7 +241,7 @@
             this.LblBienvenido.ForeColor = System.Drawing.SystemColors.Control;
             this.LblBienvenido.Location = new System.Drawing.Point(12, 74);
             this.LblBienvenido.Name = "LblBienvenido";
-            this.LblBienvenido.Size = new System.Drawing.Size(187, 32);
+            this.LblBienvenido.Size = new System.Drawing.Size(236, 39);
             this.LblBienvenido.TabIndex = 28;
             this.LblBienvenido.Text = "BIENVENIDO";
             // 
